@@ -9,28 +9,13 @@ in {
     nixvim.homeManagerModules.nixvim
     ./config/default.nix
   ];
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "kratosgado";
   home.homeDirectory = "/home/kratosgado";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
+      # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
@@ -42,25 +27,23 @@ in {
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
- gnomeExtensions.dash-to-dock
+    gnomeExtensions.dash-to-dock
     gnomeExtensions.gsconnect
     gnomeExtensions.user-themes
     andromeda-gtk-theme
     rustc
     rustup
-    # rust-analyzer
     # #flutter
     # #jdk17
-    # postman
-     brave
+    postman
+    brave
     #vscode
     # android-studio
     # #google-chrome
     # #vlc
-    # #libreoffice
-    # docker
-    # python311
-   # neovim
+    #libreoffice
+    docker
+    python311
     fzf
     curl
     jq
@@ -74,9 +57,8 @@ in {
      corepack
      dbeaver-bin
      mongodb-compass
-     
+
     neofetch
-    nnn # terminal file manager
 
     # archives
     zip
@@ -85,6 +67,7 @@ in {
     p7zip
 
     # utils
+    nnn
     ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
@@ -93,11 +76,13 @@ in {
     lazygit
     tmux
     ripgrep
-  #  reattach-to-user-namespace # allow copy to clipboard from tmux
     fd
     pass
+    zoxide
+    devbox
     jetbrains-mono
     gh
+    thefuck
 
     # networking tools
     mtr # A network diagnostic tool
@@ -114,7 +99,7 @@ in {
     pciutils # lspci
     usbutils # lsusb
   ];
- 
+
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -134,7 +119,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     VISIUAL = "nvim";
-  FZF_CTRL_T_OPTS = "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
+    FZF_CTRL_T_OPTS = "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
     FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
   };
 
@@ -171,7 +156,14 @@ in {
       vimAlias = true;
 
       luaLoader.enable = true;
+
+    extraConfigLua = ''
+       vim.o.timeoutlen = 200
+     '';
     };
+     tmux.plugins.tmux.plugins = [
+       pkgs.tmuxPlugins.vim-tmux-navigator
+    ];
   zsh = {
       enable = true;
       autosuggestion.enable = true;
@@ -184,10 +176,18 @@ in {
         v = "nvim";
         c = "clear";
         cat = "bat --theme='Catppuccin Mocha'";
+        cd = "z";
         fk = "fuck";
         ls = "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
-        cd = "z";
+                #   cd = "z";
         s = "web_search duckduckgo";
+
+       l = "ls -alh";
+       ll = "ls -l";
+       switch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
+       impureswitch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure";
+       editconfig = "nvim ~/projects/configs/nix-configuration/";
+       edithome = "export EDITOR=nvim && sudoedit /etc/nixos/home.nix";
       };
       oh-my-zsh = {
         enable = true;

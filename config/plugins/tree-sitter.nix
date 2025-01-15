@@ -34,10 +34,8 @@ grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
       xml
       yaml
     ];
-
-
     };
-        treesitter-refactor = {
+    treesitter-refactor = {
       enable = true;
       highlightDefinitions = {
         enable = true;
@@ -45,7 +43,7 @@ grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
         clearOnCursorMove = false;
       };
     };
-
+    neo-tree.enable = true;
     hmts.enable = true;
   };
 }

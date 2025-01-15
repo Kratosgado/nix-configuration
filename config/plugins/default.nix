@@ -1,23 +1,23 @@
 {
   imports = [
-    # ./barbar.nix
-    # ./comment.nix
-    # ./gitblame.nix
-    # ./harpoon.nix
-    # ./indent-o-matic.nix
-    # ./lazygit.nix
+    ./barbar.nix
+    ./comment.nix
+    ./gitblame.nix
+    ./harpoon.nix
+    ./indent-o-matic.nix
+    ./lazygit.nix
     ./lint.nix
     ./lsp.nix
-    # ./lualine.nix
-    # ./markdown-preview.nix
-    # ./nix.nix
-    # ./noice.nix
-    # ./oil.nix
-    # ./tagbar.nix
+    ./lualine.nix
+    ./markdown-preview.nix
+    ./nix.nix
+    ./noice.nix
+    ./oil.nix
+    ./tagbar.nix
     ./telescope.nix
     ./tree-sitter.nix
-    # ./which-key.nix
-    # ./web-devicons.nix
+    ./which-key.nix
+    ./web-devicons.nix
   ];
 
   programs.nixvim = {
@@ -56,65 +56,12 @@
   transparent = false;
         };
       };
-
-      vscode = {
-        enable = false;
-        settings = {
-        integrations = {
-	  italic_comments = true;
-          cmp = true;
-          gitsigns = true;
-          nvimtree = true;
-          treesitter = true;
-	  underline_links = true;
-          notify = false;
-          };
-        };
-      };
-      kanagawa = {
-        enable = false;
-        settings = {
-          colors = {
-            palette = {
-              fujiWhite = "#FFFFFF";
-              sumiInk0 = "#000000";
-            };
-            theme = {
-              all = {
-                ui = {
-                  bg_gutter = "none";
-                };
-              };
-              dragon = {
-                syn = {
-                  parameter = "yellow";
-                };
-              };
-              wave = {
-                ui = {
-                  float = {
-                    bg = "none";
-                  };
-                };
-              };
-            };
-          };
-          commentStyle = {
-            italic = true;
-          };
-          compile = false;
-          dimInactive = false;
-          functionStyle = { };
-          overrides = "function(colors) return {} end";
-          terminalColors = true;
-          theme = "wave";
-          transparent = false;
-          undercurl = true;
-        };
-      };
     };
 
     plugins = {
+      lazy = {
+        enable = true;
+      };
       gitsigns = {
         enable = true;
         settings.signs = {

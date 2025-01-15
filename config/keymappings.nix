@@ -19,6 +19,7 @@
         };
       }
       {
+        mode = ["i" "n" "v" "t"];
        action = "<Esc>";
        key = ";;";
        options= {

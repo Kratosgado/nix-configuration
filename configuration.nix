@@ -1,47 +1,23 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # inputs.home-manager.nixosModules.default
-      # <home-manager/nixos>
     ];
-    
 
-  # # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.kratos.isNormalUser = true;
-  # home-manager.users.kratos = {pkgs, ...}: {
-  #   home = "/home/kratosgado/";
-  #   # home.packages = [pkgs.atool pkgs.httpie ];
-  #   programs.bash.enable = true;
-  #
-  #   home.stateVersion = "24.11";
-  # };
-   #
-   # home-manager.useUserPackages = true;
-   # home-manager.useGlobalPkgs = true;
-   #
+
    users.users.kratosgado = {
      isNormalUser = true;
      description = "Kratosgado";
+     shell= pkgs.zsh;
      extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers"];
      packages = with pkgs; [
-      vim
+
      ];
    };
-   #
-   # home-manager = {
-   #   extraSpecialArgs = {inherit inputs; };
-   #   users = {
-   #      "kratosgado" = import ./home.nix;
-   #   };
-   # };
-   #  programs.adb.enable = true;
+
+    # programs.adb.enable = true;
    #
 
   # Bootloader.
@@ -104,9 +80,6 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -115,8 +88,6 @@
 environment.variables = {
     GTK_THEME = "Andromeda";
     GDM_THEME = "Andromeda";
-    # switch = "sudo nixos-rebuild switch";
-    # editconf = "sudo nvim /etc/nixos/configuration.nix";
   };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
@@ -126,6 +97,7 @@ environment.variables = {
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -136,7 +108,7 @@ environment.variables = {
   totem  # video player
   yelp  # help viewer
   evince  # document viewer
-  geary  # email client
+  # geary  # email client
   gnome-calculator
   # gnome-contacts
   gnome-maps
@@ -162,36 +134,21 @@ environment.variables = {
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
     # enable docker
-  # virtualisation.docker.enable = true;
-  # virtualisation.docker.rootless = {
-  #   enable = true;
-  #   setSocketVariable = true;
-  # };
-#   programs.git = {
-#   enable = true;
-#   package = pkgs.gitFull;
-#   config = {
-#     credential.helper = "libsecret";
-#   };
-# };
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
   fonts.packages = with pkgs; [fira-code-nerdfont];
-  programs.bash.completion.enable = true;
-  programs.bash.shellAliases = {
-  l = "ls -alh";
-  ll = "ls -l";
-  ls = "ls --color=tty";
-  switch = "sudo nixos-rebuild switch";
-    defaultRebuild = "sudo nixos-rebuild switch --flake /etc/nixos/#default";
-  editconfig = "export EDITOR=nvim && sudoedit /etc/nixos/configuration.nix";
-};
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
 
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+  programs.zsh.enable = true;
 
   # List services that you want to enable:
 
@@ -204,12 +161,6 @@ environment.variables = {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
