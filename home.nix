@@ -134,9 +134,15 @@ in {
  git = {
     enable = true;
     userName = "Kratosgado";
-    userEmail = "mbeahessilfieprince@gmail.com";
+            userEmail = "mbeahessilfieprince@gmail.com";
+      aliases = {
+      ci = "commit";
+      co = "checkout";
+      s = "status";
+    };
     extraConfig = {
       push = { autoSetupRemote = true;};
+
       credential.helper = "${
           pkgs.git.override { withLibsecret = true; }
         }/bin/git-credential-libsecret";
@@ -190,8 +196,8 @@ in {
 
        l = "ls -alh";
        ll = "ls -l";
-                commit = "git add . && commit -m";
-                push = "git push";
+       commit = "git add . && commit -m";
+       push = "git push";
        switch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
        impureswitch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure";
        editconfig = "nvim ~/projects/configs/nix-configuration/";
