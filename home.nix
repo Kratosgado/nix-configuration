@@ -135,7 +135,13 @@ in {
     enable = true;
     userName = "Kratosgado";
     userEmail = "mbeahessilfieprince@gmail.com";
-  };
+    extraConfig = {
+      push = { autoSetupRemote = true;};
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
+     };
+    };
 
    # starship - an customizable prompt for any shell
   starship = {
@@ -184,6 +190,8 @@ in {
 
        l = "ls -alh";
        ll = "ls -l";
+                commit = "git add . && commit -m";
+                push = "git push";
        switch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
        impureswitch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure";
        editconfig = "nvim ~/projects/configs/nix-configuration/";
