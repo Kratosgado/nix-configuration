@@ -1,13 +1,22 @@
 {
   # Import all your configuration modules here
-  imports = [
-    ./bufferline.nix
-    ./typescript.nix
-     ./autocommands.nix
-    ./completion.nix
-    ./keymappings.nix
-    ./options.nix
-    ./plugins
-    ./todo.nix
+  programs.nixvim = {
+    imports = [
+      # ./bufferline.nix
+      # ./typescript.nix
+      #  ./autocommands.nix
+      # ./completion.nix
+      # ./keymappings.nix
+      # ./options.nix
+      # ./plugins
+      # ./todo.nix
+      ./cmp/cmp.nix
+      ./lsp
+      ./plugin-manager/lazy.nix
+      ./ui
+      ./plugin
+      ./normal-config
+      ./other
     ];
+  };
 }

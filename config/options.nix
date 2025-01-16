@@ -13,7 +13,6 @@
 
       providers.wl-copy.enable = true;
     };
-
     opts = {
       updatetime = 100; # Faster completion
 
@@ -37,8 +36,8 @@
       smartcase = true; # Override the 'ignorecase' option if the search pattern contains upper
       #   case characters
       scrolloff = 8; # Number of screen lines to show around the cursor
-      cursorline = false; # Highlight the screen line of the cursor
-      cursorcolumn = false; # Highlight the screen column of the cursor
+      cursorline = true; # Highlight the screen line of the cursor
+      cursorcolumn = true; # Highlight the screen column of the cursor
       signcolumn = "yes"; # Whether to show the signcolumn
       laststatus = 3; # When to use a status line for the last window
       fileencoding = "utf-8"; # File-content encoding for the current buffer
@@ -47,8 +46,8 @@
       wrap = false; # Prevent text from wrapping
 
       # Tab options
-      tabstop = 4; # Number of spaces a <Tab> in the text stands for (local to buffer)
-      shiftwidth = 4; # Number of spaces used for each step of (auto)indent (local to buffer)
+      tabstop = 2; # Number of spaces a <Tab> in the text stands for (local to buffer)
+      shiftwidth = 2; # Number of spaces used for each step of (auto)indent (local to buffer)
       expandtab = true; # Expand <Tab> to spaces in Insert mode (local to buffer)
       autoindent = true; # Do clever autoindenting
 

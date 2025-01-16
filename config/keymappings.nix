@@ -91,7 +91,7 @@
       # Telescope search buffers
       {
         action = ":Telescope buffers<CR>";
-        key = "<leader>sb";
+        key = "<leader>sB";
         options = {
           silent = true;
           noremap = true;
@@ -101,7 +101,7 @@
       # Telescope buffer
       {
         action = ":Telescope current_buffer_fuzzy_find<CR>";
-        key = "<leader>b";
+        key = "<leader>sb";
         options = {
           silent = true;
           noremap = true;
@@ -121,7 +121,7 @@
       # Telescope search files
       {
         action = ":Telescope find_files<CR>";
-        key = "<leader>sf";
+        key = "<leader>ff";
         options = {
           silent = true;
           noremap = true;
@@ -131,7 +131,7 @@
       # Telescope search commands
       {
         action = ":Telescope commands<CR>";
-        key = "<leader>sc";
+        key = "<leader>fc";
         options = {
           silent = true;
           noremap = true;

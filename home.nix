@@ -52,6 +52,7 @@ in {
      openssl
      #pnpm
      nodejs
+    deno
      unzip
      yarn
      corepack
@@ -170,7 +171,7 @@ in {
       luaLoader.enable = true;
 
     extraConfigLua = ''
-       vim.o.timeoutlen = 200
+       vim.o.timeoutlen = 500
      '';
     };
      tmux.plugins.tmux.plugins = [
@@ -200,8 +201,7 @@ in {
        push = "git push";
        switch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
        impureswitch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure";
-       editconfig = "nvim ~/projects/configs/nix-configuration/";
-       edithome = "export EDITOR=nvim && sudoedit /etc/nixos/home.nix";
+       editconfig = "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
       };
       oh-my-zsh = {
         enable = true;
