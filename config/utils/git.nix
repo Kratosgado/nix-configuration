@@ -1,6 +1,10 @@
 {
   plugins.gitsigns = {
     enable = true;
-    settings.current_line_blame = true;
+    settings = {
+      add.text = "+";
+      change.text = "~";
+      current_line_blame = true;
+    };
   };
 }

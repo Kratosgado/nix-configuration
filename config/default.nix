@@ -10,13 +10,15 @@
       # ./options.nix
       # ./plugins
       # ./todo.nix
-      ./cmp/cmp.nix
+      ./cmp
       ./lsp
       ./plugin-manager/lazy.nix
       ./ui
       ./plugin
       ./normal-config
       ./other
+      ./utils
+      # ./debugs
     ];
   };
 }

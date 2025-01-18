@@ -67,7 +67,6 @@ in {
     corepack
     dbeaver-bin
     mongodb-compass
-    telegram-desktop
 
     neofetch
 

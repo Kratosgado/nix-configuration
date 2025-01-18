@@ -10,11 +10,13 @@
       options = { desc = "Toggle Tree View."; };
     }
     {
-      #info
-      action = "<cmd>lua vim.lsp.buf.hover()<CR>";
-      key = "<space>k"; # this line is changed
-      mode = "n";
-      options = { desc = "info about things"; };
+      action = "<Esc>";
+      key = ";;";
+      mode = [ "i" "n" "t" "x" ];
+      options = {
+        silent = true;
+        noremap = true;
+      };
     }
     {
       # execute currunt file of python in terminal
@@ -23,7 +25,6 @@
       mode = [ "n" ];
       options = { desc = "runs currunt python file in the terminal"; };
     }
-
     {
       # Neoformat
       action = "<cmd>Neoformat<CR>";
@@ -78,7 +79,6 @@
       options = { desc = "telescope buffer finding"; };
     }
     {
-
       action = "<cmd>Telescope file_browser <CR>";
       key = "<leader>fb";
       options = { desc = "telescope file browsing"; };
@@ -95,7 +95,6 @@
       key = "<leader>o";
       options = { desc = "opening neorg with telesope"; };
     }
-
   ];
 }
 # ...

@@ -6,15 +6,30 @@
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
-      # The `follows` keyword in inputs is used for inheritance.
-      # Here, `inputs.nixpkgs` of home-manager is kept consistent with
-      # the `inputs.nixpkgs` of the current flake,
-      # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
 
-  outputs = inputs@{nixpkgs, home-manager, ... }:{ 
+    # Required, nvf works best and only directly supports flakes
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+  };
+  # outputs = { nixpkgs, home-manager, nvf, ... }: let
+  #   system = "x86_64-linux";
+  #   pkgs = nixpkgs.legacyPackages.${system};
+  # in {
+  #   # ↓ this is your home output in the flake schema, expected by home-manager
+  #   "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
+  #     inherit pkgs;
+  #     modules = [
+  #       nvf.homeManagerModules.default # <- this imports the home-manager module that provides the options
+  #       ./home.nix # <- your home entrypoint, `programs.nvf.*` may be defined here
+  #     ];
+  #   };
+  # };
+  outputs = inputs@{ nixpkgs, nvf, home-manager, ... }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -23,13 +38,13 @@
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
+          nvf.nixosModules.default
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-           # TODO replace ryan with your own username
+            # TODO replace ryan with your own username
             home-manager.users.kratosgado = import ./home.nix;
-
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];

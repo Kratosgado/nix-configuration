@@ -1,25 +1,27 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./nvf
+  ];
 
+  users.users.kratosgado = {
+    isNormalUser = true;
+    description = "Kratosgado";
+    shell = pkgs.zsh;
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" ];
+    packages = with pkgs;
+      [
 
-   users.users.kratosgado = {
-     isNormalUser = true;
-     description = "Kratosgado";
-     shell= pkgs.zsh;
-     extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers"];
-     packages = with pkgs; [
+      ];
+  };
 
-     ];
-   };
-
-    # programs.adb.enable = true;
-   #
-
+  programs.adb.enable = true;
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,7 +35,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
   # Set your time zone.
   time.timeZone = "Africa/Accra";
 
@@ -85,7 +86,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-environment.variables = {
+  environment.variables = {
     GTK_THEME = "Andromeda";
     GDM_THEME = "Andromeda";
   };
@@ -94,7 +95,6 @@ environment.variables = {
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
@@ -102,23 +102,23 @@ environment.variables = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.gnome.excludePackages = with pkgs; [
-  baobab  # disk usage analyzer
-  epiphany  # web browser
-  simple-scan  # document scanner
-  totem  # video player
-  yelp  # help viewer
-  evince  # document viewer
-  # geary  # email client
-  gnome-calculator
-  # gnome-contacts
-  gnome-maps
-  gnome-music
-  # gnome-screenshot
-  gnome-system-monitor
-  # gnome-connections
-  # gnome-console
-];
-   environment.systemPackages = with pkgs; [
+    baobab # disk usage analyzer
+    epiphany # web browser
+    simple-scan # document scanner
+    totem # video player
+    yelp # help viewer
+    evince # document viewer
+    # geary  # email client
+    gnome-calculator
+    # gnome-contacts
+    gnome-maps
+    gnome-music
+    # gnome-screenshot
+    gnome-system-monitor
+    # gnome-connections
+    # gnome-console
+  ];
+  environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-dock
     gnomeExtensions.gsconnect
     gnomeExtensions.user-themes
@@ -133,13 +133,13 @@ environment.variables = {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
-    # enable docker
+  # enable docker
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
   };
-  fonts.packages = with pkgs; [fira-code-nerdfont];
+  fonts.packages = with pkgs; [ fira-code-nerdfont ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
 
@@ -153,7 +153,7 @@ environment.variables = {
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -5,17 +5,8 @@ in {
   # config = {
 
   # colorschemes..................................................................
-
-  # colorschemes.gruvbox.enable = true;
-  # colorschemes.cyberdream.enable = true;
-
   wrapRc = true;
   enableMan = true;
-  # colorschemes.nightfox = {
-  #   enable = true;
-  #   # flavor = "dayfox";
-  # };
-  # colorschemes.onedark.enable = true;
   colorschemes.tokyonight = {
     enable = true;
     # transparentBackground = true;
