@@ -1,137 +1,130 @@
-{pkgs, ...}: let
-  nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-    ref = "main";
-    rev = "a54b752259ff16d340d270928ee603b4b9599192";
-  });
-in {
-  imports = [
-    nixvim.homeManagerModules.nixvim
-    ./config/default.nix
-    # nvf.homeManagerModules.default
-  ];
-  home.username = "kratosgado";
-  home.homeDirectory = "/home/kratosgado";
+{pkgs, ...}: {
+  home = {
+    username = "kratosgado";
+    homeDirectory = "/home/kratosgado";
 
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+    stateVersion = "24.11";
+    packages = with pkgs; [
+      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+
+      # # You can also create simple shell scripts directly inside your
+      # # configuration. For example, this adds a command 'my-hello' to your
+      # # environment:
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
+
+      (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.user-themes
+      andromeda-gtk-theme
+      rustc
+      dbus
+      pkg-config
+      glib
+      gobject-introspection
+      dbus-glib
+      gtk4
+      trunk
+      openssl
+      libsoup
+      webkitgtk_4_0
+      gtk3
+      rustup
+      # #flutter
+      # #jdk17
+      postman
+      brave
+      ngrok
+      #vscode
+      android-studio
+      # #google-chrome
+      # #vlc
+      #libreoffice
+      docker
+      python311
+      fzf
+      curl
+      jq
+      gcc
+      openssh
+      openssl
+      #pnpm
+      nodejs
+      deno
+      unzip
+      yarn
+      corepack
+      dbeaver-bin
+      mongodb-compass
+      telegram-desktop
+
+      neofetch
+
+      # archives
+      zip
+      xz
+      unzip
+      p7zip
+
+      # utils
+      nnn
+      ripgrep # recursively searches directories for a regex pattern
+      jq # A lightweight and flexible command-line JSON processor
+      yq-go # yaml processor https://github.com/mikefarah/yq
+      eza # A modern replacement for ‘ls’
+      fzf # A command-line fuzzy finder
+      lazygit
+      tmux
+      ripgrep
+      fd
+      bat
+      pass
+      zoxide
+      devbox
+      jetbrains-mono
+      gh
+      thefuck
+
+      # networking tools
+      mtr # A network diagnostic tool
+      iperf3
+      dnsutils # `dig` + `nslookup`
+      ldns # replacement of `dig`, it provide the command `drill`
+      aria2 # A lightweight multi-protocol & multi-source command-line download utility
+      socat # replacement of openbsd-netcat
+      nmap # A utility for network discovery and security auditing
+      ipcalc # it is a calculator for the IPv4/v6 addresses
+      gnupg
+      glow # markdown previewer in terminal
+      ethtool
+      pciutils # lspci
+      usbutils # lsusb
+    ];
+
+    # Home Manager is pretty good at managing dotfiles. The primary way to manage
+    # plain files is through 'home.file'.
+    file = {
+      # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+      # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+      # # symlink to the Nix store copy.
+      # ".screenrc".source = dotfiles/screenrc;
+
+      # # You can also set the file content immediately.
+      # ".gradle/gradle.properties".text = ''
+      #   org.gradle.console=verbose
+      #   org.gradle.daemon.idletimeout=3600000
+      # '';
+    };
+
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISIUAL = "nvim";
+      FZF_CTRL_T_OPTS = "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
+      FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
+    };
+  }; # Please read the comment before changing.
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-
-    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.user-themes
-    andromeda-gtk-theme
-    rustc
-    dbus
-    pkg-config
-    glib
-    gobject-introspection
-    dbus-glib
-    gtk4
-    trunk
-    openssl
-    libsoup
-    webkitgtk_4_0
-    gtk3
-    rustup
-    # #flutter
-    # #jdk17
-    postman
-    brave
-    #vscode
-    # android-studio
-    # #google-chrome
-    # #vlc
-    #libreoffice
-    docker
-    python311
-    fzf
-    curl
-    jq
-    gcc
-    openssh
-    openssl
-    #pnpm
-    nodejs
-    deno
-    unzip
-    yarn
-    corepack
-    dbeaver-bin
-    mongodb-compass
-    telegram-desktop
-
-    neofetch
-
-    # archives
-    zip
-    xz
-    unzip
-    p7zip
-
-    # utils
-    nnn
-    ripgrep # recursively searches directories for a regex pattern
-    jq # A lightweight and flexible command-line JSON processor
-    yq-go # yaml processor https://github.com/mikefarah/yq
-    eza # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
-    lazygit
-    tmux
-    ripgrep
-    fd
-    pass
-    zoxide
-    devbox
-    jetbrains-mono
-    gh
-    thefuck
-
-    # networking tools
-    mtr # A network diagnostic tool
-    iperf3
-    dnsutils # `dig` + `nslookup`
-    ldns # replacement of `dig`, it provide the command `drill`
-    aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    socat # replacement of openbsd-netcat
-    nmap # A utility for network discovery and security auditing
-    ipcalc # it is a calculator for the IPv4/v6 addresses
-    gnupg
-    glow # markdown previewer in terminal
-    ethtool
-    pciutils # lspci
-    usbutils # lsusb
-  ];
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    VISIUAL = "nvim";
-    FZF_CTRL_T_OPTS = "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
-    FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
-  };
 
   services.gpg-agent = {
     enable = true;
@@ -169,19 +162,6 @@ in {
         gcloud.disabled = true;
         line_break.disabled = true;
       };
-    };
-    # Neovim
-    nixvim = {
-      enable = false;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-
-      luaLoader.enable = true;
-
-      extraConfigLua = ''
-        vim.o.timeoutlen = 500
-      '';
     };
     # dconf.settings = {
     #   "org/gnome/desktop/interface" = {

@@ -1,15 +1,39 @@
 {
   programs.nvf.settings.vim = {
     autocomplete.nvim-cmp.enable = true;
+    treesitter = {
+      enable = true;
+      indent.enable = false;
+      autotagHtml = true;
+      context.enable = true;
+    };
     lsp = {
       enable = true;
       formatOnSave = true;
       lightbulb.enable = true;
       lspSignature.enable = true;
-      lspsaga.enable = true;
-      lsplines.enable = true;
-      trouble.enable = true;
+      # lspsaga.enable = true;
+      # lsplines.enable = true;
+      trouble = {
+        enable = true;
+        mappings = {
+          lspReferences = "gr";
+        };
+      };
       otter-nvim.enable = true;
+      mappings = {
+        goToDefinition = "gd";
+        goToDeclaration = "dD";
+        goToType = "gt";
+        hover = "K";
+        nextDiagnostic = "<leader>cn";
+        previousDiagnostic = "<leader>cp";
+        renameSymbol = "<leader>cr";
+        listDocumentSymbols = "<leader>cs";
+        codeAction = "<leader>ca";
+        documentHighlight = "<leader>ch";
+        format = "<leader>cf";
+      };
       lspconfig = {
         enable = true;
         # sources =
@@ -38,10 +62,7 @@
       lua.enable = true;
       html.enable = true;
       css.enable = true;
-      ts = {
-        enable = true;
-        extensions.ts-error-translator.enable = true;
-      };
+      ts.enable = true;
       rust = {
         enable = true;
         crates.enable = true;

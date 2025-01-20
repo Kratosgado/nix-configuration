@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    # ngrok.url = "github:ngrok/ngrok-nix";
+
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -14,22 +16,14 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
-  # outputs = { nixpkgs, home-manager, nvf, ... }: let
-  #   system = "x86_64-linux";
-  #   pkgs = nixpkgs.legacyPackages.${system};
-  # in {
-  #   # ↓ this is your home output in the flake schema, expected by home-manager
-  #   "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
-  #     inherit pkgs;
-  #     modules = [
-  #       nvf.homeManagerModules.default # <- this imports the home-manager module that provides the options
-  #       ./home.nix # <- your home entrypoint, `programs.nvf.*` may be defined here
-  #     ];
-  #   };
-  # };
-  outputs = inputs@{ nixpkgs, nvf, home-manager, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    nvf,
+    # ngrok,
+    home-manager,
+    ...
+  }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -39,12 +33,15 @@
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
           nvf.nixosModules.default
+          # ngrok.nixosModules.ngrok
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-            # TODO replace ryan with your own username
-            home-manager.users.kratosgado = import ./home.nix;
+              # TODO replace ryan with your own username
+              users.kratosgado = import ./home.nix;
+            };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];
