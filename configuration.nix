@@ -53,10 +53,10 @@
         }
       '';
     };
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [80 433 9000];
-    };
+    # firewall = {
+    #   enable = true;
+    #   allowedTCPPorts = [80 433 9000];
+    # };
     nat = {
       enable = true;
       internalInterfaces = ["ens3"];

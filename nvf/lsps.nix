@@ -1,6 +1,9 @@
 {
   programs.nvf.settings.vim = {
-    autocomplete.nvim-cmp.enable = true;
+    autocomplete.nvim-cmp = {
+      enable = true;
+      mappings.next = "<C-n>";
+    };
     treesitter = {
       enable = true;
       indent.enable = false;
@@ -10,20 +13,22 @@
     lsp = {
       enable = true;
       formatOnSave = true;
-      lightbulb.enable = true;
+      # lightbulb.enable = true;
       lspSignature.enable = true;
+      lspkind.enable = true;
       # lspsaga.enable = true;
       # lsplines.enable = true;
-      trouble = {
-        enable = true;
-        mappings = {
-          lspReferences = "gr";
-        };
-      };
+
+      trouble.enable = true;
+
       otter-nvim.enable = true;
+      nvim-docs-view.enable = true;
+
       mappings = {
         goToDefinition = "gd";
         goToDeclaration = "dD";
+        listReferences = "gr";
+        listImplementations = "gi";
         goToType = "gt";
         hover = "K";
         nextDiagnostic = "<leader>cn";
@@ -34,18 +39,24 @@
         documentHighlight = "<leader>ch";
         format = "<leader>cf";
       };
-      lspconfig = {
+
+      lspconfig.enable = true;
+      # sources =
+      #   #lua
+      #   ''return { { "neovim/nvim-lspconfig",
+      #        init_options = {
+      #          userLanguages = {
+      #            eelixir = "html-eex",
+      #            eruby = "erb",
+      #            rust = "html",
+      #          },
+      #        },}}'';
+    };
+
+    debugger = {
+      nvim-dap = {
         enable = true;
-        # sources =
-        #   #lua
-        #   ''return { { "neovim/nvim-lspconfig",
-        #        init_options = {
-        #          userLanguages = {
-        #            eelixir = "html-eex",
-        #            eruby = "erb",
-        #            rust = "html",
-        #          },
-        #        },}}'';
+        ui.enable = true;
       };
     };
     languages = {

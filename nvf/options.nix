@@ -35,7 +35,7 @@
     # updatetime = 300;
     # wrap = false;
     # writebackup = true;
-    # clipboard = "unnamedplus";
+    clipboard = "unnamedplus";
     scrolloff = 999;
     virtualedit = "block";
     inccommand = "split";
