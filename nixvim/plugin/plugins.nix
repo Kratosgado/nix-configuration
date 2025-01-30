@@ -18,11 +18,11 @@
     # neocord.enable = true;
     tmux-navigator.enable = true;
 
-    friendly-snippets.enable = true;
+    friendly-snippets.enable = false;
     # oil.enable = true;
     lazygit.enable = true;
     trim.enable = true;
-    vim-surround.enable = true;
+    nvim-surround.enable = true;
 
     # dressing.enable = true;
     lualine.enable = true;

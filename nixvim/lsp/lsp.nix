@@ -17,7 +17,7 @@
         # };
         prismals = {
           enable = true;
-          package = pkgs.prisma;
+          package = pkgs.vscode-extensions.prisma.prisma;
         };
         vtsls = {
           enable = true;
@@ -61,7 +61,9 @@
         bashls.enable = true;
         kulala_ls = {
           enable = true;
-          package = pkgs.kulala-fmt;
+          autostart = true;
+          package = pkgs.vimPlugins.kulala-nvim;
+          filetypes = [ ".http" "http" ".rest" "rest" ];
         };
         tailwindcss.enable = true;
       };

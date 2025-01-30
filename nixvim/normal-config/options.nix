@@ -9,6 +9,7 @@ in {
   enableMan = true;
   colorschemes.tokyonight = {
     enable = true;
+    settings.style = "night";
     # transparentBackground = true;
   };
 
