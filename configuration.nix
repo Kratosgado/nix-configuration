@@ -1,21 +1,17 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ config, pkgs, ... }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./nvf
+    # ./nvf
+    ./nixvim
   ];
 
   users.users.kratosgado = {
     isNormalUser = true;
     description = "Kratosgado";
     shell = pkgs.zsh;
-    extraGroups = ["networkmanager" "wheel" "docker" "kvm" "adbusers"];
-    packages = with pkgs; [
-    ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" ];
+    packages = with pkgs; [ ];
   };
   programs = {
     adb.enable = true;
@@ -59,15 +55,13 @@
     # };
     nat = {
       enable = true;
-      internalInterfaces = ["ens3"];
+      internalInterfaces = [ "ens3" ];
       externalInterface = "wg0";
-      forwardPorts = [
-        {
-          sourcePort = 80;
-          proto = "tcp";
-          destination = "10.100.0.3:80";
-        }
-      ];
+      forwardPorts = [{
+        sourcePort = 80;
+        proto = "tcp";
+        destination = "10.100.0.3:80";
+      }];
     };
     #
     # interfaces = {
@@ -229,14 +223,14 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # enable docker
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
   };
-  fonts.packages = with pkgs; [fira-code-nerdfont];
+  fonts.packages = with pkgs; [ fira-code-nerdfont ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

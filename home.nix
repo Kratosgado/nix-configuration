@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home = {
     username = "kratosgado";
     homeDirectory = "/home/kratosgado";
@@ -14,11 +14,12 @@
       #   echo "Hello, ${config.home.username}!"
       # '')
 
-      (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       gnomeExtensions.dash-to-dock
       gnomeExtensions.user-themes
       andromeda-gtk-theme
       rustc
+      rustup
       dbus
       pkg-config
       glib
@@ -30,12 +31,14 @@
       libsoup
       webkitgtk_4_0
       gtk3
-      rustup
-      # #flutter
-      # #jdk17
+      # obs-studio
+      #flutter
+      #jdk17
       postman
       brave
       ngrok
+      gimp
+      # blender
       #vscode
       android-studio
       # #google-chrome
@@ -49,7 +52,7 @@
       gcc
       openssh
       openssl
-      #pnpm
+      pnpm
       nodejs
       deno
       unzip
@@ -120,7 +123,8 @@
     sessionVariables = {
       EDITOR = "nvim";
       VISIUAL = "nvim";
-      FZF_CTRL_T_OPTS = "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
+      FZF_CTRL_T_OPTS =
+        "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
     };
   }; # Please read the comment before changing.
@@ -144,11 +148,11 @@
         s = "status";
       };
       extraConfig = {
-        push = {autoSetupRemote = true;};
+        push = { autoSetupRemote = true; };
 
         credential.helper = "${
-          pkgs.git.override {withLibsecret = true;}
-        }/bin/git-credential-libsecret";
+            pkgs.git.override { withLibsecret = true; }
+          }/bin/git-credential-libsecret";
       };
     };
 
@@ -175,7 +179,7 @@
     #   };
     # };
 
-    tmux.plugins.tmux.plugins = [pkgs.tmuxPlugins.vim-tmux-navigator];
+    tmux.plugins.tmux.plugins = [ pkgs.tmuxPlugins.vim-tmux-navigator ];
     zsh = {
       enable = true;
       autosuggestion.enable = true;
@@ -190,7 +194,8 @@
         cat = "bat --theme='Catppuccin Mocha'";
         cd = "z";
         fk = "fuck";
-        ls = "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
+        ls =
+          "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
         #   cd = "z";
         s = "web_search duckduckgo";
 
@@ -198,15 +203,18 @@
         ll = "ls -l";
         commit = "git add . && commit -m";
         push = "git push";
-        switch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
-        impureswitch = "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure";
-        editconfig = "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
+        switch =
+          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
+        impureswitch =
+          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure";
+        editconfig =
+          "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
       };
       oh-my-zsh = {
         enable = true;
         extraConfig = builtins.readFile ./extraConfig.zsh;
         # Additional oh-my-zsh plugins
-        plugins = ["web-search" "copyfile" "copybuffer" "fzf" "thefuck"];
+        plugins = [ "web-search" "copyfile" "copybuffer" "fzf" "thefuck" ];
       };
 
       plugins = [
