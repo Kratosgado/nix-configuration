@@ -61,9 +61,8 @@
         bashls.enable = true;
         kulala_ls = {
           enable = true;
-          autostart = true;
-          package = pkgs.vimPlugins.kulala-nvim;
-          filetypes = [ ".http" "http" ".rest" "rest" ];
+          package = pkgs.kulala-fmt;
+          filetypes = [ "http" "rest" ];
         };
         tailwindcss.enable = true;
       };

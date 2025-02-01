@@ -1,1 +1,1 @@
-{ imports = [ ./fidget.nix ./bufferline.nix ./indent-blankline.nix ]; }
+{ imports = [ ./bufferline.nix ./indent-blankline.nix ]; }

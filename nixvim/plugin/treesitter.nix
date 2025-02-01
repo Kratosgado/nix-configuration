@@ -13,24 +13,17 @@
   extraConfigLuaPost =
     #lua
     ''
-          require('nvim-treesitter.configs').setup {
-      			    init_options = {
-            userLanguages = {
-              eelixir = "html-eex",
-              eruby = "erb",
-              rust = "html",
-            },
+        require('nvim-treesitter.configs').setup {
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<leader>ss", -- set to `false` to disable one of the mappings
+            node_incremental = "<leader>si",
+            scope_incremental = "<leader>sc",
+            node_decremental = "<leader>sd",
           },
-          incremental_selection = {
-            enable = true,
-            keymaps = {
-              init_selection = "<leader>ss", -- set to `false` to disable one of the mappings
-              node_incremental = "<leader>si",
-              scope_incremental = "<leader>sc",
-              node_decremental = "<leader>sd",
-            },
-          },
+        },
 
-        }
+      }
     '';
 }

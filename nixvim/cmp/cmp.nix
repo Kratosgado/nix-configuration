@@ -3,10 +3,9 @@
   plugins = {
 
     ## snippets...
-
     cmp-buffer = { enable = true; };
 
-    cmp-emoji = { enable = true; };
+    # cmp-emoji = { enable = true; };
 
     cmp-path = { enable = true; };
 
@@ -22,16 +21,24 @@
       settings = {
         snippet = { expand = "luasnip"; };
 
+        # Add priority weights for better sorting
         sources = [
           {
             name = "nvim_lsp";
+            priority = 1000;
           }
-          # { name = "codeium"; }
-          { name = "path"; }
-          { name = "buffer"; }
-          { name = "luasnip"; }
-          { name = "cmdline"; }
-          { name = "nvim_lua"; }
+          {
+            name = "luasnip";
+            priority = 750;
+          }
+          {
+            name = "path";
+            priority = 500;
+          }
+          {
+            name = "buffer";
+            priority = 250;
+          }
         ];
 
         mapping = {

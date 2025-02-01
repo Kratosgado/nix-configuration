@@ -1,1 +1,4 @@
-{ imports = [ ./plugins.nix ./treesitter.nix ./kulala.nix ]; }
+{
+  imports =
+    [ ./plugins.nix ./mini.nix ./treesitter.nix ./kulala.nix ./tabout.nix ];
+}

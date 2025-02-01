@@ -4,7 +4,6 @@
     beacon = { enable = true; };
     ui = {
       border = "rounded"; # One of none, single, double, rounded, solid, shadow
-      codeAction = "💡"; # Can be any symbol you want 💡
     };
     hover = {
       openCmd = "!brave"; # Choose your browser
@@ -22,7 +21,7 @@
       extendGitSigns = false;
       showServerName = true;
       onlyInCursor = true;
-      numShortcut = true;
+      numShortcut = false;
       keys = {
         exec = "<CR>";
         quit = [ "<Esc>" "q" ";;" ];

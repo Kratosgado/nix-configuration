@@ -30,68 +30,6 @@
     which-key.enable = true;
 
     noice.enable = true;
-    dashboard = {
-      enable = true;
-      settings.config = {
-        header = [
-          ""
-          "⡿⠋⠄⣀⣀⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣌⠻⣿⣿"
-          "⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠹⣿"
-          "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠹"
-          "⣿⣿⡟⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡛⢿⣿⣿⣿⣮⠛⣿⣿⣿⣿⣿⣿⡆"
-          "⡟⢻⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣣⠄⡀⢬⣭⣻⣷⡌⢿⣿⣿⣿⣿⣿"
-          "⠃⣸⡀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⣆⢹⣿⣿⣿⡈⢿⣿⣿⣿⣿"
-          "⠄⢻⡇⠄⢛⣛⣻⣿⣿⣿⣿⣿⣿⣿⣿⡆⠹⣿⣆⠸⣆⠙⠛⠛⠃⠘⣿⣿⣿⣿"
-          "⠄⠸⣡⠄⡈⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠁⣠⣉⣤⣴⣿⣿⠿⠿⠿⡇⢸⣿⣿⣿"
-          "⠄⡄⢿⣆⠰⡘⢿⣿⠿⢛⣉⣥⣴⣶⣿⣿⣿⣿⣻⠟⣉⣤⣶⣶⣾⣿⡄⣿⡿⢸"
-          "⠄⢰⠸⣿⠄⢳⣠⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣼⣿⣿⣿⣿⣿⣿⡇⢻⡇⢸"
-          "⢷⡈⢣⣡⣶⠿⠟⠛⠓⣚⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⠇⠘"
-          "⡀⣌⠄⠻⣧⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠛⢿⣿⣿⣿⣿⣿⡟⠘⠄⠄"
-          "⣷⡘⣷⡀⠘⣿⣿⣿⣿⣿⣿⣿⣿⡋⢀⣠⣤⣶⣶⣾⡆⣿⣿⣿⠟⠁⠄⠄⠄⠄"
-          "⣿⣷⡘⣿⡀⢻⣿⣿⣿⣿⣿⣿⣿⣧⠸⣿⣿⣿⣿⣿⣷⡿⠟⠉⠄⠄⠄⠄⡄⢀"
-          "⣿⣿⣷⡈⢷⡀⠙⠛⠻⠿⠿⠿⠿⠿⠷⠾⠿⠟⣛⣋⣥⣶⣄⠄⢀⣄⠹⣦⢹⣿"
-          ""
-        ];
-        center = [
-          {
-            icon = "  ";
-            desc = "Find File                               ";
-            action = "Telescope find_files find_command=rg,--hidden,--files";
-            shortcut = "SPC f f";
-          }
-          {
-            icon = "  ";
-            desc = "Recently opened                         ";
-            action = "Telescope oldfiles";
-            shortcut = "SPC f r";
-          }
-          {
-            icon = "פּ  ";
-            desc = "File browser                            ";
-            action = "NvimTreeToggle";
-            shortcut = "SPC f o";
-          }
-          {
-            icon = "  ";
-            desc = "Search for word                         ";
-            action = "Telescope live_grep";
-            shortcut = "SPC f g";
-          }
-          {
-            icon = "  ";
-            desc = "Help                                    ";
-            action = "Telescope help_tags";
-            shortcut = "SPC f h";
-          }
-          {
-            icon = "  ";
-            desc = "Commands                                ";
-            action = "Telescope commands";
-            shortcut = "SPC ?  ";
-          }
-        ];
-      };
-    };
     vim-css-color.enable = true;
     notify.enable = true;
 
@@ -108,7 +46,6 @@
     telescope.extensions.file-browser.enable = true;
     telescope.extensions.ui-select.enable = true;
     comment.enable = true;
-    neo-tree.enable = true;
     twilight.enable = true;
     # nvim-autopairs for like if u open a (, " or like anything like this it will autocomplete it and make it ()"...
     nvim-autopairs = { enable = true; };

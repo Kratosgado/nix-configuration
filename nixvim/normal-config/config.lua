@@ -1,4 +1,11 @@
 require("nvim-treesitter.configs").setup({
+	init_options = {
+		userLanguages = {
+			eelixir = "html-eex",
+			eruby = "erb",
+			rust = "html",
+		},
+	},
 	highlight = {
 		enable = true,
 	},

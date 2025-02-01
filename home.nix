@@ -31,7 +31,7 @@
       libsoup
       webkitgtk_4_0
       gtk3
-      # obs-studio
+      obs-studio
       #flutter
       #jdk17
       postman
@@ -207,7 +207,7 @@
         switch =
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
         impureswitch =
-          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure";
+          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         editconfig =
           "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
       };

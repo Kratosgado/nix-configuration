@@ -24,13 +24,13 @@
       action = "<C-w>-";
       key = "<Down>";
     }
-    {
-      # Neotree
-      action = "<cmd>Neotree toggle<CR>";
-      key = "<space>e"; # this line is changed
-      mode = "n";
-      options = { desc = "Toggle Tree View."; };
-    }
+    # {
+    #   # Neotree
+    #   action = "<cmd>Neotree toggle<CR>";
+    #   key = "<space>e"; # this line is changed
+    #   mode = "n";
+    #   options = { desc = "Toggle Tree View."; };
+    # }
     {
       mode = [ "i" "n" "v" "t" ];
       action = "<Esc>";

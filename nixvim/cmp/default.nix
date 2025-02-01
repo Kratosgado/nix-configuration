@@ -1,1 +1,1 @@
-{ imports = [ ./cmp.nix ./snippets.nix ]; }
+{ imports = [ ./cmp.nix ]; }
