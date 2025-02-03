@@ -1,5 +1,8 @@
 {
-  plugins.trouble = { enable = true; };
+  plugins = {
+    trouble.enable = true;
+    comment.enable = true;
+  };
 
   keymaps = [
     {

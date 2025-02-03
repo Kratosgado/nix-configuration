@@ -8,32 +8,22 @@
   keymaps = [
     {
       mode = "n";
-      key = "<Tab>";
-      action = "<cmd>BufferLineCycleNext<cr>";
-      options = { desc = "Cycle to next buffer"; };
-    }
-
-    {
-      mode = "n";
-      key = "<S-Tab>";
-      action = "<cmd>BufferLineCyclePrev<cr>";
-      options = { desc = "Cycle to previous buffer"; };
-    }
-
-    {
-      mode = "n";
       key = "<S-l>";
       action = "<cmd>BufferLineCycleNext<cr>";
       options = { desc = "Cycle to next buffer"; };
     }
-
     {
       mode = "n";
       key = "<S-h>";
       action = "<cmd>BufferLineCyclePrev<cr>";
       options = { desc = "Cycle to previous buffer"; };
     }
-
+    {
+      mode = "n";
+      key = "<leader>bj";
+      action = "<cmd>BufferLinePick<cr>";
+      options.desc = "Jump to buffer";
+    }
     {
       mode = "n";
       key = "<leader>bd";
@@ -47,16 +37,6 @@
       action = "<cmd>e #<cr>";
       options = { desc = "Switch to Other Buffer"; };
     }
-
-    # {
-    #   mode = "n";
-    #   key = "<leader>`";
-    #   action = "<cmd>e #<cr>";
-    #   options = {
-    #     desc = "Switch to Other Buffer";
-    #   };
-    # }
-
     {
       mode = "n";
       key = "<leader>br";

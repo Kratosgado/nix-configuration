@@ -24,13 +24,6 @@
       action = "<C-w>-";
       key = "<Down>";
     }
-    # {
-    #   # Neotree
-    #   action = "<cmd>Neotree toggle<CR>";
-    #   key = "<space>e"; # this line is changed
-    #   mode = "n";
-    #   options = { desc = "Toggle Tree View."; };
-    # }
     {
       mode = [ "i" "n" "v" "t" ];
       action = "<Esc>";
@@ -69,13 +62,6 @@
       mode = [ "v" "n" ];
       options = { desc = "run's the selected code"; };
     }
-    # {
-    #   #opening oil.nvim for files
-    #   action = "<cmd>Oil<CR>";
-    #   key = "-"; # this line is changed
-    #   mode = [ "n" ];
-    #   options = { desc = "opens oil.nvim"; };
-    # }
     {
       action = "<cmd>write<CR>";
       key = "<leader>s";
@@ -97,14 +83,20 @@
       options = { desc = "telescope file finding"; };
     }
     {
+      action = ":Telescope commands<CR>";
+      key = "<leader>fc";
+      options.desc = "Search commands";
+    }
+
+    {
+      action = ":Telescope current_buffer_fuzzy_find<CR>";
+      key = "<leader>fb";
+      options.desc = "Search current buffer";
+    }
+    {
       action = "<cmd>Telescope buffers<CR>";
       key = "<leader>fg";
       options = { desc = "telescope buffer finding"; };
-    }
-    {
-      action = "<cmd>Telescope file_browser <CR>";
-      key = "<leader>fb";
-      options = { desc = "telescope file browsing"; };
     }
     {
       action = "<cmd>bd#<CR>";

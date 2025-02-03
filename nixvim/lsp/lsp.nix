@@ -6,6 +6,7 @@
     lsp = {
       enable = true;
       # lazyLoad.enable = true;
+      inlayHints = true;
       servers = {
         nixd.enable = true;
         nixd.autostart = true;
@@ -57,6 +58,7 @@
         ruff.enable = true;
         pyright.enable = true;
         html.enable = true;
+        svelte.enable = true;
         cssls.enable = true;
         bashls.enable = true;
         kulala_ls = {

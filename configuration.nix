@@ -1,10 +1,5 @@
 { config, pkgs, ... }: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    # ./nvf
-    ./nixvim
-  ];
+  imports = [ ./hardware-configuration.nix ./nixvim ];
 
   users.users.kratosgado = {
     isNormalUser = true;
@@ -21,8 +16,6 @@
     };
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
 
     mtr.enable = true;
     gnupg.agent = {

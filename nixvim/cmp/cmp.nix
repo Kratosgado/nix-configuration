@@ -1,19 +1,19 @@
 { pkgs, config, ... }: {
 
   plugins = {
-
     ## snippets...
     cmp-buffer = { enable = true; };
-
     # cmp-emoji = { enable = true; };
-
+    luasnip.enable = true;
     cmp-path = { enable = true; };
-
     cmp_luasnip = { enable = true; };
-
     cmp-cmdline.enable = true;
-
     cmp-nvim-lsp.enable = true;
+    cmp-omni.enable = true;
+    cmp-dap.enable = true;
+    cmp-nvim-lsp-document-symbol.enable = true;
+    cmp-nvim-lsp-signature-help.enable = true;
+    cmp-dictionary.enable = true;
 
     cmp = {
       enable = true;

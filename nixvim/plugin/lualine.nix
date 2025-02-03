@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.lualine = {
+  plugins.lualine = {
     enable = true;
 
     settings = {
@@ -10,9 +10,9 @@
       # | A | B | C                             X | Y | Z |
       # +-------------------------------------------------+
       sections = {
-        lualine_a = ["mode"];
-        lualine_b = ["branch"];
-        lualine_c = ["filename" "diff"];
+        lualine_a = [ "mode" ];
+        lualine_b = [ "branch" ];
+        lualine_c = [ "filename" "diff" ];
 
         lualine_x = [
           "diagnostics"
@@ -36,9 +36,7 @@
                   return msg
               end
             '';
-            color = {
-              fg = "#ffffff";
-            };
+            color = { fg = "#ffffff"; };
           }
 
           # Add macro recording status to lualine_x section
