@@ -1,4 +1,4 @@
-{
+{ pkgs, config, ... }: {
   # Import all your configuration modules here
   programs.nixvim = {
     imports = [
@@ -11,13 +11,15 @@
       ./utils
       # ./debugs
     ];
-    enable = true;
+    enable = false;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     luaLoader.enable = true;
-    extraConfigLua = ''
-      vim.o.timeoutlen = 500
-    '';
+    extraConfigLua =
+      #lua
+      ''
+        vim.o.timeoutlen = 500
+      '';
   };
 }

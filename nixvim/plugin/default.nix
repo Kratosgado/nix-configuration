@@ -1,5 +1,8 @@
 {
   imports = [
+    ./spider.nix
+    ./fzf.nix
+    ./snack.nix
     ./lualine.nix
     ./plugins.nix
     ./mini.nix

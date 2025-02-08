@@ -33,7 +33,6 @@
     vim-css-color.enable = true;
     notify.enable = true;
 
-    startup.enable = true;
     nvim-colorizer.enable = true;
     leap.enable = true;
     sniprun = {

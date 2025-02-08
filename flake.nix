@@ -6,7 +6,6 @@
     # ngrok.url = "github:ngrok/ngrok-nix";
     nixvim = {
       url = "github:nix-community/nixvim/nixos-24.11";
-      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -15,41 +14,25 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # # Required, nvf works best and only directly supports flakes
-    # nvf = {
-    #   url = "github:notashelf/nvf";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
-  outputs = inputs@{ nixpkgs,
-    # nvf,
-    nixvim,
-    # ngrok,
-    home-manager, ... }: {
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./configuration.nix
-            # make home-manager as a module of nixos
-            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-            home-manager.nixosModules.home-manager
-            nixvim.nixosModules.nixvim
-            # nvf.nixosModules.default
-            # ngrok.nixosModules.ngrok
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-
-                # TODO replace ryan with your own username
-                users.kratosgado = import ./home.nix;
-              };
-              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-            }
-          ];
-        };
+  outputs = inputs@{ nixpkgs, nixvim, home-manager, ... }: {
+    nixosConfigurations = {
+      nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          nixvim.nixosModules.nixvim
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kratosgado = import ./home.nix;
+            };
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          }
+        ];
       };
     };
+  };
 }

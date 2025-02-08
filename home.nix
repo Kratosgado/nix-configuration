@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+  imports = [ ./lazyvim ];
   home = {
     username = "kratosgado";
     homeDirectory = "/home/kratosgado";
@@ -10,9 +11,6 @@
       # # You can also create simple shell scripts directly inside your
       # # configuration. For example, this adds a command 'my-hello' to your
       # # environment:
-      # (pkgs.writeShellScriptBin "my-hello" ''
-      #   echo "Hello, ${config.home.username}!"
-      # '')
 
       (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       gnomeExtensions.dash-to-dock
@@ -35,11 +33,13 @@
       #flutter
       #jdk17
       postman
+      xclip
       brave
       ngrok
+      # neovim
       gimp
       # blender
-      #vscode
+      vscode
       android-studio
       # #google-chrome
       # #vlc
@@ -137,6 +137,7 @@
   };
   # Let Home Manager install and manage itself.
   programs = {
+
     home-manager.enable = true;
     git = {
       enable = true;

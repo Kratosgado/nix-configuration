@@ -1,14 +1,17 @@
-{ config, pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ./nixvim ];
+{ pkgs, ... }: {
+  imports = [
+    ./hardware-configuration.nix
+    ./nixvim # ./lazyvim
+  ];
 
   users.users.kratosgado = {
     isNormalUser = true;
     description = "Kratosgado";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" ];
-    packages = with pkgs; [ ];
   };
   programs = {
+    nix-ld.enable = true;
     adb.enable = true;
     kdeconnect = {
       enable = true;
