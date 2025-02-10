@@ -18,6 +18,7 @@
       andromeda-gtk-theme
       rustc
       rustup
+      vtsls
       dbus
       pkg-config
       glib
@@ -43,7 +44,7 @@
       android-studio
       # #google-chrome
       # #vlc
-      #libreoffice
+      libreoffice
       docker
       python311
       fzf
