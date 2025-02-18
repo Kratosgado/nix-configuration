@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   imports = [ ./lazyvim ];
   home = {
     username = "kratosgado";
@@ -6,25 +6,22 @@
 
     stateVersion = "24.11";
     packages = with pkgs; [
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-      # # You can also create simple shell scripts directly inside your
-      # # configuration. For example, this adds a command 'my-hello' to your
-      # # environment:
-
       (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       gnomeExtensions.dash-to-dock
       gnomeExtensions.user-themes
       andromeda-gtk-theme
       rustc
-      rustup
-      vtsls
+      cargo
+      rust-analyzer
+      # rustup
       dbus
       pkg-config
       glib
       gobject-introspection
       dbus-glib
       gtk4
+      pcsx2
+      firefox
       trunk
       openssl
       libsoup
@@ -35,9 +32,7 @@
       #jdk17
       postman
       xclip
-      brave
       ngrok
-      # neovim
       gimp
       # blender
       vscode

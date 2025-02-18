@@ -8,15 +8,15 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "Resume last telescope session" }
 )
 
-vim.keymap.set({ "i", "t", "n", "v", "c", "o", "x" }, ";;", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "t" }, ";;", function()
-	if vim.fn.pumvisible() == 1 then
-		return "<C-e>" -- close the popup menu
-	else
-		return "<Esc>"
-	end
-end, { expr = true, noremap = true, silent = true })
-
+-- vim.keymap.set({ "i", "t", "n", "v", "c", "o", "x" }, ";;", "<Esc>", { noremap = true, silent = true })
+-- vim.keymap.set({ "n", "t" }, ";;", function()
+-- 	if vim.fn.pumvisible() == 1 then
+-- 		return "<C-e>" -- close the popup menu
+-- 	else
+-- 		return "<Esc>"
+-- 	end
+-- end, { expr = true, noremap = true, silent = true })
+--
 -- Keymaps for kulala
 vim.api.nvim_buf_set_keymap(0, "n", "[", "<cmd>lua require('kulala').jump_prev()<cr>", {
 	noremap = true,
