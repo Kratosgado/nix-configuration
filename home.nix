@@ -15,6 +15,7 @@
            dbus
       glib
       gobject-introspection
+      sqlite
       dbus-glib
       gtk4
       pcsx2
