@@ -1,54 +1,29 @@
 return {
   {
-    "Saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-    opts = {
-      completion = {
-        crates = {
-          enable = true,
-        },
-      },
-      lsp = {
-        enable = true,
-        actions = true,
-        completion = true,
-        hover = true,
-      },
-    },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "rust", "ron" } },
-  },
-  {
     "mrcjkb/rustaceanvim",
-    version = vim.fn.has("nvim-0.10.0") == 0 and "^4" or false,
+    version = "^4",
     ft = { "rust" },
     opts = {
       server = {
-        on_attach = function(_, bufnr)
-          vim.keymap.set("n", "<leader>cR", function()
-            vim.cmd.RustLsp("codeAction")
-          end, { desc = "Code Action", buffer = bufnr })
-          vim.keymap.set("n", "<leader>dr", function()
-            vim.cmd.RustLsp("debuggables")
-          end, { desc = "Rust Debuggables", buffer = bufnr })
+        on_attach = function(client, bufnr)
+          -- Enable inlay hints
+          vim.lsp.inlay_hint.enable(bufnr, true)
         end,
-        default_settings = {
-          -- rust-analyzer language server configuration
+        settings = {
+          -- rust-analyzer settings
           ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+            },
             cargo = {
               allFeatures = true,
               loadOutDirsFromCheck = true,
-              buildScripts = {
-                enable = true,
-              },
+              runBuildScripts = true,
             },
-            -- Add clippy lints for Rust if using rust-analyzer
-            checkOnSave = diagnostics == "rust-analyzer",
-            -- Enable diagnostics if using rust-analyzer
-            diagnostics = {
-              enable = diagnostics == "rust-analyzer",
+            -- Add clippy lints
+            check = {
+              command = "clippy",
+              extraArgs = { "--all-features" },
             },
             procMacro = {
               enable = true,
@@ -62,27 +37,20 @@ return {
         },
       },
     },
-    config = function(_, opts)
-      vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
-      if vim.fn.executable("rust-analyzer") == 0 then
-        LazyVim.error(
-          "**rust-analyzer** not found in PATH, please install it.\nhttps://rust-analyzer.github.io/",
-          { title = "rustaceanvim" }
-        )
-      end
-    end,
   },
+
+  -- Add crates.nvim for Cargo.toml dependency management
   {
-    "neovim/nvim-lspconfig",
+    "saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
     opts = {
-      servers = {
-        rust_analyzer = {},
+      null_ls = {
+        enabled = true,
+        name = "crates.nvim",
+      },
+      popup = {
+        border = "rounded",
       },
     },
-  },
-  {
-    "williamboman/mason.nvim",
-    optional = true,
-    opts = { ensure_installed = { "codelldb" } },
   },
 }

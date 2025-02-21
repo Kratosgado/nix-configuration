@@ -8,14 +8,11 @@
     packages = with pkgs; [
       (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       gnomeExtensions.dash-to-dock
+      gnomeExtensions.hide-top-bar
+      gnome-tweaks
       gnomeExtensions.user-themes
       andromeda-gtk-theme
-      rustc
-      cargo
-      rust-analyzer
-      # rustup
-      dbus
-      pkg-config
+           dbus
       glib
       gobject-introspection
       dbus-glib
@@ -207,6 +204,14 @@
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         editconfig =
           "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
+
+          # Rust aliases
+  cr = "cargo run";
+  cb = "cargo build";
+  ct = "cargo test";
+  cc = "cargo check";
+  ccp = "cargo clippy";
+  cf = "cargo fmt";
       };
       oh-my-zsh = {
         enable = true;

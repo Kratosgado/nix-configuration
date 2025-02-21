@@ -10,19 +10,21 @@ let
     cmake-tools-nvim
     cmp-buffer
     vim-illuminate
-    cmp-git
     vim-svelte
     cmp-nvim-lsp
     cmp-path
     conform-nvim
     copilot-cmp
     copilot-lua
+    copilot-vim
     crates-nvim
     dial-nvim
     flash-nvim
     friendly-snippets
     fzf-lua
     git-conflict-nvim
+    cmp-git
+    gitsigns-nvim
     grug-far-nvim
     kulala-nvim
     lazy-nvim
@@ -81,8 +83,15 @@ in
     nodePackages."wrangler"
     tailwindcss-language-server
     nodePackages."vscode-langservers-extracted"
+    lua-language-server
+    rustfmt
     nil
     vtsls
+    clippy
+     rustc
+      cargo
+      rust-analyzer
+      pkg-config
   ];
   
   programs.neovim = {
