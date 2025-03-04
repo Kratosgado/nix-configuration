@@ -21,6 +21,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.kratosgado = import ./home.nix;
+              backupFileExtension = "backup";
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }

@@ -7,6 +7,10 @@ return {
       servers = {
         nil_ls = {},
       },
+      format = {
+        formatting_options = nil,
+        timeout_ms = nil,
+      },
     },
   },
   {

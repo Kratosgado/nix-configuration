@@ -86,18 +86,18 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ak_GH";
-    LC_IDENTIFICATION = "ak_GH";
-    LC_MEASUREMENT = "ak_GH";
-    LC_MONETARY = "ak_GH";
-    LC_NAME = "ak_GH";
-    LC_NUMERIC = "ak_GH";
-    LC_PAPER = "ak_GH";
-    LC_TELEPHONE = "ak_GH";
-    LC_TIME = "ak_GH";
-  };
+  #
+  # i18n.extraLocaleSettings = {
+  #   LC_ADDRESS = "ak_GH";
+  #   LC_IDENTIFICATION = "ak_GH";
+  #   LC_MEASUREMENT = "ak_GH";
+  #   LC_MONETARY = "ak_GH";
+  #   LC_NAME = "ak_GH";
+  #   LC_NUMERIC = "ak_GH";
+  #   LC_PAPER = "ak_GH";
+  #   LC_TELEPHONE = "ak_GH";
+  #   LC_TIME = "ak_GH";
+  # };
   services = {
     xserver = {
       # Enable the X11 windowing system.
@@ -192,20 +192,13 @@
       gnome-maps
       gnome-music
       # gnome-screenshot
-      gnome-system-monitor
       # gnome-connections
       # gnome-console
     ];
     systemPackages = with pkgs; [
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.gsconnect
-      gnomeExtensions.user-themes
-      andromeda-gtk-theme
-      fzf
-      curl
       nginx
-      jq
       direnv
+      home-manager
       nix-direnv
     ];
   };

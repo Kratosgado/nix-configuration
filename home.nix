@@ -10,9 +10,10 @@
       gnomeExtensions.dash-to-dock
       gnomeExtensions.hide-top-bar
       gnome-tweaks
+      gnomeExtensions.gsconnect
       gnomeExtensions.user-themes
       andromeda-gtk-theme
-           dbus
+      dbus
       glib
       gobject-introspection
       sqlite
@@ -95,7 +96,7 @@
       gnupg
       glow # markdown previewer in terminal
       ethtool
-      pciutils # lspci
+        pciutils # lspci
       usbutils # lsusb
     ];
 
@@ -200,8 +201,8 @@
         commit = "git add . && commit -m";
         push = "git push";
         switch =
-          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch";
-        impureswitch =
+          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
+        iswitch =
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         editconfig =
           "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
