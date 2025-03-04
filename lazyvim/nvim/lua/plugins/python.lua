@@ -38,6 +38,17 @@ return {
     },
   },
   {
+    "neovim/nvim-lspconfig",
+    opts = function(_, opts)
+      local servers = { "pyright", "basedpyright", "ruff", "ruff_lsp", ruff, lsp }
+      for _, server in ipairs(servers) do
+        opts.servers[server] = opts.servers[server] or {}
+        opts.servers[server].enabled = server == lsp or server == ruff
+      end
+    end,
+  },
+  { "nvim-neotest/neotest-python", },
+  {
     "linux-cultist/venv-selector.nvim",
     branch = "regexp", -- Use this branch for the new version
     cmd = "VenvSelect",
@@ -57,11 +68,11 @@ return {
   },
   {
     "mfussenegger/nvim-dap-python",
-  -- stylua: ignore
-  keys = {
-    { "<leader>dPt", function() require('dap-python').test_method() end, desc = "Debug Method", ft = "python" },
-    { "<leader>dPc", function() require('dap-python').test_class() end, desc = "Debug Class", ft = "python" },
-  },
+    -- stylua: ignore
+    keys = {
+      { "<leader>dPt", function() require('dap-python').test_method() end, desc = "Debug Method", ft = "python" },
+      { "<leader>dPc", function() require('dap-python').test_class() end,  desc = "Debug Class",  ft = "python" },
+    },
     config = function()
       if vim.fn.has("win32") == 1 then
         require("dap-python").setup(LazyVim.get_pkg_path("debugpy", "/venv/Scripts/pythonw.exe"))

@@ -24,7 +24,7 @@
       trunk
       openssl
       libsoup
-      webkitgtk_4_0
+        webkitgtk_4_0
       gtk3
       obs-studio
       #flutter

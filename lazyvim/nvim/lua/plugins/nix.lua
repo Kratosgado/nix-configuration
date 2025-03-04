@@ -1,5 +1,9 @@
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = { ensure_installed = { "nix" } },
+  },
+  {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
@@ -15,9 +19,10 @@ return {
   },
   {
     "stevearc/conform.nvim",
+    optional = true,
     opts = {
       formatters_by_ft = {
-        nix = { "nixpkgs_fmt", "injected" },
+        nix = { "nixfmt" },
       },
     },
   },
