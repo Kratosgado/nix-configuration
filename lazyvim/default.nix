@@ -13,6 +13,7 @@
     nixd
     vtsls
     marksman
+    markdownlint-cli2 
     clippy
     rustc
     cargo
