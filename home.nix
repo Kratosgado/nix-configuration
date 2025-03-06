@@ -36,15 +36,18 @@
       # blender
       vscode
       android-studio
+      jetbrains.idea-community
       # #google-chrome
-      # #vlc
+      vlc
       libreoffice
       docker
       python311
+      python311Packages.numpy
       fzf
       curl
       jq
       gcc
+      libgcc
       openssh
       openssl
       pnpm
@@ -121,6 +124,7 @@
       FZF_CTRL_T_OPTS =
         "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
+      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     };
   }; # Please read the comment before changing.
   fonts.fontconfig.enable = true;

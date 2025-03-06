@@ -18,9 +18,10 @@
     rustc
     cargo
     rust-analyzer
-    pkg-config
+       pkg-config
 
     vimPlugins.none-ls-nvim # vimPlugins.nvim-lspconfig
+    stylua
   ];
   
   programs.neovim = {
