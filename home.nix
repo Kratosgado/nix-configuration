@@ -39,6 +39,7 @@
       jetbrains.idea-community
       # #google-chrome
       vlc
+      slack
       libreoffice
       docker
       python311
