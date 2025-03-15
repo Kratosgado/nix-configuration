@@ -19,7 +19,6 @@
       sqlite
       dbus-glib
       gtk4
-      pcsx2
       firefox
       trunk
       openssl
@@ -40,6 +39,8 @@
       # #google-chrome
       vlc
       slack
+      vdhcoapp
+      yt-dlp
       libreoffice
       docker
       python311
