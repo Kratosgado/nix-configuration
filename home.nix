@@ -11,6 +11,7 @@
       gnomeExtensions.hide-top-bar
       gnome-tweaks
       gnomeExtensions.gsconnect
+      gnomeExtensions.clipboard-history
       gnomeExtensions.user-themes
       andromeda-gtk-theme
       dbus
@@ -29,6 +30,7 @@
       #flutter
       #jdk17
       postman
+      insomnia
       xclip
       ngrok
       gimp

@@ -59,7 +59,7 @@ return {
       disable_script_print_output = false,
       -- set scope for environment and request variables
       -- possible values: b = buffer, g = global
-      environment_scope = "b",
+      environment_scope = "g",
       -- certificates
       certificates = {},
     },
