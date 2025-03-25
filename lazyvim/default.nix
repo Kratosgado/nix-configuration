@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     svelte-language-server
+    typescript-language-server
     nodePackages."@prisma/language-server"
     nodePackages."wrangler"
     tailwindcss-language-server
@@ -8,6 +9,7 @@
     nodePackages."vscode-langservers-extracted"
     lua-language-server
     rustfmt
+    jdt-language-server
     ruff
     kotlin
     jdk
@@ -18,7 +20,7 @@
     nixpkgs-fmt
     # Debugging tools
     # jdb
-    visualvm
+    # visualvm
     
     # Additional tools
     # rnix-lsp        # For Nix files

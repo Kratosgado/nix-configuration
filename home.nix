@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./lazyvim ];
+  imports = [ ./lazyvim ./helix ];
   home = {
     username = "kratosgado";
     homeDirectory = "/home/kratosgado";
@@ -24,7 +24,7 @@
       trunk
       openssl
       libsoup
-        webkitgtk_4_0
+      webkitgtk_4_0
       gtk3
       obs-studio
       #flutter
@@ -103,7 +103,7 @@
       gnupg
       glow # markdown previewer in terminal
       ethtool
-        pciutils # lspci
+      pciutils # lspci
       usbutils # lsusb
     ];
 
@@ -123,8 +123,8 @@
     };
 
     sessionVariables = {
-      EDITOR = "nvim";
-      VISIUAL = "nvim";
+      EDITOR = "hx";
+      VISIUAL = "hx";
       FZF_CTRL_T_OPTS =
         "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
@@ -193,7 +193,7 @@
       shellAliases = {
         hms = "home-manager switch";
         lg = "lazygit";
-        v = "nvim";
+        v = "hx";
         c = "clear";
         cat = "bat --theme='Catppuccin Mocha'";
         cd = "z";
@@ -208,20 +208,22 @@
         ll = "ls -l";
         commit = "git add . && commit -m";
         push = "git push";
+        hxconfig =
+          "cp -r ~/.config/helix/. ~/projects/configs/nix-configuration/helix/helix";
         switch =
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         iswitch =
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         editconfig =
-          "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
+          "cd ~/projects/configs/nix-configuration/ && hx ~/projects/configs/nix-configuration/";
 
-          # Rust aliases
-  cr = "cargo run";
-  cb = "cargo build";
-  ct = "cargo test";
-  cc = "cargo check";
-  ccp = "cargo clippy";
-  cf = "cargo fmt";
+        # Rust aliases
+        cr = "cargo run";
+        cb = "cargo build";
+        ct = "cargo test";
+        cc = "cargo check";
+        ccp = "cargo clippy";
+        cf = "cargo fmt";
       };
       oh-my-zsh = {
         enable = true;
