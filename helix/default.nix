@@ -1,102 +1,145 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   home.packages = with pkgs; [
-    svelte-language-server
-    typescript-language-server
-    nodePackages."@prisma/language-server"
-    nodePackages."wrangler"
-    tailwindcss-language-server
-    kotlin-language-server
-    nodePackages."vscode-langservers-extracted"
-    lua-language-server
-    rustfmt
-    jdt-language-server
     ruff
     kotlin
     jdk
     gradle
     maven
-    helix
-    taplo
-    
-    # Build tools and utilities
-    nixpkgs-fmt
     # Debugging tools
     # jdb
     # visualvm
-    
+
     # Additional tools
     # rnix-lsp        # For Nix files
-    nil             # Nix language server
-    pyright
-    ktlint
-    vtsls
-    marksman
-    markdownlint-cli2 
     clippy
     rustc
     cargo
     rust-analyzer
-       pkg-config
+    pkg-config
 
     vimPlugins.none-ls-nvim # vimPlugins.nvim-lspconfig
     stylua
   ];
-  
-  programs.helix = {
-  enable = true;
-    defaultEditor = true;
-  settings = {
-    theme = "tokyonight";
-    editor = {
-        cursor-shape = {
-      normal = "block";
-      insert = "bar";
-      select = "underline";
-    };
-      };
-  };
-  languages = {
-      language = [{
-    name = "nix";
-    auto-format = true;
-    formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
-  }
-        {name = "rust";}
-        
-        {name = "cpp";}
 
-{ name = "java"; }
-{ name = "kotlin"; }
-{ name = "svelte"; }
-{ name = "gts"; }
-{ name = "prisma"; }
-{ name = "python"; }
-{ name = "toml"; }
-{ name = "dockerfile"; }
-{ name = "docker-compose"; }
-{ name = "env"; }
-        {name = "bash";}
-        {name = "html";}
-        {name = "css";}
-        {name = "lua";}
-        {name = "json";}
-        {name = "markdown";}
-        {name = "sql";}
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    package = inputs.helix.packages.${pkgs.system}.default;
+    settings = {
+      theme = "tokyonight";
+      editor = {
+
+        cursorline = true;
+        completion-replace = true;
+        true-color = true;
+        bufferline = "always";
+        color-modes = true;
+        popup-border = "all";
+        auto-save.focus-lost = true;
+        indent-guides.render = true;
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics.cursor-line = "warning";
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
+        lsp = {
+          display-inlay-hints = true;
+          display-progress-messages = true;
+        };
+        statusline = {
+
+          left = [ "mode" "spinner" ];
+          center = [ "file-name" ];
+          right = [
+            "diagnostics"
+            "selections"
+            "position"
+            "file-encoding"
+            "file-line-ending"
+            "file-type"
+          ];
+          separator = "│";
+          mode.normal = "NORMAL";
+          mode.insert = "INSERT";
+          mode.select = "SELECT";
+        };
+      };
+      keys = {
+        insert = { j = { k = "normal_mode"; }; };
+        normal = {
+          H = "goto_previous_buffer";
+          L = "goto_next_buffer";
+          space = {
+            b = {
+              d = ":bc!";
+              o = ":bco!";
+              b = "buffer_picker";
+            };
+          };
+        };
+      };
+    };
+    languages = {
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+        }
+        {
+          name = "rust";
+        }
+        # { name = "cpp"; }
+        { name = "java"; }
+        { name = "kotlin"; }
+        { name = "svelte"; }
+        { name = "gts"; }
+        { name = "prisma"; }
+        { name = "python"; }
+        { name = "toml"; }
+        { name = "dockerfile"; }
+        { name = "docker-compose"; }
+        { name = "env"; }
+        { name = "bash"; }
+        { name = "html"; }
+        { name = "css"; }
+        { name = "lua"; }
+        { name = "json"; }
+        { name = "markdown"; }
+        { name = "sql"; }
       ];
     };
-  themes = {
-    autumn_night_transparent = {
-      "inherits" = "autumn_night";
-      "ui.background" = { };
+    themes = {
+      autumn_night_transparent = {
+        "inherits" = "autumn_night";
+        "ui.background" = { };
+      };
     };
+    extraPackages = with pkgs; [
+      svelte-language-server
+      typescript-language-server
+      nodePackages."@prisma/language-server"
+      tailwindcss-language-server
+      kotlin-language-server
+      nodePackages."vscode-langservers-extracted"
+      lua-language-server
+      rustfmt
+      jdt-language-server
+      nil # Nix language server
+      pyright
+      ktlint
+      vtsls
+      marksman
+      markdownlint-cli2
+      taplo
+      # Build tools and utilities
+      nixpkgs-fmt
+    ];
+
   };
-};
-  #
-  # home.file."./.config/helix/" = {
-  #   source = ./helix;
-  #   recursive = true;
-  # };
-  
+
   home.sessionVariables = {
     JAVA_HOME = "${pkgs.jdk}";
     # This forces kotlin-language-server to use the correct JDK

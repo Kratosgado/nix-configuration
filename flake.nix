@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helix.url = "github:helix-editor/helix";
   };
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
@@ -22,6 +23,7 @@
               useUserPackages = true;
               users.kratosgado = import ./home.nix;
               backupFileExtension = "backup";
+              extraSpecialArgs = { inherit inputs; };
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }

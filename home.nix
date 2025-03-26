@@ -1,5 +1,7 @@
-{ pkgs, ... }: {
-  imports = [ ./lazyvim ./helix ];
+{ pkgs, inputs, ... }: {
+  imports = [ ./helix ];
+
+  nixpkgs = { overlays = [ inputs.helix.overlays.default ]; };
   home = {
     username = "kratosgado";
     homeDirectory = "/home/kratosgado";
