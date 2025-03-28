@@ -1,6 +1,9 @@
 { pkgs, ... }: {
   imports = [ ./hardware-configuration.nix ];
 
+  system.activationScripts.script.text = ''
+    cp /home/kratosgado/Pictures/kratosgado.png /var/lib/AccountsService/icons/kratosgado
+  '';
   users.users.kratosgado = {
     isNormalUser = true;
     description = "Kratosgado";

@@ -5,6 +5,16 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
 
+    #   "org/gnome/desktop/interface" = {
+    #     font-name = "JetBrainsMono Nerd Font 12";
+    #     document-font-name = "JetBrainsMono Nerd Font 12";
+    #     monospace-font-name = "JetBrainsMono Nerd Font Mono 12";
+    #   };
+    #   "org/gnome/terminal/legacy/profiles:/:<profile-id>" = {
+    #     font = "JetBrainsMono Nerd Font Mono 12";
+    #     use-system-font = false;
+    #   };
+
     "org/gnome/desktop/background" = {
       picture-uri = "file:///home/kratosgado/Pictures/wallpaper.jpg";
       picture-uri-dark = "file:///home/kratosgado/Pictures/wallpaper.jpg";
@@ -119,6 +129,7 @@
 
     file = {
       "Pictures/wallpaper.jpg" = { source = ./files/wallpaper.jpg; };
+      "Pictures/kratosgado.png" = { source = ./files/kratosgado.png; };
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
       # # the Nix store. Activating the configuration will then make '~/.screenrc' a
       # # symlink to the Nix store copy.
@@ -180,17 +191,6 @@
         line_break.disabled = true;
       };
     };
-    # dconf.settings = {
-    #   "org/gnome/desktop/interface" = {
-    #     font-name = "JetBrainsMono Nerd Font 12";
-    #     document-font-name = "JetBrainsMono Nerd Font 12";
-    #     monospace-font-name = "JetBrainsMono Nerd Font Mono 12";
-    #   };
-    #   "org/gnome/terminal/legacy/profiles:/:<profile-id>" = {
-    #     font = "JetBrainsMono Nerd Font Mono 12";
-    #     use-system-font = false;
-    #   };
-    # };
 
     tmux.plugins.tmux.plugins = [ pkgs.tmuxPlugins.vim-tmux-navigator ];
     zsh = {

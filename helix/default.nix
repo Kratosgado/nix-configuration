@@ -67,10 +67,8 @@
         };
       };
       keys = {
-        insert = {
-          j = { k = "normal_mode"; };
-          "S-space" = "completion";
-        };
+        insert = { j = { k = "normal_mode"; }; };
+        select = { g = { c = "toggle_comments"; }; };
         normal = {
           H = "goto_previous_buffer";
           L = "goto_next_buffer";
