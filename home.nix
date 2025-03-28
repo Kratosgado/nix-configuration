@@ -2,6 +2,14 @@
   imports = [ ./helix ];
 
   nixpkgs = { overlays = [ inputs.helix.overlays.default ]; };
+  dconf.settings = {
+    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+
+    "org/gnome/desktop/background" = {
+      picture-uri = "file:///home/kratosgado/Pictures/wallpaper.jpg";
+      picture-uri-dark = "file:///home/kratosgado/Pictures/wallpaper.jpg";
+    };
+  };
   home = {
     username = "kratosgado";
     homeDirectory = "/home/kratosgado";
@@ -109,9 +117,8 @@
       usbutils # lsusb
     ];
 
-    # Home Manager is pretty good at managing dotfiles. The primary way to manage
-    # plain files is through 'home.file'.
     file = {
+      "Pictures/wallpaper.jpg" = { source = ./files/wallpaper.jpg; };
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
       # # the Nix store. Activating the configuration will then make '~/.screenrc' a
       # # symlink to the Nix store copy.

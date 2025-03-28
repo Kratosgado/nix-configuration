@@ -67,10 +67,15 @@
         };
       };
       keys = {
-        insert = { j = { k = "normal_mode"; }; };
+        insert = {
+          j = { k = "normal_mode"; };
+          "S-space" = "completion";
+        };
         normal = {
           H = "goto_previous_buffer";
           L = "goto_next_buffer";
+          K = "hover";
+          g = { c = "toggle_comments"; };
           space = {
             b = {
               d = ":bc!";
@@ -88,21 +93,49 @@
           auto-format = true;
           formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
         }
+        { name = "rust"; }
         {
-          name = "rust";
+          name = "typescript";
+          auto-format = true;
         }
         # { name = "cpp"; }
         { name = "java"; }
         { name = "kotlin"; }
-        { name = "svelte"; }
-        { name = "gts"; }
-        { name = "prisma"; }
-        { name = "python"; }
+        {
+          name = "svelte";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+            args = [ "--parser=svelte" ];
+          };
+        }
+        {
+          name = "gts";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+            args = [ "--parser=typescript" ];
+          };
+        }
+        {
+          name = "prisma";
+          auto-format = true;
+        }
+        {
+          name = "python";
+          formatter.command = "black";
+        }
         { name = "toml"; }
         { name = "dockerfile"; }
         { name = "docker-compose"; }
         { name = "env"; }
-        { name = "bash"; }
+        {
+          name = "bash";
+          formatter = {
+            command = "shfmt";
+            args = [ "-i" "2" "-ci" ];
+          };
+        }
         { name = "html"; }
         { name = "css"; }
         { name = "lua"; }
@@ -145,5 +178,4 @@
     # This forces kotlin-language-server to use the correct JDK
     KOTLIN_LANGUAGE_SERVER_JAVA_HOME = "${pkgs.jdk}";
   };
-
 }

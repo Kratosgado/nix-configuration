@@ -1,7 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   users.users.kratosgado = {
     isNormalUser = true;
@@ -12,6 +10,7 @@
   programs = {
     nix-ld.enable = true;
     adb.enable = true;
+    dconf.enable = true;
     kdeconnect = {
       enable = true;
       package = pkgs.gnomeExtensions.gsconnect;
@@ -195,12 +194,7 @@
       # gnome-connections
       # gnome-console
     ];
-    systemPackages = with pkgs; [
-      nginx
-      direnv
-      home-manager
-      nix-direnv
-    ];
+    systemPackages = with pkgs; [ nginx direnv home-manager nix-direnv ];
   };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
