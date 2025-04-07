@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  imports = [ ./helix ];
+  imports = [ ./helix ./nixvim ];
 
   nixpkgs = { overlays = [ inputs.helix.overlays.default ]; };
   dconf.settings = {
