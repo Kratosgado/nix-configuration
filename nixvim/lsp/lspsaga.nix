@@ -4,9 +4,10 @@
     beacon = { enable = true; };
     ui = {
       border = "rounded"; # One of none, single, double, rounded, solid, shadow
+      codeAction = null;
     };
     hover = {
-      openCmd = "!brave"; # Choose your browser
+      openCmd = "!firefox"; # Choose your browser
       openLink = "gx";
     };
     diagnostic = {

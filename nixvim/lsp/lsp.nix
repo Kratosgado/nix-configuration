@@ -12,16 +12,16 @@
         nixd.autostart = true;
         jsonls.enable = true;
         lua_ls.enable = true;
-        # ts_ls = {
-        #   enable = true;
-        #   autostart = true;
-        # };
+        ts_ls = {
+          enable = true;
+          autostart = true;
+        };
         prismals = {
           enable = true;
           package = pkgs.vscode-extensions.prisma.prisma;
         };
         vtsls = {
-          enable = true;
+          enable = false;
           autostart = true;
           package = pkgs.vtsls;
         };
