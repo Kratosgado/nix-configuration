@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ ... }: {
   # Import all your configuration modules here
   programs.nixvim = {
     imports = [
@@ -11,7 +11,7 @@
       ./utils
       # ./debugs
     ];
-    enable = false;
+    enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;

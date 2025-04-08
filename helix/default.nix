@@ -18,7 +18,7 @@
 
   programs.helix = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = false;
     package = inputs.helix.packages.${pkgs.system}.default;
     settings = { theme = "tokyonight"; };
     ignores = [ ".build/" ".dist/" "!.gitignore" ];

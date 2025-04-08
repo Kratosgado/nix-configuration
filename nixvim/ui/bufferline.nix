@@ -3,7 +3,7 @@
 {
   plugins.bufferline = {
     enable = true;
-    alwaysShowBufferline = false;
+    settings.options.alwaysShowBufferline = false;
   };
   keymaps = [
     {

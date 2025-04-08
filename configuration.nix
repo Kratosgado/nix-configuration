@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./nixvim ./hardware-configuration.nix ];
 
   system.activationScripts.script.text = ''
     cp /home/kratosgado/Pictures/kratosgado.png /var/lib/AccountsService/icons/kratosgado
@@ -215,7 +215,7 @@
     enable = true;
     setSocketVariable = true;
   };
-  fonts.packages = with pkgs; [ fira-code-nerdfont ];
+  fonts.packages = with pkgs; [ fira-code-nerdfont nerd-fonts.jetbrains-mono ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

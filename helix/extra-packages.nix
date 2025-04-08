@@ -2,7 +2,7 @@
 
   programs.helix.extraPackages = with pkgs; [
     shfmt
-    nodePackages."@prisma/language-server"
+    # nodePackages."@prisma/language-server"
     nodePackages."svelte-language-server"
     nodePackages.typescript
     nodePackages."@vue/language-server"

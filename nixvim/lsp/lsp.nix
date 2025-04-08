@@ -37,6 +37,16 @@
           autostart = true;
         };
         nginx_language_server.enable = true;
+        jdtls = {
+          enable = true;
+          autostart = true;
+          settings = {
+            init_options = {
+              storagePath =
+                "~/.jvm/cache"; # Specify your desired cache path here
+            };
+          };
+        };
         kotlin_language_server = {
           enable = true;
           autostart = true;
@@ -59,6 +69,7 @@
         pyright.enable = true;
         html.enable = true;
         svelte.enable = true;
+        volar = { enable = true; };
         cssls.enable = true;
         bashls.enable = true;
         kulala_ls = {

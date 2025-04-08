@@ -1,5 +1,5 @@
 { pkgs, inputs, ... }: {
-  imports = [ ./helix ./nixvim ];
+  imports = [ ./helix ];
 
   nixpkgs = { overlays = [ inputs.helix.overlays.default ]; };
   dconf.settings = {
@@ -26,7 +26,6 @@
 
     stateVersion = "24.11";
     packages = with pkgs; [
-      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       gnomeExtensions.dash-to-dock
       gnomeExtensions.hide-top-bar
       gnome-tweaks
@@ -143,8 +142,8 @@
     };
 
     sessionVariables = {
-      EDITOR = "hx";
-      VISIUAL = "hx";
+      EDITOR = "nvim";
+      VISIUAL = "nvim";
       FZF_CTRL_T_OPTS =
         "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
@@ -202,7 +201,7 @@
       shellAliases = {
         hms = "home-manager switch";
         lg = "lazygit";
-        v = "hx";
+        v = "nvim";
         c = "clear";
         cat = "bat --theme='Catppuccin Mocha'";
         cd = "z";
@@ -217,14 +216,12 @@
         ll = "ls -l";
         commit = "git add . && commit -m";
         push = "git push";
-        hxconfig =
-          "cp -r ~/.config/helix/. ~/projects/configs/nix-configuration/helix/helix";
         switch =
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         iswitch =
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         editconfig =
-          "cd ~/projects/configs/nix-configuration/ && hx ~/projects/configs/nix-configuration/";
+          "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
 
         # Rust aliases
         cr = "cargo run";

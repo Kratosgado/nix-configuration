@@ -6,7 +6,10 @@
     {
       action = "<C-w>";
       key = "<leader>w";
-      options.silent = false;
+      options = {
+        silent = false;
+        desc = "Window";
+      };
     }
     {
       action = "<C-w>>";
@@ -25,9 +28,9 @@
       key = "<Down>";
     }
     {
-      mode = [ "i" "n" "v" "t" ];
+      mode = [ "i" "v" "t" ];
       action = "<Esc>";
-      key = ";;";
+      key = "jk";
       options = {
         silent = true;
         noremap = true;

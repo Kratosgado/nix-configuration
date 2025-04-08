@@ -1,6 +1,4 @@
-# here all the plugins...................
 { pkgs, ... }: {
-  # most of the plugins............... they are messed and i will not write any docs..........
   plugins = {
     # lskind for icons.................................
     lspkind = {
@@ -37,8 +35,10 @@
     leap.enable = true;
     sniprun = {
       enable = true;
-      display = [ "Terminal" "VirtualText" ];
-      liveModeToggle = "on";
+      settings = {
+        display = [ "Terminal" "VirtualText" ];
+        live_mode_toggle = "on";
+      };
     };
     # commentary.enable = true;
     telescope.enable = true;
