@@ -4,7 +4,7 @@
     beacon = { enable = true; };
     ui = {
       border = "rounded"; # One of none, single, double, rounded, solid, shadow
-      codeAction = null;
+      codeAction = "";
     };
     hover = {
       openCmd = "!firefox"; # Choose your browser

@@ -2,6 +2,7 @@
   plugins = {
     clangd-extensions.enable = true;
     nix.enable = true;
+    lsp-lines.enable = true;
 
     lsp = {
       enable = true;

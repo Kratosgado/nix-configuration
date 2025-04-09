@@ -1,5 +1,6 @@
 {
   imports = [
+    ./telescope.nix
     ./spider.nix
     ./fzf.nix
     ./snack.nix

@@ -215,7 +215,7 @@
     enable = true;
     setSocketVariable = true;
   };
-  fonts.packages = with pkgs; [ fira-code-nerdfont nerd-fonts.jetbrains-mono ];
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -19,6 +19,11 @@
       options = { desc = "Cycle to previous buffer"; };
     }
     {
+      key = "<leader>b";
+      options.desc = "Buffer";
+      action = "";
+    }
+    {
       mode = "n";
       key = "<leader>bj";
       action = "<cmd>BufferLinePick<cr>";

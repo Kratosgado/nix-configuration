@@ -1,1 +1,1 @@
-{ imports = [ ./dap.nix ./default.nix ]; }
+{ imports = [ ./dap.nix ./trouble.nix ]; }

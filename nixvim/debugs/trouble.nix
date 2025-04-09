@@ -2,7 +2,7 @@
   plugins = {
     trouble.enable = true;
     comment.enable = true;
-    todo-comment.enable = true;
+    todo-comments.enable = true;
   };
 
   keymaps = [

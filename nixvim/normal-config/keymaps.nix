@@ -12,6 +12,11 @@
       };
     }
     {
+      action = "G";
+      key = "ge";
+      options.desc = "End of line";
+    }
+    {
       action = "<C-w>>";
       key = "<Right>";
     }
@@ -65,42 +70,7 @@
       mode = [ "v" "n" ];
       options = { desc = "run's the selected code"; };
     }
-    {
-      action = "<cmd>write<CR>";
-      key = "<leader>s";
-      options = { desc = "save file"; };
-    }
-    {
-      action = "<cmd>quit<CR>";
-      key = "<leader>q";
-      options = { desc = "exit file"; };
-    }
-    {
-      action = "<cmd>Telescope live_grep<CR>";
-      key = "<leader>fs";
-      options = { desc = "telescope live_grep"; };
-    }
-    {
-      action = "<cmd>Telescope find_files<CR>";
-      key = "<leader>ff";
-      options = { desc = "telescope file finding"; };
-    }
-    {
-      action = ":Telescope commands<CR>";
-      key = "<leader>fc";
-      options.desc = "Search commands";
-    }
 
-    {
-      action = ":Telescope current_buffer_fuzzy_find<CR>";
-      key = "<leader>fb";
-      options.desc = "Search current buffer";
-    }
-    {
-      action = "<cmd>Telescope buffers<CR>";
-      key = "<leader>fg";
-      options = { desc = "telescope buffer finding"; };
-    }
     {
       action = "<cmd>bd#<CR>";
       key = "<leader>cb";

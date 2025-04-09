@@ -5,7 +5,7 @@
     keymaps.motions = {
       b = "b";
       e = "e";
-      ge = "ge";
+      # ge = "ge";
       w = "w";
     };
   };

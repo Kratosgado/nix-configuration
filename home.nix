@@ -1,13 +1,10 @@
-{ pkgs, inputs, ... }: {
-  imports = [ ./helix ];
-
-  nixpkgs = { overlays = [ inputs.helix.overlays.default ]; };
+{ pkgs, ... }: {
   dconf.settings = {
     "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
 
     #   "org/gnome/desktop/interface" = {
     #     font-name = "JetBrainsMono Nerd Font 12";
-    #     document-font-name = "JetBrainsMono Nerd Font 12";
+    # document-font-name = "JetBrainsMono Nerd Font 12";
     #     monospace-font-name = "JetBrainsMono Nerd Font Mono 12";
     #   };
     #   "org/gnome/terminal/legacy/profiles:/:<profile-id>" = {
@@ -42,6 +39,18 @@
       firefox
       trunk
       openssl
+      kotlin
+      poetry
+      nodePackages.typescript
+      nodePackages."@vue/language-server"
+      nodePackages."typescript-language-server"
+      jdk
+      gradle
+      maven
+      rustc
+      cargo
+      pkg-config
+      stylua
       libsoup
       webkitgtk_4_0
       gtk3
@@ -148,6 +157,9 @@
         "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+      JAVA_HOME = "${pkgs.jdk}";
+      # This forces kotlin-language-server to use the correct JDK
+      KOTLIN_LANGUAGE_SERVER_JAVA_HOME = "${pkgs.jdk}";
     };
   }; # Please read the comment before changing.
   fonts.fontconfig.enable = true;

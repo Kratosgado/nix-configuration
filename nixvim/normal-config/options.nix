@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-let
-in {
-  imports = [ ];
-  # config = {
+{ pkgs, ... }: {
 
   # colorschemes..................................................................
   wrapRc = true;
@@ -50,9 +46,11 @@ in {
     smartcase = true;
     tabstop = 2;
     termguicolors = true;
-    # timeoutlen = 300;
+    timeoutlen = 300;
     undofile = true;
     swapfile = false;
+    guifont = "JetBrainsMono Nerd Font";
+    grepformat = "%f:%l:%c:%m";
     # updatetime = 300;
     # wrap = false;
     # writebackup = true;
@@ -61,8 +59,6 @@ in {
     virtualedit = "block";
     inccommand = "split";
   };
-
-  # extraPlugins to add that are not availble in nixvim repo... u can configure them using lua....(which  i don't do)
 
   extraPlugins = with pkgs.vimPlugins; [
     neoformat
@@ -74,14 +70,6 @@ in {
     neorg-telescope
   ];
   extraConfigLua = builtins.readFile ./config.lua;
-
-  # extraConfigLuaPost =
-  #   # lua
-  #   ''
-  #   '';
-
-  # open terminal in insert mode...( or may be i'm wrong i don't know...)
-
   autoCmd = [{
     event = [ "TermOpen" ];
     pattern = [ "*" ];

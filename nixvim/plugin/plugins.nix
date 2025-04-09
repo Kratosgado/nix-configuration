@@ -31,8 +31,11 @@
     vim-css-color.enable = true;
     notify.enable = true;
 
-    nvim-colorizer.enable = true;
-    leap.enable = true;
+    colorizer.enable = true;
+    flash = {
+      settings = { search.trigger = "s"; };
+      enable = true;
+    };
     sniprun = {
       enable = true;
       settings = {
@@ -41,9 +44,6 @@
       };
     };
     # commentary.enable = true;
-    telescope.enable = true;
-    telescope.extensions.file-browser.enable = true;
-    telescope.extensions.ui-select.enable = true;
     comment.enable = true;
     twilight.enable = true;
     # nvim-autopairs for like if u open a (, " or like anything like this it will autocomplete it and make it ()"...
