@@ -80,13 +80,39 @@
         };
         tailwindcss.enable = true;
       };
-      keymaps.lspBuf = {
-        "gd" = "definition";
-        "gD" = "references";
-        "gt" = "type_definition";
-        "gi" = "implementation";
-        "K" = "hover";
-        "<F2>" = "rename";
+      keymaps = {
+        lspBuf = {
+          "gd" = "definition";
+          "gD" = "references";
+          "gt" = "type_definition";
+          "gi" = "implementation";
+          "K" = "hover";
+          "<F2>" = "rename";
+        };
+
+        extra = [
+          {
+            action = "<CMD>LspStop<Enter>";
+            key = "<leader>lx";
+            options.desc = "Lsp stop";
+          }
+          {
+            mode = "n";
+            key = "<leader>li";
+            action = "<cmd>LspInfo<cr>";
+            options.desc = "Lsp Info";
+          }
+          {
+            action = "<CMD>LspStart<Enter>";
+            key = "<leader>ls";
+            options.desc = "Lsp start";
+          }
+          {
+            action = "<CMD>LspRestart<Enter>";
+            key = "<leader>lr";
+            options.desc = "Lsp restart";
+          }
+        ];
       };
     };
   };

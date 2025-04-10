@@ -1,4 +1,4 @@
-{
+{ lib, config, ... }: {
   plugins = {
     rest.enable = true;
     kulala = {
@@ -41,7 +41,7 @@
 
     };
   };
-  keymaps = [
+  keymaps = lib.mkIf config.plugins.kulala.enable [
     {
       mode = "n";
       action = "";

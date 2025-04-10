@@ -33,7 +33,7 @@
       key = "<Down>";
     }
     {
-      mode = [ "i" "v" "t" ];
+      mode = [ "i" "v" ];
       action = "<Esc>";
       key = "jk";
       options = {
@@ -56,13 +56,7 @@
       mode = [ "n" ];
       options = { desc = "formatting"; };
     }
-    {
-      #opening a terminal in neovim
-      action = "<cmd>ToggleTerm<CR>";
-      key = "<space>t"; # this line is changed
-      mode = [ "n" ];
-      options = { desc = "open terminal"; };
-    }
+
     {
       # running a single code using SnipRun
       action = "<cmd>SnipRun<CR>";

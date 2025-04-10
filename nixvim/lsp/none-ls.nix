@@ -28,7 +28,10 @@
         google_java_format.enable = true;
         ktlint.enable = true;
         prisma_format.enable = true;
-        prettierd.enable = true;
+        prettierd = {
+          enable = true;
+          disableTsServerFormatter = true;
+        };
         stylua.enable = true;
         black.enable = true;
       };

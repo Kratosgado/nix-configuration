@@ -1,5 +1,7 @@
 {
   imports = [
+    ./tailwind.nix
+    ./flash.nix
     ./telescope.nix
     ./spider.nix
     ./fzf.nix

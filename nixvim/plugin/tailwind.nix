@@ -1,5 +1,5 @@
 {
-  plugins.tailwindl-tools = {
+  plugins.tailwind-tools = {
     enable = true;
     settings = {
       document_color = {

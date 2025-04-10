@@ -1,1 +1,1 @@
-{ plugins.lazy.enable = true; }
+{ plugins.lz-n.enable = true; }

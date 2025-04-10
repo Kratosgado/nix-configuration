@@ -1,1 +1,1 @@
-{ imports = [ ./git.nix ./wilder.nix ./toggleterm.nix ]; }
+{ imports = [ ./compiler.nix ./git.nix ./wilder.nix ./toggleterm.nix ]; }

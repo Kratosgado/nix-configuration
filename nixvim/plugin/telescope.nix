@@ -2,7 +2,47 @@
   plugins = {
     telescope = {
       enable = true;
+      settings.defaults = {
+        prompt_prefix = "   ";
+        color_devicons = true;
+        set_env.COLORTERM = "truecolor";
+        file_ignore_patterns = [
+          "^.git/"
+          "^.mypy_cache/"
+          "^__pycache__/"
+          "^output/"
+          "^data/"
+          "%.ipynb"
+        ];
+
+        mappings = {
+          i = {
+            # Have Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
+            "<esc>".__raw = ''
+              function(...)
+                return require("telescope.actions").close(...)
+              end'';
+            "<c-t>".__raw = ''
+              function(...)
+                require('trouble.providers.telescope').open_with_trouble(...);
+              end
+            '';
+          };
+          n = {
+            "<c-t>".__raw = ''
+              function(...)
+                require('trouble.providers.telescope').open_with_trouble(...);
+              end
+            '';
+          };
+        };
+
+      };
       keymaps = {
+        "<leader>st" = {
+          action = "todo-comments";
+          options.desc = "View Todo";
+        };
         "<leader>," = {
           action = "buffers sort_mru=true sort_lastused=true";
           options.desc = "Switch Buffer";
@@ -49,7 +89,6 @@
         };
         "<leader>fR" = {
           action = "oldfiles";
-          # options.__raw = "{ cwd = vim.uv.cwd() }";
           options.desc = "Recent (cwd)";
         };
 
@@ -124,8 +163,8 @@
           action = "man_pages";
           options.desc = "Man Pages";
         };
-        "<leader>sm" = {
-          action = "marks";
+        "<leader>s'" = {
+          action = "view marks";
           options.desc = "Jump to Mark";
         };
         "<leader>so" = {
@@ -142,33 +181,22 @@
         };
         "<leader>sw" = {
           action = "grep_string";
-          # options.__raw = "{ word_match = '-w' }";
           options.desc = "Word (Root Dir)";
         };
         "<leader>sW" = {
           action = "grep_string";
-          # options.__raw = "{ root = false, word_match = '-w' }";
           options.desc = "Word (cwd)";
         };
         "<leader>uC" = {
           action = "colorscheme";
-          # options.__raw = "{ enable_preview = true }";
           options.desc = "Colorscheme with Preview";
         };
         "<leader>ss" = {
           action = "lsp_document_symbols";
-          # options.__raw = ''
-          #   {
-          #               symbols = require("lazyvim.config").get_kind_filter(),
-          #             }'';
           options.desc = "Goto Symbol";
         };
         "<leader>sS" = {
           action = "lsp_dynamic_workspace_symbols";
-          # options.__raw = ''
-          #   {
-          #               symbols = require("lazyvim.config").get_kind_filter(),
-          #             }'';
           options.desc = "Goto Symbol (Workspace)";
         };
       };

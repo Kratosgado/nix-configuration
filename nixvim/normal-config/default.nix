@@ -1,1 +1,1 @@
-{ imports = [ ./keymaps.nix ./options.nix ]; }
+{ imports = [ ./whichkey.nix ./keymaps.nix ./options.nix ]; }
