@@ -79,6 +79,7 @@
       curl
       jq
       gcc
+      gnumake
       libgcc
       openssh
       openssl
@@ -138,6 +139,7 @@
     file = {
       "Pictures/wallpaper.jpg" = { source = ./files/wallpaper.jpg; };
       "Pictures/kratosgado.png" = { source = ./files/kratosgado.png; };
+      ".npmrc".text = "prefix=$HOME/.npm-packages";
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
       # # the Nix store. Activating the configuration will then make '~/.screenrc' a
       # # symlink to the Nix store copy.
@@ -157,11 +159,14 @@
         "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+      NPM_CONFIG_PREFIX = "$HOME/.npm-packages";
+      PATH = "$HOME/.npm-packages/bin:$PATH";
+      NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
       JAVA_HOME = "${pkgs.jdk}";
       # This forces kotlin-language-server to use the correct JDK
       KOTLIN_LANGUAGE_SERVER_JAVA_HOME = "${pkgs.jdk}";
     };
-  }; # Please read the comment before changing.
+  };
   fonts.fontconfig.enable = true;
 
   services.gpg-agent = {

@@ -67,6 +67,19 @@
         ellipsis_char = "...";
       };
     };
+    codesnap = {
+      enable = true;
+      settings = {
+        breadcrumbs_separator = "/";
+        has_breadcrumbs = true;
+        has_line_number = false;
+        mac_window_bar = true;
+        save_path = "~/Pictures/codesnaps/";
+        bg_theme = "grape";
+        title = "CodeSnap.nvim";
+        watermark = "Kratosgado";
+      };
+    };
 
     wtf.enable = true;
     edgy.enable = true;

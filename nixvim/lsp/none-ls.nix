@@ -12,10 +12,7 @@
         todo_comments.enable = true;
       };
       completion.luasnip.enable = true;
-      code_actions = {
-        refactoring.enable = true;
-        # ts_node_action.enable = true;
-      };
+
       formatting = {
         nixfmt.enable = true;
         asmfmt.enable = true;
@@ -27,7 +24,7 @@
         cmake_format.enable = true;
         google_java_format.enable = true;
         ktlint.enable = true;
-        prisma_format.enable = true;
+        # prisma_format.enable = true;
         prettierd = {
           enable = true;
           disableTsServerFormatter = true;

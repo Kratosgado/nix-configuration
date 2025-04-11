@@ -19,7 +19,8 @@
         };
         prismals = {
           enable = true;
-          package = pkgs.vscode-extensions.prisma.prisma;
+          package = null;
+          # package = pkgs.prismaPackages."@prisma/language-server";
         };
         vtsls = {
           enable = false;
@@ -75,7 +76,7 @@
         bashls.enable = true;
         kulala_ls = {
           enable = true;
-          package = pkgs.kulala-fmt;
+          package = null;
           filetypes = [ "http" "rest" ];
         };
         tailwindcss.enable = true;
