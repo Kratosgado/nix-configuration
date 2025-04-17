@@ -1,5 +1,6 @@
 {
   imports = [
+    ./spectre.nix
     ./tailwind.nix
     ./flash.nix
     ./telescope.nix

@@ -12,6 +12,11 @@
       };
     }
     {
+      action = ":nohlsearch<CR>";
+      key = "<Esc>";
+      options.silent = true;
+    }
+    {
       action = "G";
       key = "ge";
       options.desc = "End of line";
@@ -33,7 +38,7 @@
       key = "<Down>";
     }
     {
-      mode = [ "i" "v" ];
+      mode = [ "i" ];
       action = "<Esc>";
       key = "jk";
       options = {

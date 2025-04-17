@@ -51,7 +51,7 @@
       cargo
       pkg-config
       stylua
-      libsoup
+      libsoup_2_4
       webkitgtk_4_0
       gtk3
       obs-studio
@@ -233,6 +233,7 @@
         ll = "ls -l";
         commit = "git add . && commit -m";
         push = "git push";
+        upgrade = "sudo nixos-rebuild switch --upgrade";
         switch =
           "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
         iswitch =

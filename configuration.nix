@@ -113,6 +113,7 @@
         variant = "";
       };
     };
+    pulseaudio.enable = false;
 
     # Enable CUPS to print documents.
     printing.enable = true;
@@ -123,29 +124,6 @@
       pulse.enable = true;
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
-    };
-
-    nginx = {
-      enable = true;
-      recommendedGzipSettings = true;
-      recommendedOptimisation = true;
-      recommendedProxySettings = true;
-      recommendedTlsSettings = true;
-      virtualHosts = {
-        localhost = {
-          locations."/" = {
-            return = "200 '<html><body>It works</body></html>'";
-            extraConfig = ''
-              default_type text/html;
-            '';
-          };
-        };
-        # "kgopinion.freetcp.com" = {
-        #   enableACME = true;
-        #   forceSSL = true;
-        #   root = "/var/www/kgopinion";
-        # };
-      };
     };
 
     # # List services that you want to enable:
@@ -162,7 +140,6 @@
   hardware.bluetooth.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security = {
     rtkit.enable = true;
     # acme.certs = {
