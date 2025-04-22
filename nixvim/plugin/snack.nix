@@ -4,7 +4,7 @@
       enable = true;
       settings = {
         bigfile = { enabled = true; };
-        dashboard = { enabled = true; };
+        dashboard = { enabled = false; };
         indent = { enabled = true; };
         input = { enabled = true; };
         picker = { enabled = true; };

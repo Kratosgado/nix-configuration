@@ -59,13 +59,39 @@
     virtualedit = "block";
     inccommand = "split";
   };
-
+  diagnostics = {
+    virtual_text = {
+      prefix = "●"; # Bullet character
+      spacing = 4; # Space after diagnostic
+      # format = function(d)
+      # 	return d.message:gsub("\n", " "):gsub("\t", " ")
+      # end;
+    };
+    signs = true; # -- Show gutter signs
+    underline = true; # -- Underline errors
+    update_in_insert = false; # -- Don't update while typing
+    severity_sort = true; # -- Sort by error severity
+    float = { # -- Diagnostic hover window
+      border = "rounded";
+      source = "always";
+    };
+  };
   extraPlugins = with pkgs.vimPlugins; [
+    # (pkgs.vimUtils.buildVimPlugin {
+    #   name = "snacks.nvim";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "folke";
+    #     repo = "snacks.nvim";
+    #     rev = "v2.22.0"; # Replace with latest commit
+    #     hash =
+    #       "sha256-0a5nw7xa33shag1h12gf930g3vcixbwk8dxv0ji4980ycskh238v"; # Get via nix-prefetch-url
+    #   };
+    # })
+    # snacks-nvim
     neoformat
     vim-test
     vimux
     vim-quickrun
-    vim-be-good
     neorg
     neorg-telescope
   ];

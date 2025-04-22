@@ -92,6 +92,7 @@
       dbeaver-bin
       mongodb-compass
       telegram-desktop
+      zapzap
 
       neofetch
 

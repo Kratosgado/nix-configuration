@@ -3,6 +3,7 @@
 
   system.activationScripts.script.text = ''
     cp /home/kratosgado/Pictures/kratosgado.png /var/lib/AccountsService/icons/kratosgado
+    export PATH=$PATH:~/.npm-packages/bin
   '';
   users.users.kratosgado = {
     isNormalUser = true;

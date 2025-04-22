@@ -90,8 +90,6 @@
     friendly-snippets.enable = false;
     trim.enable = true;
     nvim-surround.enable = true;
-
-    # dressing.enable = true;
     lualine.enable = true;
     # lightline.enable = true;
 

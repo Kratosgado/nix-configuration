@@ -1,7 +1,7 @@
 {
   plugins = {
     telescope = {
-      enable = true;
+      enable = false;
       settings.defaults = {
         prompt_prefix = "   ";
         color_devicons = true;
