@@ -31,7 +31,7 @@
           textobject = "<leader>/";
         };
       };
-      diff = { view = { style = "sign"; }; };
+      # diff = { view = { style = "sign"; }; };
       starter = {
         content_hooks = {
           "__unkeyed-1.adding_bullet" = {

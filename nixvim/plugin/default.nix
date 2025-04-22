@@ -3,7 +3,6 @@
     ./spectre.nix
     ./tailwind.nix
     ./flash.nix
-    ./telescope.nix
     ./spider.nix
     ./fzf.nix
     ./snack.nix

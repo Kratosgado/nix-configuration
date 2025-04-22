@@ -2,23 +2,23 @@
   extraPlugins = [ pkgs.vimPlugins.fzf-lua ];
   plugins = {
     fzf-lua = {
-      enable = false;
+      enable = true;
       profile = "skim";
       settings = {
-        winopts = { }; # UI Options
-        keymap = { }; # Neovim keymaps / fzf binds
-        actions = { "Tab" = "down"; }; # Fzf "accept" binds
-        fzf_opts = { }; # Fzf CLI flags
-        fzf_colors = { }; # Fzf `--color` specification
-        hls = { }; # Highlights
-        previewers = { }; # Previewers options
+        # winopts = { }; # UI Options
+        keymap = { fzf = { "Tab" = "down"; }; }; # Neovim keymaps / fzf binds
+        # actions = {  }; # Fzf "accept" binds
+        # fzf_opts = { }; # Fzf CLI flags
+        # fzf_colors = { }; # Fzf `--color` specification
+        # hls = { }; # Highlights
+        # previewers = { }; # Previewers options
       };
       #
       keymaps = {
-        "<leader>st" = {
-          action = "todo-comments";
-          options.desc = "View Todo";
-        };
+        # "<leader>st" = {
+        #   action = "todo-comments";
+        #   options.desc = "View Todo";
+        # };
         "<leader>/" = {
           action = "live_grep";
           options.desc = "Grep (Root Dir)";
@@ -34,8 +34,7 @@
 
         # Find mappings
         "<leader>fb" = {
-          action =
-            "buffers sort_mru=true sort_lastused=true ignore_current_buffer=true";
+          action = "buffers";
           options.desc = "Buffers";
         };
         "<leader>fc" = {
