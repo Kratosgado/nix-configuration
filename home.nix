@@ -57,7 +57,6 @@
       obs-studio
       #flutter
       #jdk17
-      postman
       insomnia
       xclip
       ngrok
