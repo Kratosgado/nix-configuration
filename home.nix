@@ -224,6 +224,7 @@
         cd = "z";
         fk = "fuck";
         pn = "pnpm";
+        px = "pnpx";
         ls =
           "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions";
         #   cd = "z";
