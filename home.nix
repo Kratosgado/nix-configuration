@@ -61,7 +61,8 @@
       xclip
       ngrok
       gimp
-      # blender
+      blender
+      blendfarm
       vscode
       android-studio
       jetbrains.idea-community

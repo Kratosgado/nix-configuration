@@ -91,6 +91,7 @@
     neoformat
     vim-test
     vimux
+    skim
     vim-quickrun
     neorg
     neorg-telescope
