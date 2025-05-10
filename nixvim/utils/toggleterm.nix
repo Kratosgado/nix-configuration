@@ -5,6 +5,12 @@
       open_mapping = "[[]]";
       shell = "zsh";
     };
+    lazyLoad = {
+      settings = {
+        cmd = "ToggleTerm";
+        keys = [ "<leader>tg" ];
+      };
+    };
   };
 
   keymaps = [{

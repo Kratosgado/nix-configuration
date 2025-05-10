@@ -37,6 +37,9 @@
       dbus-glib
       gtk4
       firefox
+      tor-browser
+      awscli2
+      aws-nuke
       trunk
       openssl
       kotlin
