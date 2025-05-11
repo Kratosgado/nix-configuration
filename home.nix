@@ -79,7 +79,7 @@
       python311
       python311Packages.numpy
       fzf
-      curl
+      curlHTTP3
       jq
       gcc
       gnumake

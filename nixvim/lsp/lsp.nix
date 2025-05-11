@@ -23,7 +23,7 @@
           # package = pkgs.prismaPackages."@prisma/language-server";
         };
         vtsls = {
-          enable = false;
+          enable = true;
           autostart = true;
           package = pkgs.vtsls;
         };
