@@ -79,6 +79,7 @@
       python311
       python311Packages.numpy
       fzf
+      skim
       curlHTTP3
       jq
       gcc
