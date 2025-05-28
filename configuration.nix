@@ -102,6 +102,7 @@
   #   LC_TIME = "ak_GH";
   # };
   services = {
+    gnome.gnome-keyring.enable = true;
     xserver = {
       # Enable the X11 windowing system.
       enable = true;
