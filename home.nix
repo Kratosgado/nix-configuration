@@ -101,6 +101,11 @@
 
       neofetch
 
+      # hex
+      hex
+      hexedit
+      hextazy
+
       # archives
       zip
       xz
@@ -188,11 +193,6 @@
       enable = true;
       userName = "Kratosgado";
       userEmail = "mbeahessilfieprince@gmail.com";
-      aliases = {
-        ci = "commit";
-        co = "checkout";
-        s = "status";
-      };
       extraConfig = {
         push = { autoSetupRemote = true; };
 
@@ -238,7 +238,11 @@
 
         l = "ls -alh";
         ll = "ls -l";
-        commit = "git add . && commit -m";
+        # git aliases
+        gc = "git add . && git commit -m";
+        gs = "git status";
+        go = "git checkout";
+        gb = "git branch";
         push = "git push";
         upgrade = "sudo nixos-rebuild switch --upgrade";
         switch =

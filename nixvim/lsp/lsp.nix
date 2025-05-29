@@ -16,17 +16,18 @@
         ts_ls = {
           enable = true;
           autostart = true;
+          package = pkgs.vtsls;
         };
         prismals = {
           enable = true;
           package = null;
           # package = pkgs.prismaPackages."@prisma/language-server";
         };
-        vtsls = {
-          enable = true;
-          autostart = true;
-          package = pkgs.vtsls;
-        };
+        # vtsls = {
+        #   enable = true;
+        #   autostart = true;
+        #   package = pkgs.vtsls;
+        # };
         rust_analyzer = {
           enable = true;
           autostart = true;
