@@ -8,6 +8,7 @@
     settings.style = "night";
     # transparentBackground = true;
   };
+  # dependencies.flutter.enable = true;
 
   #...............................................................................
 
@@ -77,17 +78,6 @@
     };
   };
   extraPlugins = with pkgs.vimPlugins; [
-    # (pkgs.vimUtils.buildVimPlugin {
-    #   name = "snacks.nvim";
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "folke";
-    #     repo = "snacks.nvim";
-    #     rev = "v2.22.0"; # Replace with latest commit
-    #     hash =
-    #       "sha256-0a5nw7xa33shag1h12gf930g3vcixbwk8dxv0ji4980ycskh238v"; # Get via nix-prefetch-url
-    #   };
-    # })
-    # snacks-nvim
     neoformat
     vim-test
     vimux

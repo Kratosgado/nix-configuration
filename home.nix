@@ -68,6 +68,7 @@
       blender
       blendfarm
       vscode
+      # android-studio-full
       android-studio
       jetbrains.idea-community
       # #google-chrome

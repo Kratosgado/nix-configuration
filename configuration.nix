@@ -51,16 +51,16 @@
     #   enable = true;
     #   allowedTCPPorts = [80 433 9000];
     # };
-    nat = {
-      enable = true;
-      internalInterfaces = [ "ens3" ];
-      externalInterface = "wg0";
-      forwardPorts = [{
-        sourcePort = 80;
-        proto = "tcp";
-        destination = "10.100.0.3:80";
-      }];
-    };
+    # nat = {
+    #   enable = true;
+    #   internalInterfaces = [ "ens3" ];
+    #   externalInterface = "wg0";
+    #   forwardPorts = [{
+    #     sourcePort = 80;
+    #     proto = "tcp";
+    #     destination = "10.100.0.3:80";
+    #   }];
+    # };
     #
     # interfaces = {
     #   ens3.ipv6.addresses = [
@@ -75,7 +75,6 @@
     #   interface = "ens3";
     # };
     #
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
@@ -89,18 +88,7 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
-  #
-  # i18n.extraLocaleSettings = {
-  #   LC_ADDRESS = "ak_GH";
-  #   LC_IDENTIFICATION = "ak_GH";
-  #   LC_MEASUREMENT = "ak_GH";
-  #   LC_MONETARY = "ak_GH";
-  #   LC_NAME = "ak_GH";
-  #   LC_NUMERIC = "ak_GH";
-  #   LC_PAPER = "ak_GH";
-  #   LC_TELEPHONE = "ak_GH";
-  #   LC_TIME = "ak_GH";
-  # };
+
   services = {
     gnome.gnome-keyring.enable = true;
     xserver = {

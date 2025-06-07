@@ -1,6 +1,7 @@
 {
   imports = [
     ./spectre.nix
+    ./flutter.nix
     ./tailwind.nix
     ./flash.nix
     ./spider.nix
