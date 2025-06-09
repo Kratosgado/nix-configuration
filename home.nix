@@ -48,6 +48,7 @@
       nodePackages.typescript
       nodePackages."@vue/language-server"
       nodePackages."typescript-language-server"
+      nodePackages.node-gyp
       jdk
       gradle
       maven
@@ -71,7 +72,7 @@
       # android-studio-full
       android-studio
       jetbrains.idea-community
-      # #google-chrome
+      google-chrome
       vlc
       slack
       vdhcoapp
@@ -175,6 +176,7 @@
       PATH = "$HOME/.npm-packages/bin:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
       JAVA_HOME = "${pkgs.jdk}";
+      CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
       # This forces kotlin-language-server to use the correct JDK
       KOTLIN_LANGUAGE_SERVER_JAVA_HOME = "${pkgs.jdk}";
     };

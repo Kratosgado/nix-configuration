@@ -4,6 +4,7 @@
   system.activationScripts.script.text = ''
     cp /home/kratosgado/Pictures/kratosgado.png /var/lib/AccountsService/icons/kratosgado
     export PATH=$PATH:~/.npm-packages/bin
+    export CHROME_EXECUTABLE="${pkgs.google-chrome}/bin/google-chrome-stable"
   '';
   users.users.kratosgado = {
     isNormalUser = true;
