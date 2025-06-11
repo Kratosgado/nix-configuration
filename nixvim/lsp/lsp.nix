@@ -3,6 +3,9 @@
     clangd-extensions.enable = true;
     nix.enable = true;
     lsp-lines.enable = true;
+    vim-dadbod-completion.enable = true;
+    vim-dadbod.enable = true;
+    vim-dadbod-ui.enable = true;
 
     lsp = {
       enable = true;
@@ -75,6 +78,7 @@
         volar = { enable = true; };
         cssls.enable = true;
         bashls.enable = true;
+        sqls = { enable = true; };
         kulala_ls = {
           enable = true;
           package = null;

@@ -14,6 +14,23 @@ require("neorg").setup({
 	},
 })
 
+-- sqls configurations
+require("lspconfig").sqls.setup({
+	on_attach = function(client, bufnr)
+		require("sqls").on_attach(client, bufnr) -- require sqls.nvim
+	end,
+	settings = {
+		sqls = {
+			connections = {
+				{
+					driver = "postgresql",
+					dataSourceName = "host=127.0.0.1 port=5432 user=kratosgado password=28935617 dbname=stealth sslmode=disable",
+				},
+			},
+		},
+	},
+})
+
 -- require("lspconfig").volar.setup({
 -- 	init_options = {
 -- 		typescript = {

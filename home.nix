@@ -60,8 +60,6 @@
       webkitgtk_4_0
       gtk3
       obs-studio
-      #flutter
-      #jdk17
       insomnia
       xclip
       ngrok
@@ -103,7 +101,7 @@
 
       neofetch
 
-      # hex
+      # for viewing binary files
       hex
       hexedit
       hextazy
@@ -115,6 +113,7 @@
       p7zip
 
       # utils
+      postgresql
       nnn
       ripgrep # recursively searches directories for a regex pattern
       jq # A lightweight and flexible command-line JSON processor
@@ -173,7 +172,7 @@
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
       NPM_CONFIG_PREFIX = "$HOME/.npm-packages";
-      PATH = "$HOME/.npm-packages/bin:$PATH";
+      PATH = "/home/kratosgado/.npm-packages/bin:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
       JAVA_HOME = "${pkgs.jdk}";
       CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";

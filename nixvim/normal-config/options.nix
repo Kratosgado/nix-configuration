@@ -85,6 +85,10 @@
     vim-quickrun
     neorg
     neorg-telescope
+    nvim-cmp
+    vim-dadbod # Database interaction
+    vim-dadbod-ui # DB UI
+    vim-dadbod-completion # DB-aware completion
   ];
   extraConfigLua = builtins.readFile ./config.lua;
   autoCmd = [{
