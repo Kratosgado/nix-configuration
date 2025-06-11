@@ -78,7 +78,6 @@
         volar = { enable = true; };
         cssls.enable = true;
         bashls.enable = true;
-        sqls = { enable = true; };
         kulala_ls = {
           enable = true;
           package = null;

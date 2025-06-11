@@ -26,6 +26,7 @@
         Function = "󰡱";
         Constructor = "";
         Field = "󰜢";
+
         Variable = "󰀫";
         Class = "󰠱";
         Interface = "";
@@ -87,7 +88,6 @@
     # neocord.enable = true;
     tmux-navigator.enable = true;
 
-    friendly-snippets.enable = false;
     trim.enable = true;
     nvim-surround.enable = true;
     lualine.enable = true;

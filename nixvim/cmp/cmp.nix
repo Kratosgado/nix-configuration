@@ -16,7 +16,7 @@
     cmp-dictionary.enable = true;
 
     cmp = {
-      enable = true;
+      enable = false;
       autoEnableSources = true;
       settings = {
         snippet = { expand = "luasnip"; };

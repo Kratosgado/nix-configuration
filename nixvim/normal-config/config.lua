@@ -13,36 +13,7 @@ require("neorg").setup({
 		},
 	},
 })
-
--- sqls configurations
-require("lspconfig").sqls.setup({
-	on_attach = function(client, bufnr)
-		require("sqls").on_attach(client, bufnr) -- require sqls.nvim
-	end,
-	settings = {
-		sqls = {
-			connections = {
-				{
-					driver = "postgresql",
-					dataSourceName = "host=127.0.0.1 port=5432 user=kratosgado password=28935617 dbname=stealth sslmode=disable",
-				},
-			},
-			lowercaseKeywords = false,
-			completion = {
-				enable = true,
-				-- These settings help with function completion
-				resolveTableNames = true,
-				resolveColumnNames = true,
-				resolveFunctions = true,
-				includeFunctions = true,
-				includeProcedures = true,
-				includeSchemas = true,
-			},
-		},
-	},
-})
 vim.g.db_ui_use_nerd_fonts = 1
-
 -- require("lspconfig").volar.setup({
 -- 	init_options = {
 -- 		typescript = {
