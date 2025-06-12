@@ -27,7 +27,7 @@
           preset = "super-tab";
           "<Tab>" = [ "snippet_forward" "select_next" "fallback" ];
           "<S-Tab>" = [ "snippet_backward" "select_prev" "fallback" ];
-          "CR" = [ "select_and_accept" "fallback" ];
+          "<CR>" = [ "select_and_accept" "fallback" ];
           "<C-k>" = [ "show_signature" "hide_signature" "fallback" ];
         };
         signature = { enabled = true; };
