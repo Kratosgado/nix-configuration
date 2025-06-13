@@ -62,10 +62,8 @@
           # cmdline = [ ];
           default = [ "lsp" "path" "snippets" "buffer" "emoji" ];
           per_filetype = {
-            sql = [ "dadbod" ];
-            lua = [ "lazydev" ];
-            tsx = [ "emoji" ];
-            html = [ "emoji" ];
+            sql = [ "snippets" "dadbod" "buffer" ];
+            lua = [ "lazydev" "lsp" "path" "buffer" "snippets" ];
           };
           providers = {
             buffer = { score_offset = -7; };
