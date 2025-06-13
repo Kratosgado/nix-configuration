@@ -141,10 +141,6 @@
           action = "grep_cword";
           options.desc = "Word (Root Dir)";
         };
-        "<leader>sW" = {
-          action = "grep_cword";
-          options.desc = "Word (cwd)";
-        };
         "<leader>uC" = {
           action = "colorschemes";
           options.desc = "Colorscheme with Preview";

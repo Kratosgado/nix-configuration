@@ -14,13 +14,7 @@ require("neorg").setup({
 	},
 })
 vim.g.db_ui_use_nerd_fonts = 1
-require("lspconfig")["rust-analyzer"].setup({
-	completion = {
-		capable = {
-			snippets = "add_parenthesis",
-		},
-	},
-})
+
 -- require("lspconfig").volar.setup({
 -- 	init_options = {
 -- 		typescript = {
