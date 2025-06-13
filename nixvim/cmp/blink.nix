@@ -1,8 +1,14 @@
 {
   plugins = {
-    friendly-snippets.enable = true;
-    blink-cmp-dictionary.enable = true;
+    friendly-snippets.enable = false;
     blink-emoji.enable = true;
+    blink-compat = {
+      enable = true;
+      settings = {
+        debug = true;
+        impersonate_nvim_cmp = true;
+      };
+    };
     blink-cmp = {
       enable = true;
       settings = {
@@ -11,29 +17,29 @@
           accept = {
             auto_brackets = {
               enabled = true;
-              semantic_token_resolution = { enabled = true; };
+              semantic_token_resolution = { enabled = false; };
             };
           };
           documentation = { auto_show = true; };
           ghost_text.enabled = true;
-          list.selection = {
-            auto_insert = false;
-            preselect = false;
-          };
+          # list.selection = {
+          #   auto_insert = false;
+          #   preselect = false;
+          # };
           menu.border = "solid";
         };
-
         keymap = {
           preset = "super-tab";
-          "<Tab>" = [ "snippet_forward" "select_next" "fallback" ];
-          "<S-Tab>" = [ "snippet_backward" "select_prev" "fallback" ];
+          "<Tab>" = [ "select_next" "snippet_forward" "fallback" ];
+          "<S-Tab>" = [ "select_prev" "snippet_backward" "fallback" ];
           "<CR>" = [ "select_and_accept" "fallback" ];
           "<C-k>" = [ "show_signature" "hide_signature" "fallback" ];
         };
+        snippets = { preset = "luasnip"; };
         signature = { enabled = true; };
         sources = {
           # cmdline = [ ];
-          default = [ "lsp" "path" "snippets" "buffer" "dictionary" ];
+          default = [ "lsp" "path" "snippets" "buffer" ];
           per_filetype = {
             sql = [ "snippets" "dadbod" "buffer" ];
             vue = [ "emoji" ];
@@ -41,7 +47,7 @@
             html = [ "emoji" ];
           };
           providers = {
-            # buffer = { score_offset = -7; };
+            buffer = { score_offset = -7; };
             dadbod = {
               name = "Dadbod";
               module = "vim_dadbod_completion.blink";
@@ -54,15 +60,7 @@
               # Optional configurations
               opts = { insert = true; };
             };
-            dictionary = {
-              module = "blink-cmp-dictionary";
-              name = "Dict";
-              score_offset = 100;
-              min_keyword_length = 3;
-              # Optional configurations
-              opts = { };
-            };
-            # lsp = { fallbacks = [ ]; };
+            lsp = { fallbacks = [ ]; };
           };
         };
       };
