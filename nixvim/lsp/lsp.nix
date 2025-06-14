@@ -17,8 +17,9 @@
         jsonls.enable = true;
         lua_ls.enable = true;
         ts_ls = {
-          enable = false;
+          enable = true;
           autostart = true;
+          settings.filetypes = [ "vue" ];
         };
         prismals = {
           enable = true;

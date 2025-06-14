@@ -15,7 +15,7 @@ require("neorg").setup({
 })
 vim.g.db_ui_use_nerd_fonts = 1
 
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
 
 -- lspconfig.volar.setup({
 -- 	-- add filetypes for typescript, javascript and vue
@@ -33,26 +33,27 @@ local lspconfig = require("lspconfig")
 -- 		end
 -- 	end,
 -- })
-local vue_plugin_path = vim.fn.stdpath("data") .. "/etc/profiles/per-user/kratosgado/bin/vue-language-server"
+-- local vue_plugin_path = vim.fn.stdpath("data")
+-- .. "/nix/store/34nab311z94dnbhrnijpkkrdrw8v10h2-vue-language-server-2.2.8/lib/node_modules/@vue/language-server"
 
 -- Setup vtsls with vue support
-lspconfig.vtsls.setup({
-	filetypes = { "typescript", "javascript", "vue" },
-	settings = {
-		vtsls = {
-			tsserver = {
-				globalPlugins = {
-					{
-						name = "@vue/typescript-plugin",
-						location = vue_plugin_path,
-						languages = { "vue" },
-						configNamespace = "typescript",
-						enableForWorkspaceTypeScriptVersions = true,
-					},
-				},
-			},
-		},
-	},
-})
+-- lspconfig.vtsls.setup({
+-- 	filetypes = { "typescript", "javascript", "vue" },
+-- 	settings = {
+-- 		vtsls = {
+-- 			tsserver = {
+-- 				globalPlugins = {
+-- 					{
+-- 						name = "@vue/typescript-plugin",
+-- 						location = vue_plugin_path,
+-- 						languages = { "vue" },
+-- 						configNamespace = "typescript",
+-- 						enableForWorkspaceTypeScriptVersions = true,
+-- 					},
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- })
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2
