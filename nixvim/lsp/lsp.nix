@@ -17,13 +17,12 @@
         jsonls.enable = true;
         lua_ls.enable = true;
         ts_ls = {
-          enable = true;
+          enable = false;
           autostart = true;
         };
         prismals = {
           enable = true;
           package = null;
-          # package = pkgs.prismaPackages."@prisma/language-server";
         };
         vtsls = {
           enable = true;

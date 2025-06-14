@@ -15,11 +15,15 @@ require("neorg").setup({
 })
 vim.g.db_ui_use_nerd_fonts = 1
 
--- require("lspconfig").volar.setup({
+local lspconfig = require("lspconfig")
+
+-- lspconfig.volar.setup({
+-- 	-- add filetypes for typescript, javascript and vue
+-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 -- 	init_options = {
--- 		typescript = {
--- 			-- replace with your global TypeScript library path
--- 			tsdk = "/path/to/node_modules/typescript/lib",
+-- 		vue = {
+-- 			-- disable hybrid mode
+-- 			hybridMode = true,
 -- 		},
 -- 	},
 -- 	on_new_config = function(new_config, new_root_dir)
@@ -29,5 +33,26 @@ vim.g.db_ui_use_nerd_fonts = 1
 -- 		end
 -- 	end,
 -- })
+local vue_plugin_path = vim.fn.stdpath("data") .. "/etc/profiles/per-user/kratosgado/bin/vue-language-server"
+
+-- Setup vtsls with vue support
+lspconfig.vtsls.setup({
+	filetypes = { "typescript", "javascript", "vue" },
+	settings = {
+		vtsls = {
+			tsserver = {
+				globalPlugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vue_plugin_path,
+						languages = { "vue" },
+						configNamespace = "typescript",
+						enableForWorkspaceTypeScriptVersions = true,
+					},
+				},
+			},
+		},
+	},
+})
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2
