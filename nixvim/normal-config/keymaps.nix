@@ -48,6 +48,16 @@
       };
     }
     {
+      mode = [ "i" ];
+      action = "<Esc>";
+      key = "JK";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "exit mode";
+      };
+    }
+    {
       # execute currunt file of python in terminal
       action = "<cmd>term python3 %<CR>";
       key = "<F8>"; # this line is changed
