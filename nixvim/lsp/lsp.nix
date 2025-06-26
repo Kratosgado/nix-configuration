@@ -19,6 +19,7 @@
         ts_ls = {
           enable = true;
           autostart = true;
+          filetypes = [ "vue" ];
         };
         prismals = {
           enable = true;

@@ -83,7 +83,12 @@
               name = "Emoji";
               score_offset = 15;
               # Optional configurations
-              opts = { insert = true; };
+              opts = {
+                insert = true;
+                trigger = lib.nixvim.mkRaw ''
+                  function() return { "~" } end,
+                '';
+              };
             };
             lsp = { fallbacks = [ ]; };
           };

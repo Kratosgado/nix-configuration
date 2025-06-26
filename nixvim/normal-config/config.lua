@@ -15,8 +15,6 @@ require("neorg").setup({
 })
 vim.g.db_ui_use_nerd_fonts = 1
 
-require("lspconfig").ts_ls.setup({})
-
 -- Setup vtsls with vue support
 -- lspconfig.vtsls.setup({
 -- 	filetypes = { "typescript", "javascript", "vue" },

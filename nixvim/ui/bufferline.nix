@@ -8,13 +8,13 @@
   keymaps = [
     {
       mode = "n";
-      key = "<S-l>";
+      key = "L";
       action = "<cmd>BufferLineCycleNext<cr>";
       options = { desc = "Cycle to next buffer"; };
     }
     {
       mode = "n";
-      key = "<S-h>";
+      key = "H";
       action = "<cmd>BufferLineCyclePrev<cr>";
       options = { desc = "Cycle to previous buffer"; };
     }
@@ -31,7 +31,18 @@
       action = "<cmd>bdelete<cr>";
       options = { desc = "Delete buffer"; };
     }
-
+    {
+      mode = "n";
+      key = "M";
+      action = "<cmd>BufferLineMoveNext<cr>";
+      options = { desc = "Move Buffer right"; };
+    }
+    {
+      mode = "n";
+      key = "N";
+      action = "<cmd>BufferLineMovePrev<cr>";
+      options = { desc = "Move Buffer left"; };
+    }
     {
       mode = "n";
       key = "<leader>bb";
@@ -44,7 +55,6 @@
       action = "<cmd>BufferLineCloseRight<cr>";
       options = { desc = "Delete buffers to the right"; };
     }
-
     {
       mode = "n";
       key = "<leader>bl";
@@ -65,11 +75,22 @@
       action = "<cmd>BufferLineTogglePin<cr>";
       options = { desc = "Toggle pin"; };
     }
-
     {
       mode = "n";
       key = "<leader>bP";
       action = "<Cmd>BufferLineGroupClose ungrouped<CR>";
+      options = { desc = "Delete non-pinned buffers"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>bsd";
+      action = "<Cmd>BufferLineSortByDirectory<cr>";
+      options = { desc = "Delete non-pinned buffers"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>bse";
+      action = "<Cmd>BufferLineSortByExtension<cr>";
       options = { desc = "Delete non-pinned buffers"; };
     }
   ];

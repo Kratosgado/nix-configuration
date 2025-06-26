@@ -1,5 +1,10 @@
 { lib, config, ... }: {
   plugins = {
+    which-key.settings.spec = lib.optionals config.plugins.kulala.enable [{
+      __unkeyed-1 = "<leader>r";
+      group = "Kulala";
+      icon = "";
+    }];
     rest.enable = true;
     kulala = {
       enable = true;
@@ -41,17 +46,8 @@
 
     };
   };
-  keymaps = lib.mkIf config.plugins.kulala.enable [
-    {
-      mode = "n";
-      action = "";
-      key = "<leader>r";
-      options = {
-        silent = true;
-        noremap = true;
-        desc = "+Rest";
-      };
-    }
+
+  keymaps = lib.optionals config.plugins.kulala.enable [
     {
       mode = "n";
       key = "<leader>rb";
