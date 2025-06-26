@@ -8,7 +8,7 @@
         actionlint.enable = true;
         cppcheck.enable = true;
         mypy.enable = true;
-        ktlint.enable = true;
+        ktlint.enable = false;
         todo_comments.enable = true;
       };
       completion.luasnip.enable = true;
@@ -23,7 +23,7 @@
         clang_format.enable = true;
         cmake_format.enable = true;
         google_java_format.enable = true;
-        ktlint.enable = true;
+        ktlint = { enable = false; };
         # prisma_format.enable = true;
         prettierd = {
           enable = true;

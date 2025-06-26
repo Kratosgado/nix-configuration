@@ -133,7 +133,6 @@
         silent = true;
       };
     }
-
     {
       mode = "n";
       key = "<leader>ca";

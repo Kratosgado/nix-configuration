@@ -14,25 +14,5 @@ require("neorg").setup({
 	},
 })
 vim.g.db_ui_use_nerd_fonts = 1
-
--- Setup vtsls with vue support
--- lspconfig.vtsls.setup({
--- 	filetypes = { "typescript", "javascript", "vue" },
--- 	settings = {
--- 		vtsls = {
--- 			tsserver = {
--- 				globalPlugins = {
--- 					{
--- 						name = "@vue/typescript-plugin",
--- 						location = vue_plugin_path,
--- 						languages = { "vue" },
--- 						configNamespace = "typescript",
--- 						enableForWorkspaceTypeScriptVersions = true,
--- 					},
--- 				},
--- 			},
--- 		},
--- 	},
--- })
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2

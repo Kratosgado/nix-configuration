@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   plugins = {
     clangd-extensions.enable = true;
     nix.enable = true;
@@ -48,19 +48,27 @@
           settings = {
             init_options = {
               storagePath =
-                "~/.jvm/cache"; # Specify your desired cache path here
+                "/tmp/kotlin-lsp-cache"; # Specify your desired cache path here
             };
           };
         };
         kotlin_language_server = {
           enable = true;
           autostart = true;
+          # extraOptions = {
+          #   on_attach = lib.nixvim.mkRaw ''
+          #     function(client, bufnr)
+          #       client.server_capabilities.documentFormattingProvider = false
+          #     end
+          #   '';
+          # };
           settings = {
             init_options = {
               storagePath =
-                "~/.jvm/cache"; # Specify your desired cache path here
+                "/tmp/java-lsp-cache"; # Specify your desired cache path here
             };
           };
+
         };
         gradle_ls = {
           enable = true;
