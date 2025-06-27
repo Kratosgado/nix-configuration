@@ -43,7 +43,6 @@
       aws-nuke
       trunk
       openssl
-      kotlin
       poetry
       nodePackages.typescript
       nodePackages."@vue/language-server"
