@@ -50,6 +50,7 @@
       nodePackages."typescript-language-server"
       nodePackages.node-gyp
       jdk
+      # jdk17
       gradle
       maven
       rustc

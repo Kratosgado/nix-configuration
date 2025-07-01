@@ -1,7 +1,7 @@
 { lib, ... }: {
   plugins = {
     friendly-snippets.enable = false;
-    blink-emoji.enable = true;
+    # blink-emoji.enable = true;
     lazydev = {
       enable = true;
       settings = {
@@ -60,7 +60,7 @@
         signature = { enabled = true; };
         sources = {
           # cmdline = [ ];
-          default = [ "lsp" "path" "snippets" "buffer" "emoji" ];
+          default = [ "lsp" "path" "snippets" "buffer" ];
           per_filetype = {
             sql = [ "snippets" "dadbod" "buffer" ];
             lua = [ "lazydev" "lsp" "path" "buffer" "snippets" ];
@@ -78,18 +78,16 @@
               score_offset = 100;
             };
 
-            emoji = {
-              module = "blink-emoji";
-              name = "Emoji";
-              score_offset = 15;
-              # Optional configurations
-              opts = {
-                insert = true;
-                trigger = lib.nixvim.mkRaw ''
-                  function() return { "~" } end,
-                '';
-              };
-            };
+            # emoji = {
+            #   module = "blink-emoji";
+            #   name = "Emoji";
+            #   score_offset = 15;
+            #   # Optional configurations
+            #   opts = {
+            #     insert = true;
+            #     trigger = "~";
+            #   };
+            # };
             lsp = { fallbacks = [ ]; };
           };
         };

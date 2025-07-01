@@ -21,6 +21,5 @@
       lsp = { color = { enabled = true; }; };
       widget_guides = { enabled = true; };
     };
-
   };
 }

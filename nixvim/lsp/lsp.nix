@@ -65,7 +65,7 @@
         };
         gradle_ls = {
           enable = true;
-          package = pkgs.gradle;
+          package = null;
         };
         groovyls = {
           enable = true;
