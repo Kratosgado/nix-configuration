@@ -16,11 +16,11 @@
         nixd.autostart = true;
         jsonls.enable = true;
         lua_ls.enable = true;
-        ts_ls = {
-          enable = true;
-          autostart = true;
-          filetypes = [ "vue" ];
-        };
+        # ts_ls = {
+        #   enable = true;
+        #   autostart = true;
+        #   settings.filetypes = [ "vue" ];
+        # };
         prismals = {
           enable = true;
           package = null;

@@ -114,7 +114,8 @@
       p7zip
 
       # utils
-      postgresql
+      redisinsight
+      postgresql # for dadbod
       nnn
       ripgrep # recursively searches directories for a regex pattern
       jq # A lightweight and flexible command-line JSON processor
