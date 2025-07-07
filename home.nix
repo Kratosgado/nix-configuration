@@ -53,6 +53,9 @@
       # jdk17
       gradle
       maven
+      liquibase
+      ktor-cli
+
       rustc
       cargo
       pkg-config
