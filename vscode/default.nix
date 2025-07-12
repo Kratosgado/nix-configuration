@@ -48,19 +48,6 @@
           usernamehw.errorlens
           dbaeumer.vscode-eslint
           adpyke.codesnap
-
-          # vue.vscode-typescript-vue-plugin
-          # vue
-          # (pkgs.vscode-with-extensions.override {
-          #   vscodeExtensions = with pkgs.vscode-extensions;
-          #     [ adpyke.codesnap ]
-          #     ++ pkgs.vscode-utils.extensionFromVscodeMarketplace [{
-          #       name = "Kratosgado.italic-dark-theme";
-          #       publisher = "Kratosgado";
-          #       version = "0.0.2";
-          #       sha256 = "87105593033575af55810ed42c1eef1bc05d1037";
-          #     }];
-          # })
         ];
       };
       rust = {

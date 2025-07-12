@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [ ./vscode ];
   dconf.settings = {
     "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
@@ -187,11 +187,19 @@
   };
   fonts.fontconfig.enable = true;
 
-  services.gpg-agent = {
-    enable = true;
-    defaultCacheTtl = 1800;
-    enableSshSupport = true;
+  services = {
+    gpg-agent = {
+      enable = true;
+      defaultCacheTtl = 1800;
+      enableSshSupport = true;
+    };
+    network-manager-applet.enable = true;
   };
+  # nixpkgs.config = {
+  #   allowBroken = true;
+  #   allowUnfree = true;
+  #   allowUnfreePredicate = true;
+  # };
   # Let Home Manager install and manage itself.
   programs = {
 

@@ -178,10 +178,8 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # enable docker
   virtualisation.docker.enable = true;
