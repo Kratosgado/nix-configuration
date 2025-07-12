@@ -1,16 +1,19 @@
 {
-  plugins.toggleterm = {
-    enable = true;
-    settings = {
-      open_mapping = "[[]]";
-      shell = "zsh";
-    };
-    lazyLoad = {
+  plugins = {
+    toggleterm = {
+      enable = true;
       settings = {
-        cmd = "ToggleTerm";
-        keys = [ "<leader>tg" ];
+        open_mapping = "[[<C-T>]]";
+        shell = "zsh";
+      };
+      lazyLoad = {
+        settings = {
+          cmd = "ToggleTerm";
+          keys = [ "<leader>tg" ];
+        };
       };
     };
+    tmux-navigator.enable = true;
   };
 
   keymaps = [{

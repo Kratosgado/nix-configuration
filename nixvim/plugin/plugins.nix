@@ -84,9 +84,6 @@
 
     wtf.enable = true;
     edgy.enable = true;
-    # neorg.enable = true;
-    # neocord.enable = true;
-    tmux-navigator.enable = true;
 
     trim.enable = true;
     nvim-surround.enable = true;

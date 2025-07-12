@@ -37,10 +37,8 @@
           installRustc = true;
           installRustfmt = true;
         };
-        clangd = {
-          enable = true;
-          autostart = true;
-        };
+        clangd.enable = true;
+        cmake.enable = true;
         nginx_language_server.enable = true;
         jdtls = {
           enable = true;
@@ -83,7 +81,12 @@
           package = null;
           filetypes = [ "http" "rest" ];
         };
+        eslint.enable = true;
         tailwindcss.enable = true;
+        dockerls.enable = true;
+        docker_compose_language_service.enable = true;
+        asm_lsp.enable = true;
+        yamlls.enable = true;
       };
       keymaps = {
         lspBuf = {
