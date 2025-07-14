@@ -1,6 +1,7 @@
 {
   plugins = {
     copilot-vim = { enable = false; };
+
     copilot-chat = {
       enable = true;
       settings = {
@@ -9,6 +10,7 @@
         error_header = "## Error ";
         context = "buffers";
         # model = "gpt-3.5-turbo"; # gpt-4
+        window = { width = 0.3; };
         mappings = {
           accept_diff = {
             insert = "<C-y>";

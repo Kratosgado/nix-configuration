@@ -28,6 +28,8 @@
         impersonate_nvim_cmp = true;
       };
     };
+    blink-copilot.enable = true;
+    copilot-lua.enable = false;
     blink-cmp = {
       enable = true;
       settings = {
@@ -62,7 +64,7 @@
           # cmdline = [ ];
           default = [ "lsp" "path" "snippets" "buffer" "copilot" ];
           per_filetype = {
-            sql = [ "lsp" "snippets" "dadbod" "buffer" ];
+            sql = [ "lsp" "snippets" "dadbod" "buffer" "copilot" ];
             lua = [ "lazydev" "lsp" "path" "buffer" "snippets" ];
           };
           providers = {
@@ -78,7 +80,7 @@
               score_offset = 100;
             };
             copilot = {
-              async = false;
+              async = true;
               module = "blink-copilot";
               name = "copilot";
               score_offset = 100;

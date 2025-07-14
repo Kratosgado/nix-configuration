@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   plugins = {
     smear-cursor = {
-      enable = false;
+      enable = true;
       package = pkgs.vimPlugins.smear-cursor-nvim;
     };
     visual-multi = { enable = true; };
