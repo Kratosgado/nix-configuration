@@ -2,10 +2,20 @@
   plugins = {
     toggleterm = {
       enable = true;
+      # settings = {
+      #   open_mapping = "[[<C-T>]]";
+      #   shell = "zsh";
+      # };
       settings = {
-        open_mapping = "[[<C-T>]]";
-        shell = "zsh";
+        # direction = "float";
+        # float_opts = {
+        #   border = "curved";
+        #   height = 30;
+        #   width = 130;
+        # };
+        open_mapping = "[[<c-\\>]]";
       };
+
       lazyLoad = {
         settings = {
           cmd = "ToggleTerm";

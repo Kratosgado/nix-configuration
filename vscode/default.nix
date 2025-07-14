@@ -2,6 +2,8 @@
 
   programs.vscode = {
     enable = true;
+    # package = pkgs.vscode.fhs;
+    # programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup zlib openssl.dev pkg-config ]);
     profiles = {
       typescript = {
         extensions = with pkgs.vscode-extensions; [
@@ -11,6 +13,9 @@
           adpyke.codesnap
           dbaeumer.vscode-eslint
           usernamehw.errorlens
+          github.copilot
+          vscodevim.vim
+          yzhang.markdown-all-in-one
           # (vscode-with-extensions.override {
           #   extensions = [ "publisher.extension-name" ];
           # })
@@ -46,15 +51,21 @@
           alefragnani.bookmarks
           vue.volar
           usernamehw.errorlens
+          github.copilot
           dbaeumer.vscode-eslint
           adpyke.codesnap
+          vscodevim.vim
+          yzhang.markdown-all-in-one
         ];
       };
       rust = {
         extensions = with pkgs.vscode-extensions; [
           rust-lang.rust-analyzer
           usernamehw.errorlens
+          yzhang.markdown-all-in-one
+          vscodevim.vim
           dbaeumer.vscode-eslint
+          github.copilot
           adpyke.codesnap
           alefragnani.bookmarks
         ];

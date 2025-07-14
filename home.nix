@@ -70,7 +70,7 @@
       gimp
       blender
       blendfarm
-      vscode
+      # vscode
       # android-studio-full
       android-studio
       jetbrains.idea-community

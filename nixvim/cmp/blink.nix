@@ -62,7 +62,7 @@
           # cmdline = [ ];
           default = [ "lsp" "path" "snippets" "buffer" ];
           per_filetype = {
-            sql = [ "snippets" "dadbod" "buffer" ];
+            sql = [ "lsp" "snippets" "dadbod" "buffer" ];
             lua = [ "lazydev" "lsp" "path" "buffer" "snippets" ];
           };
           providers = {

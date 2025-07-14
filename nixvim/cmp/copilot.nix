@@ -1,8 +1,8 @@
 {
   plugins = {
-    # copilot-vim = { enable = true; };
+    copilot-vim = { enable = false; };
     copilot-chat = {
-      enable = false;
+      enable = true;
       settings = {
         answer_header = "## Copilot ";
         auto_follow_cursor = false;
@@ -28,6 +28,6 @@
         show_help = false;
       };
     };
-    # copilot-cmp = { enable = true; };
+    copilot-cmp = { enable = true; };
   };
 }
