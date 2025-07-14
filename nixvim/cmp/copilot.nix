@@ -2,7 +2,7 @@
   plugins = {
     # copilot-vim = { enable = true; };
     copilot-chat = {
-      enable = true;
+      enable = false;
       settings = {
         answer_header = "## Copilot ";
         auto_follow_cursor = false;

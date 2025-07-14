@@ -39,46 +39,46 @@ in {
   '';
 
   # Modified keymaps to work with tabout
-  keymaps = [
-    {
-      mode = "i";
-      key = "<Tab>";
-      lua = true;
-      action =
-        #lua
-        ''
-          function()
-            if require("tabout").tabout() then
-              return
-            elseif require("cmp").visible() then
-              require("cmp").select_next_item()
-            elseif require("luasnip").expand_or_jumpable() then
-              vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-            else
-              vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n")
-            end
-          end
-        '';
-    }
-    {
-      mode = "i";
-      key = "<S-Tab>";
-      lua = true;
-      action =
-        #lua
-        ''
-          function()
-            if require("tabout").tabout_back() then
-              return
-            elseif require("cmp").visible() then
-              require("cmp").select_prev_item()
-            elseif require("luasnip").jumpable(-1) then
-              vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-            else
-              vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), "n")
-            end
-          end
-        '';
-    }
-  ];
+  # keymaps = [
+  #   {
+  #     mode = "i";
+  #     key = "<Tab>";
+  #     lua = true;
+  #     action =
+  #       #lua
+  #       ''
+  #         function()
+  #           if require("tabout").tabout() then
+  #             return
+  #           elseif require("cmp").visible() then
+  #             require("cmp").select_next_item()
+  #           elseif require("luasnip").expand_or_jumpable() then
+  #             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+  #           else
+  #             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), "n")
+  #           end
+  #         end
+  #       '';
+  #   }
+  #   {
+  #     mode = "i";
+  #     key = "<S-Tab>";
+  #     lua = true;
+  #     action =
+  #       #lua
+  #       ''
+  #         function()
+  #           if require("tabout").tabout_back() then
+  #             return
+  #           elseif require("cmp").visible() then
+  #             require("cmp").select_prev_item()
+  #           elseif require("luasnip").jumpable(-1) then
+  #             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+  #           else
+  #             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), "n")
+  #           end
+  #         end
+  #       '';
+  #   }
+  # ];
 }
