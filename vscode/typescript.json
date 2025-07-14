@@ -121,7 +121,7 @@
 		"vscode-insiders",
 		"docker-desktop"
 	],
-	"docker.dockerPath": "/snap/bin/docker",
+	"docker.dockerPath": "/run/current-system/sw/bin/docker",
 	"vs-kubernetes": {
 		"vscode-kubernetes.helm-path-linux": "/home/kratosgado/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
 		"vscode-kubernetes.minikube-path-linux": "/home/kratosgado/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
@@ -131,7 +131,7 @@
 	"workbench.sideBar.location": "right",
 	"kotlin.java.home": "$JAVA_HOME",
 	"remote.autoForwardPortsSource": "hybrid",
-	"vscode-neovim.neovimExecutablePaths.linux": "/opt/nvim-linux64/bin/nvim",
+	"vscode-neovim.neovimExecutablePaths.linux": "/run/current-system/sw/bin/nvim",
 	"vscode-neovim.useWSL": true,
 	"extensions.experimental.affinity": {
 		"asvetliakov.vscode-neovim": 1
