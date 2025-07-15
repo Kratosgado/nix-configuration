@@ -10,7 +10,7 @@
         error_header = "## Error ";
         context = "buffers";
         # model = "gpt-3.5-turbo"; # gpt-4
-        window = { width = 0.3; };
+        window = { width = 0.4; };
         mappings = {
           accept_diff = {
             insert = "<C-y>";

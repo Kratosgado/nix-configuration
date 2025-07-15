@@ -16,18 +16,18 @@
         nixd.autostart = true;
         jsonls.enable = true;
         lua_ls.enable = true;
-        # ts_ls = {
-        #   enable = true;
-        #   autostart = true;
-        #   settings.filetypes = [ "vue" ];
-        # };
+        ts_ls = {
+          enable = true;
+          autostart = false;
+          settings.filetypes = [ "vue" "typescript" "javascript" ];
+        };
         prismals = {
           enable = true;
           package = null;
         };
         vtsls = {
           enable = true;
-          autostart = true;
+          autostart = false;
           package = pkgs.vtsls;
         };
         rust_analyzer = {
@@ -42,7 +42,6 @@
         nginx_language_server.enable = true;
         jdtls = {
           enable = true;
-          autostart = true;
           settings = {
             init_options = {
               storagePath =
@@ -52,7 +51,6 @@
         };
         kotlin_language_server = {
           enable = true;
-          autostart = true;
           settings = {
             init_options = {
               storagePath =
