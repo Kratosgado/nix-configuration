@@ -79,6 +79,7 @@
   };
   extraPlugins = with pkgs.vimPlugins; [
     neoformat
+    nvim-jdtls
     vim-test
     vimux
     skim

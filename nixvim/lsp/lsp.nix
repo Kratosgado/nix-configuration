@@ -40,15 +40,6 @@
         clangd.enable = true;
         cmake.enable = true;
         nginx_language_server.enable = true;
-        jdtls = {
-          enable = true;
-          settings = {
-            init_options = {
-              storagePath =
-                "/tmp/java-lsp-cache"; # Specify your desired cache path here
-            };
-          };
-        };
         kotlin_language_server = {
           enable = true;
           settings = {

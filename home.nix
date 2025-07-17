@@ -81,8 +81,8 @@
       yt-dlp
       libreoffice
       docker
-      python311
-      python311Packages.numpy
+      python312
+      pipx
       fzf
       skim
       curlHTTP3
@@ -117,6 +117,8 @@
       p7zip
 
       # utils
+      jdt-language-server
+      lombok
       redisinsight
       postgresql # for dadbod
       nnn
