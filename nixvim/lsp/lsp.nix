@@ -58,7 +58,7 @@
           enable = true;
           package = pkgs.groovy;
         };
-        ruff.enable = true;
+        ruff.enable = false;
         pyright.enable = true;
         html.enable = true;
         svelte.enable = true;

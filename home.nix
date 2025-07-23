@@ -71,6 +71,7 @@
       blender
       blendfarm
       # vscode
+      code-cursor
       # android-studio-full
       android-studio
       jetbrains.idea-community

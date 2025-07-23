@@ -13,8 +13,9 @@
           adpyke.codesnap
           dbaeumer.vscode-eslint
           usernamehw.errorlens
+          asvetliakov.vscode-neovim
           github.copilot
-          vscodevim.vim
+          github.copilot-chat
           yzhang.markdown-all-in-one
           # (vscode-with-extensions.override {
           #   extensions = [ "publisher.extension-name" ];
@@ -52,18 +53,21 @@
           vue.volar
           usernamehw.errorlens
           github.copilot
+          github.copilot-chat
           dbaeumer.vscode-eslint
           adpyke.codesnap
-          vscodevim.vim
+          asvetliakov.vscode-neovim
           yzhang.markdown-all-in-one
         ];
+        userSettings = builtins.fromJSON (builtins.readFile ./typescript.json);
       };
       rust = {
         extensions = with pkgs.vscode-extensions; [
           rust-lang.rust-analyzer
           usernamehw.errorlens
+          asvetliakov.vscode-neovim
           yzhang.markdown-all-in-one
-          vscodevim.vim
+          github.copilot-chat
           dbaeumer.vscode-eslint
           github.copilot
           adpyke.codesnap

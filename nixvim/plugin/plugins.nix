@@ -26,7 +26,7 @@
         Function = "󰡱";
         Constructor = "";
         Field = "󰜢";
-
+        Supermaven = "";
         Variable = "󰀫";
         Class = "󰠱";
         Interface = "";
