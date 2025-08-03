@@ -3,7 +3,7 @@
   extraConfigLua = ''
     require("supermaven-nvim").setup({
       keymaps = {
-        accept_suggestion = "<Tab>",
+        accept_suggestion = "<C-l>",
         clear_suggestion = "<C-]>",
         accept_word = "<C-j>",
       },
@@ -20,5 +20,6 @@
       end -- condition to check for stopping supermaven, `true` means to stop supermaven when the condition is true.
     })
         vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", { fg = "#6CC644" })
+
   '';
 }

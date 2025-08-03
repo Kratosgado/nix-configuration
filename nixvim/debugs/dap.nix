@@ -2,6 +2,7 @@
   plugins = {
     dap = {
       enable = true;
+      extensions = { dap-ui.enable = true; };
       signs = {
         dapBreakpoint = {
           text = "●";
@@ -28,6 +29,7 @@
       };
     };
     dap-python = { enable = true; };
+    cmake-tools = { enable = true; };
     dap-ui = {
       enable = true;
       settings.floating.mappings = { close = [ "<ESC>" "q" ]; };

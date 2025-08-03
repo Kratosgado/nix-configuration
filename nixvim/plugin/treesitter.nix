@@ -1,5 +1,6 @@
 { lib, config, ... }: {
   plugins = {
+    nvim-tree.enable = true;
     treesitter = {
       enable = true;
       nixvimInjections = true;

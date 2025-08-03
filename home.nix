@@ -58,9 +58,19 @@
 
       rustc
       cargo
-      pkg-config
       stylua
       libsoup_2_4
+
+      # C++ toolchain
+      gcc
+      cmake
+      pkg-config
+      ninja
+      clang-tools
+      gnumake
+      libgcc
+      opencv4
+
       webkitgtk_4_0
       gtk3
       obs-studio
@@ -88,9 +98,6 @@
       skim
       curlHTTP3
       jq
-      gcc
-      gnumake
-      libgcc
       openssh
       openssl
       pnpm
@@ -179,6 +186,7 @@
         "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+      PKG_CONFIG_PATH = "${pkgs.opencv4}/lib/pkgconfig";
       NPM_CONFIG_PREFIX = "$HOME/.npm-packages";
       PATH = "/home/kratosgado/.npm-packages/bin:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules";

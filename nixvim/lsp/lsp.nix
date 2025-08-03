@@ -68,7 +68,7 @@
         kulala_ls = {
           enable = true;
           package = null;
-          filetypes = [ "http" "rest" ];
+          filetypes = [ "http" "rest" "hurl" ];
         };
         eslint.enable = true;
         tailwindcss.enable = true;
