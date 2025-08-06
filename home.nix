@@ -36,7 +36,6 @@
       gobject-introspection
       sqlite
       dbus-glib
-      gtk4
       firefox
       tor-browser
       awscli2
@@ -73,6 +72,7 @@
 
       webkitgtk_4_0
       gtk3
+      gtk4
       obs-studio
       insomnia
       xclip

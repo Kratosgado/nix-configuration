@@ -23,7 +23,6 @@
     autoindent = true;
     smartindent = true;
     backspace = "indent,eol,start";
-    # backup = true;
     cmdheight = 1;
     # colorcolumn = "80";
     # completeopt = "menu,menuone,noselect";
@@ -31,12 +30,12 @@
     cursorline = true;
     # expandtab = true;
     updatetime = 100;
-    # foldenable = true;
+    foldenable = true;
     splitbelow = true;
     splitright = true;
-    # foldexpr = "nvim_treesitter#foldexpr()";
-    # foldlevel = 5;
-    # foldmethod = "expr";
+    foldexpr = "nvim_treesitter#foldexpr()";
+    foldlevel = 5;
+    foldmethod = "expr";
     ignorecase = true;
     # laststatus = 3;
     mouse = "a";
