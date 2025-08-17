@@ -3,7 +3,6 @@
     ./spectre.nix
     ./flutter.nix
     ./supermaven.nix
-    ./hurl.nix
     ./tailwind.nix
     ./flash.nix
     ./spider.nix

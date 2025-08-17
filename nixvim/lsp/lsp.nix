@@ -58,7 +58,7 @@
           enable = true;
           package = pkgs.groovy;
         };
-        ruff.enable = false;
+        ruff.enable = true;
         pyright.enable = true;
         html.enable = true;
         svelte.enable = true;
@@ -68,7 +68,7 @@
         kulala_ls = {
           enable = true;
           package = null;
-          filetypes = [ "http" "rest" "hurl" ];
+          filetypes = [ "http" "rest" ];
         };
         eslint.enable = true;
         tailwindcss.enable = true;

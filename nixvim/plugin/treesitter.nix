@@ -65,11 +65,6 @@
           "[]" = "@class.outer";
         };
       };
-      swap = {
-        enable = true;
-        swapNext = { "<leader>a" = "@parameters.inner"; };
-        swapPrevious = { "<leader>A" = "@parameter.outer"; };
-      };
     };
     treesitter-refactor.enable = true;
     # rainbow-delimiters.enable = true;

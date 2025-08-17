@@ -96,17 +96,6 @@
                 };
               };
             };
-
-            # emoji = {
-            #   module = "blink-emoji";
-            #   name = "Emoji";
-            #   score_offset = 15;
-            #   # Optional configurations
-            #   opts = {
-            #     insert = true;
-            #     trigger = "~";
-            #   };
-            # };
             lsp = { fallbacks = [ ]; };
           };
         };

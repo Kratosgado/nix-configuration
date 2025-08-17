@@ -15,13 +15,6 @@
         # };
         open_mapping = "[[<c-\\>]]";
       };
-
-      lazyLoad = {
-        settings = {
-          cmd = "ToggleTerm";
-          keys = [ "<leader>tg" ];
-        };
-      };
     };
     tmux-navigator.enable = true;
   };

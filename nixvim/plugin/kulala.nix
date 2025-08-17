@@ -10,7 +10,7 @@
       enable = true;
       settings = {
         additional_curl_options = { };
-        debug = false;
+        debug = true;
         default_env = "dev";
         default_view = "body";
         environment_scope = "b";

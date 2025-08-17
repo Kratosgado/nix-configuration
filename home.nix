@@ -1,4 +1,6 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+let clibraries = with pkgs; [ xorg.libX11 stdenv.cc.cc.lib zlib ];
+in {
   imports = [ ./vscode ];
   dconf.settings = {
     "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
@@ -41,7 +43,6 @@
       awscli2
       aws-nuke
       trunk
-      openssl
       kotlin
       poetry
       nodePackages.typescript
@@ -50,6 +51,7 @@
       nodePackages.node-gyp
       jdk
       # jdk17
+      flutter
       gradle
       maven
       liquibase
@@ -61,6 +63,7 @@
       libsoup_2_4
 
       # C++ toolchain
+      nasm
       gcc
       cmake
       pkg-config
@@ -92,8 +95,7 @@
       yt-dlp
       libreoffice
       docker
-      python312
-      pipx
+      python311
       fzf
       skim
       curlHTTP3
@@ -103,7 +105,6 @@
       pnpm
       nodejs
       deno
-      unzip
       yarn
       corepack
       dbeaver-bin
@@ -126,6 +127,8 @@
 
       # utils
       jdt-language-server
+      prisma-engines
+      prisma
       lombok
       redisinsight
       postgresql # for dadbod
@@ -185,15 +188,26 @@
       FZF_CTRL_T_OPTS =
         "--preview 'bat -n --color=always --theme='Catppuccin Mocha' --line-range :500 {}'";
       FZF_ALT_C_OPTS = "--preview 'eza --tree --color=always {} | head -200'";
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-      PKG_CONFIG_PATH = "${pkgs.opencv4}/lib/pkgconfig";
+      LD_LIBRARY_PATH = "${lib.makeLibraryPath clibraries}";
+      LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
+      PKG_CONFIG_PATH =
+        "${pkgs.opencv4}/lib/pkgconfig:${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.libxml2.dev}/lib/pkgconfig";
       NPM_CONFIG_PREFIX = "$HOME/.npm-packages";
       PATH = "/home/kratosgado/.npm-packages/bin:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
       JAVA_HOME = "${pkgs.jdk}";
+      GRADLE_USER_HOME = "$HOME/.gradle";
       CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
       # This forces kotlin-language-server to use the correct JDK
       KOTLIN_LANGUAGE_SERVER_JAVA_HOME = "${pkgs.jdk}";
+
+      PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
+      PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
+      PRISMA_QUERY_ENGINE_LIBRARY =
+        "${pkgs.prisma-engines}/lib/libquery_engine.node";
+      PRISMA_INTROSPECTION_ENGINE_BINARY =
+        "${pkgs.prisma-engines}/bin/introspection-engine";
+      PRISMA_FMT_BINARY = "${pkgs.prisma-engines}/bin/prisma-fmt";
     };
   };
   fonts.fontconfig.enable = true;

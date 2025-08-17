@@ -17,8 +17,6 @@ vim.g.db_ui_use_nerd_fonts = 1
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2
 
--- "jdtls", "-configuration", "/home/kratosgado/.cache/jdtls/config", "-data", "/home/kratosgado/.cache/jdtls/workspace"
---
 local config = {
 	cmd = {
 		"jdtls",
@@ -83,3 +81,19 @@ vim.api.nvim_create_autocmd("FileType", {
 		require("jdtls").start_or_attach(config)
 	end,
 })
+
+local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
+
+if not configs.hurl_lsp then
+	configs.hurl_lsp = {
+		default_config = {
+			cmd = { "/home/kratosgado/projects/rust/hurlls/target/debug/hurlls" },
+			filetypes = { "hurl" },
+			root_dir = lspconfig.util.root_pattern("vars.env"),
+			settings = {},
+		},
+	}
+end
+
+lspconfig.hurl_lsp.setup({})

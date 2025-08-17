@@ -57,41 +57,6 @@
         desc = "exit mode";
       };
     }
-    {
-      # execute currunt file of python in terminal
-      action = "<cmd>term python3 %<CR>";
-      key = "<F8>"; # this line is changed
-      mode = [ "n" ];
-      options = { desc = "runs currunt python file in the terminal"; };
-    }
-    {
-      # Neoformat
-      action = "<cmd>Neoformat<CR>";
-      key = "<space>="; # this line is changed
-      mode = [ "n" ];
-      options = { desc = "formatting"; };
-    }
-
-    {
-      # running a single code using SnipRun
-      action = "<cmd>SnipRun<CR>";
-      key = "<space>r"; # this line is changed
-      mode = [ "v" "n" ];
-      options = { desc = "run's the selected code"; };
-    }
-
-    {
-      action = "<cmd>bd#<CR>";
-      key = "<leader>cb";
-      options = { desc = "killing opened output buffer"; };
-    }
-
-    # for neorg
-    {
-      action = "<cmd>Neorg<CR>";
-      key = "<leader>o";
-      options = { desc = "opening neorg with telesope"; };
-    }
   ];
 }
 # ...
