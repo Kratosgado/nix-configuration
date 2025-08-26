@@ -9,6 +9,7 @@
     # transparentBackground = true;
   };
   # dependencies.flutter.enable = true;
+  # dependencies.claude-code.enable = true;
 
   #...............................................................................
 

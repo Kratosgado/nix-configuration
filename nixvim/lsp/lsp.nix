@@ -70,7 +70,6 @@
           package = null;
           filetypes = [ "http" "rest" ];
         };
-        eslint.enable = true;
         tailwindcss.enable = true;
         dockerls.enable = true;
         docker_compose_language_service.enable = true;

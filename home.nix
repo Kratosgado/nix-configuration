@@ -82,9 +82,12 @@ in {
       ngrok
       gimp
       blender
+      godot
       blendfarm
+      pcsx2
       # vscode
       code-cursor
+      claude-code
       # android-studio-full
       android-studio
       jetbrains.idea-community
@@ -99,6 +102,7 @@ in {
       fzf
       skim
       curlHTTP3
+      websocat
       jq
       openssh
       openssl
@@ -198,6 +202,8 @@ in {
       JAVA_HOME = "${pkgs.jdk}";
       GRADLE_USER_HOME = "$HOME/.gradle";
       CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
+      NIXPKGS_ALLOW_UNFREE = 1;
+      NIXPKGS_ALLOW_UNFREE_PREDICATE = 1;
       # This forces kotlin-language-server to use the correct JDK
       KOTLIN_LANGUAGE_SERVER_JAVA_HOME = "${pkgs.jdk}";
 
@@ -285,12 +291,14 @@ in {
         gb = "git branch";
         push = "git push";
         upgrade = "sudo nixos-rebuild switch --upgrade";
+        syncconfig =
+          "sudo rsync -avh --delete --exclude .git ~/projects/configs/nixos/ /etc/nixos/";
         switch =
-          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
+          "syncconfig && sudo nixos-rebuild switch && sudo cp /etc/nixos/flake.lock ~/projects/configs/nixos/flake.lock";
         iswitch =
-          "sudo cp -r ~/projects/configs/nix-configuration/* /etc/nixos/.  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nix-configuration/flake.lock";
+          "syncconfig  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nixos/flake.lock";
         editconfig =
-          "cd ~/projects/configs/nix-configuration/ && nvim ~/projects/configs/nix-configuration/";
+          "cd ~/projects/configs/nixos/ && nvim ~/projects/configs/nixos/";
 
         # Rust aliases
         cr = "cargo run";
