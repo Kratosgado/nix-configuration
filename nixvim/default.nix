@@ -6,7 +6,7 @@
       ./lsp
       ./plugin-manager/lazy.nix
       ./ui
-      ./plugin
+      ./plugins
       ./normal-config
       ./utils
       ./debugs

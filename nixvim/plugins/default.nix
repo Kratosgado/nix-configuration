@@ -2,6 +2,7 @@
   imports = [
     ./spectre.nix
     ./flutter.nix
+    ./octo.nix
     ./claude-code.nix
     ./supermaven.nix
     ./tailwind.nix

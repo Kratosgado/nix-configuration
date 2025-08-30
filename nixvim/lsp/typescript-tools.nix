@@ -2,13 +2,6 @@
   plugins.typescript-tools = {
     enable = false;
     settings = {
-      handlers = {
-        "textDocument/publishDiagnostics" = ''
-          api.filter_diagnostics(
-            { 80006 }
-          )
-        '';
-      };
       settings = {
         tsserver_file_preferences = {
           __raw = ''
@@ -35,4 +28,15 @@
       };
     };
   };
+  # extraConfigLua = ''
+  #   local api = require("typescript-tools.api")
+  #   require("typescript-tools").setup {
+  #     handlers = {
+  #       ["textDocument/publishDiagnostics"] = api.filter_diagnostics(
+  #         -- Ignore 'This may be converted to an async function' diagnostics.
+  #         { 80006 }
+  #       ),
+  #     },
+  #   }
+  # '';
 }

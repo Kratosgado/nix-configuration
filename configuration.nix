@@ -182,10 +182,16 @@
   nixpkgs.config.allowUnsupportedSystem = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # enable docker
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
+  virtualisation = {
+    docker = {
+      enable = true;
+      enableOnBoot = false;
+      extraPackages = with pkgs; [ docker-compose ];
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
   };
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
