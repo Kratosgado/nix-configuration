@@ -60,7 +60,7 @@ in {
       rustc
       cargo
       stylua
-      libsoup_2_4
+      libsoup_3
 
       # C++ toolchain
       nasm
@@ -152,7 +152,7 @@ in {
       devbox
       jetbrains-mono
       gh
-      thefuck
+      pay-respects
 
       # networking tools
       mtr # A network diagnostic tool
@@ -290,7 +290,9 @@ in {
         go = "git checkout";
         gb = "git branch";
         push = "git push";
-        upgrade = "sudo nixos-rebuild switch --upgrade";
+        upgrade =
+          "sudo nix flake update --flake ~/projects/configs/nixos && update";
+        update = "sudo nixos-rebuild switch --flake ~/projects/configs/nixos";
         syncconfig =
           "sudo rsync -avh --delete --exclude .git ~/projects/configs/nixos/ /etc/nixos/";
         switch =
@@ -347,7 +349,7 @@ in {
           };
         }
       ];
-      initExtra = ''
+      initContent = ''
         ;
                 [[ ! -f ~/.config/home-manager/.p10k.zsh ]] || source ~/.config/home-manager/.p10k.zsh
       '';

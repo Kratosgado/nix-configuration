@@ -4,19 +4,22 @@
     lspkind = {
       enable = true;
 
-      cmp.menu = {
-        nvim_lsp = "";
-        nvim_lua = "";
-        neorg = "[neorg]";
-        buffer = "";
-        calc = "";
-        git = "";
-        luasnip = "󰩫";
-        codeium = "󱜙";
-        copilot = "";
-        emoji = "󰞅";
-        path = "";
-        spell = "";
+      cmp = {
+        enable = true;
+        menu = {
+          nvim_lsp = "";
+          nvim_lua = "";
+          neorg = "[neorg]";
+          buffer = "";
+          calc = "";
+          git = "";
+          luasnip = "󰩫";
+          codeium = "󱜙";
+          copilot = "";
+          emoji = "󰞅";
+          path = "";
+          spell = "";
+        };
       };
 
       symbolMap = {

@@ -60,7 +60,7 @@
     virtualedit = "block";
     inccommand = "split";
   };
-  diagnostics = {
+  diagnostic.settings = {
     virtual_text = {
       prefix = "●"; # Bullet character
       spacing = 4; # Space after diagnostic
