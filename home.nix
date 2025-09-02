@@ -65,6 +65,7 @@ in {
       # C++ toolchain
       nasm
       gcc
+      tree-sitter
       cmake
       pkg-config
       ninja
@@ -306,7 +307,7 @@ in {
         cr = "cargo run";
         cb = "cargo build";
         ct = "cargo test";
-        cc = "cargo check";
+        # cc = "cargo check";
         ccp = "cargo clippy";
         cf = "cargo fmt";
       };

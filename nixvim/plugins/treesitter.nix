@@ -5,78 +5,8 @@
       enable = true;
       nixvimInjections = true;
       nixGrammars = true;
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        bash
-        json
-        asm
-        c
-        cpp
-        css
-        lua
-        csv
-        dart
-        dot
-        dockerfile
-        diff
-        git_config
-        git_rebase
-        gitattributes
-        gitcommit
-        gitignore
-        graphql
-        groovy
-        html
-        http
-        java
-        javadoc
-        javascript
-        jq
-        jsdoc
-        kotlin
-        latex
-        llvm
-        make
-        nasm
-        nginx
-        prisma
-        proto
-        python
-        regex
-        rust
-        scss
-        sql
-        ssh_config
-        styled
-        svelte
-        superhtml
-        tmux
-        todotxt
-        toml
-        tsx
-        typescript
-        vue
-        cmake
-        comment
-        commonlisp
-        markdown
-        nix
-        regex
-        toml
-        vim
-        vimdoc
-        xml
-        yaml
-      ];
+
       settings = {
-        auto_install = true;
-        ensure_installed = [
-          "git_config"
-          "kulala_http"
-          "git_rebase"
-          "gitattributes"
-          "gitcommit"
-          "gitignore"
-        ];
         indent.enable = true;
         highlight.enable = true;
         init_options = {
