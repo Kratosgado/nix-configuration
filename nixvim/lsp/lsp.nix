@@ -65,11 +65,11 @@
         volar = { enable = true; };
         cssls.enable = true;
         bashls.enable = true;
-        kulala_ls = {
-          enable = true;
-          package = null;
-          filetypes = [ "http" "rest" ];
-        };
+        # kulala_ls = {
+        #   enable = true;
+        #   package = null;
+        #   filetypes = [ "http" "rest" ];
+        # };
         tailwindcss.enable = true;
         dockerls.enable = true;
         docker_compose_language_service.enable = true;

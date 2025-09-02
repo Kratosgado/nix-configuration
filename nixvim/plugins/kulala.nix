@@ -1,10 +1,10 @@
 { lib, config, ... }: {
   plugins = {
-    which-key.settings.spec = [{
-      __unkeyed-1 = "<leader>r";
-      group = "Kulala";
-      icon = "";
-    }];
+    # which-key.settings.spec = [{
+    #   __unkeyed-1 = "<leader>r";
+    #   group = "Kulala";
+    #   icon = "";
+    # }];
     rest.enable = true;
     kulala.enable = true;
   };
@@ -177,7 +177,7 @@
 
         --enable/disable/customize  LSP keymaps
         ---@type boolean|table
-        keymaps = false, -- disabled by default, as Kulala relies on default Neovim LSP keymaps
+        keymaps = true, -- disabled by default, as Kulala relies on default Neovim LSP keymaps
 
         -- enable/disable/customize HTTP formatter
         formatter = {
@@ -200,67 +200,68 @@
       -- set to true to enable default keymaps (check docs or {plugins_path}/kulala.nvim/lua/kulala/config/keymaps.lua for details)
       -- or override default keymaps as shown in the example below.
       ---@type boolean|table
-      global_keymaps = {
-          ["Send request"] = { -- sets global mapping
-            "<leader>rs",
-            function() require("kulala").run() end,
-            mode = { "n", "v" }, -- optional mode, default is n
-            desc = "Send request" -- optional description, otherwise inferred from the key
-          },
-          ["Send all requests"] = {
-            "<leader>ra",
-            function() require("kulala").run_all() end,
-            mode = { "n", "v" },
-            ft = "http", -- sets mapping for *.http files only
-          },
-          ["Replay the last request"] = {
-            "<leader>rr",
-            function() require("kulala").replay() end,
-            ft = { "http", "rest" }, -- sets mapping for specified file types
-          },
-        ["Find request"] = {
-          "<leader>rf",
-          function() require("kulala").search() end,
-          mode = { "n", "v" },
-          desc = "Find request",
-        },
-        ["Preview request cURL command"] = {
-          "<leader>rp",
-          function() require("kulala").preview() end,
-          mode = { "n", "v" },
-          desc = "Preview request cURL command",
-        },
-        ["Re-run last request"] = {
-          "<leader>rl",
-          function() require("kulala").last() end,
-          mode = { "n", "v" },
-          desc = "Re-run last request",
-        },
-        ["Run request with variables"] = {
-          "<leader>rR",
-          function() require("kulala").run(true) end,
-          mode = { "n", "v" },
-          desc = "Run request with variables",
-        },
-        ["Jump to previous request"] = {
-          "<leader>rP",
-          function() require("kulala").jump_prev() end,
-          mode = { "n", "v" },
-          desc = "Jump to previous request",
-        },
-        ["Jump to next request"] = {
-          "<leader>rn",
-          function() require("kulala").jump_next() end,
-          mode = { "n", "v" },
-          desc = "Jump to next request",
-        },
-        ["Toggle body/header view"] = {
-          "<leader>rt",
-          function() require("kulala").toggle_view() end,
-          mode = { "n", "v" },
-          desc = "Toggle body/header view",
-        },
-      },
+      global_keymaps = true,
+      -- global_keymaps = {
+      --     ["Send request"] = { -- sets global mapping
+      --       "<leader>rs",
+      --       function() require("kulala").run() end,
+      --       mode = { "n", "v" }, -- optional mode, default is n
+      --       desc = "Send request" -- optional description, otherwise inferred from the key
+      --     },
+      --     ["Send all requests"] = {
+      --       "<leader>ra",
+      --       function() require("kulala").run_all() end,
+      --       mode = { "n", "v" },
+      --       ft = "http", -- sets mapping for *.http files only
+      --     },
+      --     ["Replay the last request"] = {
+      --       "<leader>rr",
+      --       function() require("kulala").replay() end,
+      --       ft = { "http", "rest" }, -- sets mapping for specified file types
+      --     },
+      --   ["Find request"] = {
+      --     "<leader>rf",
+      --     function() require("kulala").search() end,
+      --     mode = { "n", "v" },
+      --     desc = "Find request",
+      --   },
+      --   ["Preview request cURL command"] = {
+      --     "<leader>rp",
+      --     function() require("kulala").preview() end,
+      --     mode = { "n", "v" },
+      --     desc = "Preview request cURL command",
+      --   },
+      --   ["Re-run last request"] = {
+      --     "<leader>rl",
+      --     function() require("kulala").last() end,
+      --     mode = { "n", "v" },
+      --     desc = "Re-run last request",
+      --   },
+      --   ["Run request with variables"] = {
+      --     "<leader>rR",
+      --     function() require("kulala").run(true) end,
+      --     mode = { "n", "v" },
+      --     desc = "Run request with variables",
+      --   },
+      --   ["Jump to previous request"] = {
+      --     "<leader>rP",
+      --     function() require("kulala").jump_prev() end,
+      --     mode = { "n", "v" },
+      --     desc = "Jump to previous request",
+      --   },
+      --   ["Jump to next request"] = {
+      --     "<leader>rn",
+      --     function() require("kulala").jump_next() end,
+      --     mode = { "n", "v" },
+      --     desc = "Jump to next request",
+      --   },
+      --   ["Toggle body/header view"] = {
+      --     "<leader>rt",
+      --     function() require("kulala").toggle_view() end,
+      --     mode = { "n", "v" },
+      --     desc = "Toggle body/header view",
+      --   },
+      -- },
 
       -- Prefix for global keymaps
       global_keymaps_prefix = "<leader>r",

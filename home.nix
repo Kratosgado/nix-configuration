@@ -106,10 +106,10 @@ in {
       jq
       openssh
       openssl
-      pnpm
+      # pnpm
       nodejs
-      deno
-      yarn
+      # deno
+      # yarn
       corepack
       dbeaver-bin
       mongodb-compass
@@ -314,7 +314,7 @@ in {
         enable = true;
         extraConfig = builtins.readFile ./extraConfig.zsh;
         # Additional oh-my-zsh plugins
-        plugins = [ "web-search" "copyfile" "copybuffer" "fzf" "thefuck" ];
+        plugins = [ "web-search" "copyfile" "copybuffer" "fzf" "pay-respects" ];
       };
 
       plugins = [

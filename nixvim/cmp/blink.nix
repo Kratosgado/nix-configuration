@@ -21,13 +21,14 @@
         runtime = lib.nixvim.mkRaw "vim.env.VIMRUNTIME";
       };
     };
-    blink-compat = {
-      enable = true;
-      settings = {
-        debug = true;
-        impersonate_nvim_cmp = true;
-      };
-    };
+    # blink-compat = {
+    #   enable = true;
+    #   settings = {
+    #     debug = true;
+    #     impersonate_nvim_cmp = true;
+    #   };
+    # };
+
     blink-copilot.enable = true;
     copilot-lua.enable = false;
     blink-cmp = {
@@ -96,7 +97,6 @@
                 };
               };
             };
-            lsp = { fallbacks = [ ]; };
           };
         };
       };

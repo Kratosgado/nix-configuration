@@ -108,33 +108,33 @@
   ];
 
   # Optional: Add custom configuration for mini.files
-  extraConfigLua = ''
-    -- Customize mini.files appearance
-    require('mini.files').setup({
-      mappings = {
-        close = ';;',
-        go_in = 'l',
-        go_out = 'h',
-        reset = '<BS>',
-        show_help = 'g?',
-        synchronize = '=',
-        trim_left = '<',
-        trim_right = '>',
-      },
-      windows = {
-        preview = true,
-        width_preview = 80,
-      }
-    })
-
-    -- Auto-close explorer when last window
-    vim.api.nvim_create_autocmd('BufLeave', {
-      pattern = 'minifiles-*',
-      callback = function(args)
-        if vim.fn.winnr('$') == 1 then
-          vim.cmd('quit')
-        end
-      end,
-    })
-  '';
+  # extraConfigLua = ''
+  #   -- Customize mini.files appearance
+  #   require('mini.files').setup({
+  #     mappings = {
+  #       close = ';;',
+  #       go_in = 'l',
+  #       go_out = 'h',
+  #       reset = '<BS>',
+  #       show_help = 'g?',
+  #       synchronize = '=',
+  #       trim_left = '<',
+  #       trim_right = '>',
+  #     },
+  #     windows = {
+  #       preview = true,
+  #       width_preview = 80,
+  #     }
+  #   })
+  #
+  #   -- Auto-close explorer when last window
+  #   vim.api.nvim_create_autocmd('BufLeave', {
+  #     pattern = 'minifiles-*',
+  #     callback = function(args)
+  #       if vim.fn.winnr('$') == 1 then
+  #         vim.cmd('quit')
+  #       end
+  #     end,
+  #   })
+  # '';
 }
