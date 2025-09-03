@@ -1,6 +1,5 @@
 {
   plugins = {
-    neogit = { enable = true; };
     gitblame.enable = true;
     gitsigns = {
       enable = true;

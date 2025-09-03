@@ -78,7 +78,7 @@
     }
     {
       mode = "n";
-      key = "<leader>gs";
+      key = "<leader>ns";
       action = "<cmd>Neotree git_status<cr>";
       options = {
         desc = "Git Status";

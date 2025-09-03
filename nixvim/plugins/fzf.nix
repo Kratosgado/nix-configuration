@@ -58,16 +58,6 @@
           options.desc = "Recent (cwd)";
         };
 
-        # Git mappings
-        "<leader>gc" = {
-          action = "git_commits";
-          options.desc = "Commits";
-        };
-        "<leader>gs" = {
-          action = "git_status";
-          options.desc = "Status";
-        };
-
         # Search mappings
         "<leader>s\"" = {
           action = "registers";
@@ -127,7 +117,7 @@
         };
         "<leader>sm" = {
           action = "marks";
-          options.desc = "Jump to Mark";
+          options.desc = "Search Marks";
         };
         "<leader>sR" = {
           action = "resume";

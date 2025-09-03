@@ -32,4 +32,10 @@
       y = "yank_name";
     };
   };
+  keymaps = [{
+    mode = "n";
+    key = "<leader>se";
+    action = "<cmd>Navbuddy<cr>";
+    options = { desc = "Navbuddy"; };
+  }];
 }

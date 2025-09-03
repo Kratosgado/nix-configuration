@@ -85,7 +85,6 @@
     skim
     vim-quickrun
     neorg
-    neorg-telescope
     nvim-cmp
     vim-dadbod # Database interaction
     vim-dadbod-ui # DB UI

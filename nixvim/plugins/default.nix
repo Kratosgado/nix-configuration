@@ -18,5 +18,6 @@
     ./tabout.nix
     ./navbuddy.nix
     ./neo-tree.nix
+    ./neogit.nix
   ];
 }
