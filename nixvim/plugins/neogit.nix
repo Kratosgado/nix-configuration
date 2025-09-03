@@ -13,12 +13,6 @@
       mode = "n";
       key = "<leader>gs";
       action = "<cmd>Neogit<cr>";
-      options = { desc = "Neogit"; };
-    }
-    {
-      mode = "n";
-      key = "<leader>gS";
-      action = "<cmd>Neogit<cr>";
       options = { desc = "Neogit Status"; };
     }
     {

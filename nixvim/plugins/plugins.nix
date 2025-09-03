@@ -75,7 +75,7 @@
     edgy.enable = true;
 
     trim.enable = true;
-    nvim-surround.enable = true;
+    # nvim-surround.enable = true;
     lualine.enable = true;
     # lightline.enable = true;
 
