@@ -31,6 +31,7 @@
       };
 
       implement = { enable = false; };
+      lightbulb.enable = false;
       rename = {
         autoSave = false;
         keys = {

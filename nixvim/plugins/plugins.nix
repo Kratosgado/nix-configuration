@@ -2,26 +2,10 @@
   plugins = {
     # lskind for icons.................................
     lspkind = {
-      enable = true;
+      enable = false;
 
       settings = {
-        cmp = {
-          enable = true;
-          menu = {
-            nvim_lsp = "";
-            nvim_lua = "";
-            neorg = "[neorg]";
-            buffer = "";
-            calc = "";
-            git = "";
-            luasnip = "󰩫";
-            codeium = "󱜙";
-            copilot = "";
-            emoji = "󰞅";
-            path = "";
-            spell = "";
-          };
-        };
+        cmp = { enable = false; };
 
         symbolMap = {
           Namespace = "󰌗";

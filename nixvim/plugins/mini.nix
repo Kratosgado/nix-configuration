@@ -3,7 +3,7 @@
   # Enable mini.nvim with files configuration
   plugins.web-devicons.enable = true;
   plugins.mini = {
-    enable = true;
+    enable = false;
     modules = {
       git = {
         enable = true;
@@ -31,44 +31,44 @@
           textobject = "<leader>/";
         };
       };
-      # diff = { view = { style = "sign"; }; };
-      # starter = {
-      #   content_hooks = {
-      #     "__unkeyed-1.adding_bullet" = {
-      #       __raw = "require('mini.starter').gen_hook.adding_bullet()";
-      #     };
-      #     "__unkeyed-2.indexing" = {
-      #       __raw =
-      #         "require('mini.starter').gen_hook.indexing('all', { 'Builtin actions' })";
-      #     };
-      #     "__unkeyed-3.padding" = {
-      #       __raw =
-      #         "require('mini.starter').gen_hook.aligning('center', 'center')";
-      #     };
-      #   };
-      #   evaluate_single = true;
-      #   header = ''
-      #     ███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗
-      #     ████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║
-      #     ██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║
-      #     ██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║
-      #     ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║
-      #   '';
-      #   items = {
-      #     "__unkeyed-1.buildtin_actions" = {
-      #       __raw = "require('mini.starter').sections.builtin_actions()";
-      #     };
-      #     "__unkeyed-2.recent_files_current_directory" = {
-      #       __raw = "require('mini.starter').sections.recent_files(10, false)";
-      #     };
-      #     "__unkeyed-3.recent_files" = {
-      #       __raw = "require('mini.starter').sections.recent_files(10, true)";
-      #     };
-      #     "__unkeyed-4.sessions" = {
-      #       __raw = "require('mini.starter').sections.sessions(5, true)";
-      #     };
-      #   };
-      # };
+      diff = { view = { style = "sign"; }; };
+      starter = {
+        content_hooks = {
+          "__unkeyed-1.adding_bullet" = {
+            __raw = "require('mini.starter').gen_hook.adding_bullet()";
+          };
+          "__unkeyed-2.indexing" = {
+            __raw =
+              "require('mini.starter').gen_hook.indexing('all', { 'Builtin actions' })";
+          };
+          "__unkeyed-3.padding" = {
+            __raw =
+              "require('mini.starter').gen_hook.aligning('center', 'center')";
+          };
+        };
+        evaluate_single = true;
+        header = ''
+          ███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗
+          ████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║
+          ██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║
+          ██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║
+          ██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║
+        '';
+        items = {
+          "__unkeyed-1.buildtin_actions" = {
+            __raw = "require('mini.starter').sections.builtin_actions()";
+          };
+          "__unkeyed-2.recent_files_current_directory" = {
+            __raw = "require('mini.starter').sections.recent_files(10, false)";
+          };
+          "__unkeyed-3.recent_files" = {
+            __raw = "require('mini.starter').sections.recent_files(10, true)";
+          };
+          "__unkeyed-4.sessions" = {
+            __raw = "require('mini.starter').sections.sessions(5, true)";
+          };
+        };
+      };
       surround = {
         mappings = {
           add = "gsa";
@@ -84,27 +84,27 @@
   };
 
   # Add keymaps for mini.files
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>E";
-      action = "<cmd>lua require('mini.files').open()<cr>";
-      options = {
-        desc = "Open file explorer";
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>e";
-      action =
-        "<cmd>lua require('mini.files').open(vim.api.nvim_buf_get_name(0))<cr>";
-      options = {
-        desc = "Reveal current file";
-        silent = true;
-      };
-    }
-  ];
+  # keymaps = [
+  #   {
+  #     mode = "n";
+  #     key = "<leader>E";
+  #     action = "<cmd>lua require('mini.files').open()<cr>";
+  #     options = {
+  #       desc = "Open file explorer";
+  #       silent = true;
+  #     };
+  #   }
+  #   {
+  #     mode = "n";
+  #     key = "<leader>e";
+  #     action =
+  #       "<cmd>lua require('mini.files').open(vim.api.nvim_buf_get_name(0))<cr>";
+  #     options = {
+  #       desc = "Reveal current file";
+  #       silent = true;
+  #     };
+  #   }
+  # ];
 
   # Optional: Add custom configuration for mini.files
   # extraConfigLua = ''

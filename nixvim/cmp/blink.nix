@@ -44,10 +44,10 @@
           };
           documentation = { auto_show = true; };
           ghost_text.enabled = true;
-          # list.selection = {
-          #   auto_insert = false;
-          #   preselect = false;
-          # };
+          list.selection = {
+            auto_insert = false;
+            preselect = false;
+          };
           menu.border = "solid";
         };
         keymap = {

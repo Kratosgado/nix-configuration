@@ -16,6 +16,8 @@ require("neorg").setup({
 vim.g.db_ui_use_nerd_fonts = 1
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 local config = {
 	cmd = {
