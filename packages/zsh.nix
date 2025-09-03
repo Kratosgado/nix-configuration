@@ -66,39 +66,28 @@
         enable = true;
         extraConfig = builtins.readFile ./extraConfig.zsh;
         # Additional oh-my-zsh plugins
-        plugins = [ "web-search" "copyfile" "copybuffer" "fzf" "pay-respects" ];
+        plugins = [ "web-search" "copyfile" "copybuffer" "fzf" "flutter" "cp" ];
       };
 
-      plugins = [
+      plugins = with pkgs; [
         # Autocompletions
         {
           name = "zsh-autosuggestions";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-autosuggestions";
-            rev = "v0.7.1";
-            hash = "sha256-vpTyYq9ZgfgdDsWzjxVAE7FZH4MALMNZIFyEOBLm5Qo=";
-          };
+          src = zsh-autosuggestions;
+        }
+        {
+          name = "zsh-autocomplete";
+          src = zsh-autocomplete;
         }
         # Completion scroll
         {
           name = "zsh-completions";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-completions";
-            rev = "0.35.0";
-            hash = "sha256-GFHlZjIHUWwyeVoCpszgn4AmLPSSE8UVNfRmisnhkpg=";
-          };
+          src = zsh-completions;
         }
         # Highlight commands in terminal
         {
           name = "zsh-syntax-highlighting";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-syntax-highlighting";
-            rev = "0.8.0";
-            hash = "sha256-iJdWopZwHpSyYl5/FQXEW7gl/SrKaYDEtTH9cGP7iPo=";
-          };
+          src = zsh-syntax-highlighting;
         }
       ];
       initContent = ''
