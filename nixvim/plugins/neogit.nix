@@ -51,11 +51,5 @@
       action = "<cmd>Neogit pull<cr>";
       options = { desc = "Neogit Pull"; };
     }
-    {
-      mode = "n";
-      key = "<leader>gs";
-      action = "<cmd>Neogit status<cr>";
-      options = { desc = "Neogit Status"; };
-    }
   ];
 }

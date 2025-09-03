@@ -17,7 +17,7 @@
       enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
-      dotDir = ".config/zsh";
+      dotDir = "/home/kratosgado/.config/zsh";
 
       shellAliases = {
         hms = "home-manager switch";
@@ -26,7 +26,7 @@
         c = "clear";
         cat = "bat --theme='Catppuccin Mocha'";
         cd = "z";
-        fk = "fuck";
+        fk = "pay-respects";
         pn = "pnpm";
         px = "pnpx";
         ls =
