@@ -9,7 +9,7 @@
         codeAction = "";
       };
       hover = {
-        openCmd = "!firefox"; # Choose your browser
+        openCmd = "!chrome-chrome-stable"; # Choose your browser
         openLink = "gx";
       };
       diagnostic = {

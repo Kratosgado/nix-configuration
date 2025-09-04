@@ -5,7 +5,11 @@
       popup.kind = "floating";
       integrations.fzf-lua = true;
       integrations.diffview = true;
+      commit_editor.kind = "floating";
+      commit_select_view.kind = "floating";
+      commit_view.kind = "floating";
       log_view.kind = "floating";
+      description_editor.kind = "floating";
     };
   };
   keymaps = [

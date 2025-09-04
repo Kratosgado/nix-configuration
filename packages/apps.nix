@@ -4,7 +4,7 @@
     # godot
     # blendfarm
     pcsx2
-    firefox
+    # firefox
     tor-browser
     obs-studio
     insomnia
