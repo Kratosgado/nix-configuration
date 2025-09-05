@@ -63,7 +63,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>e";
+      key = "<leader>E";
       action = "<cmd>Neotree toggle<cr>";
       options = {
         desc = "Toggle neo-tree";
@@ -72,7 +72,7 @@
     }
     {
       mode = "n";
-      key = "<leader>E";
+      key = "<leader>e";
       action = "<cmd>Neotree reveal_force_cwd<cr>";
       options = {
         desc = "Toggle neo-tree";

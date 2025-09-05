@@ -1,5 +1,12 @@
 { pkgs, ... }: {
   plugins = {
+    extraConfigLua = builtins.readFile ./kulala.lua;
+    which-key.settings.spec = [{
+      __unkeyed-1 = "<leader>r";
+      group = "Kulala";
+      icon = "";
+    }];
+    rest.enable = true;
     # lskind for icons.................................
     lspkind = {
       enable = false;

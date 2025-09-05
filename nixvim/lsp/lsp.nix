@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   plugins = {
     clangd-extensions.enable = true;
     nix.enable = true;
@@ -20,6 +20,10 @@
           enable = true;
           autostart = false;
           settings.filetypes = [ "vue" "typescript" "javascript" ];
+        };
+        biome = {
+          enable = true;
+          package = pkgs.biome;
         };
         prismals = {
           enable = true;

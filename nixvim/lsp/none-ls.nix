@@ -15,6 +15,7 @@
 
       formatting = {
         nixfmt.enable = true;
+        biome.enable = true;
         asmfmt.enable = true;
         yamlfix.enable = true;
         yamlfmt.enable = true;
@@ -25,10 +26,6 @@
         google_java_format.enable = true;
         ktlint = { enable = false; };
         # prisma_format.enable = true;
-        prettierd = {
-          enable = true;
-          disableTsServerFormatter = true;
-        };
         stylua.enable = true;
         black.enable = true;
       };

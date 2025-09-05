@@ -89,6 +89,7 @@
     vim-dadbod # Database interaction
     vim-dadbod-ui # DB UI
     vim-dadbod-completion # DB-aware completion
+    kulala-nvim
   ];
   extraConfigLua = builtins.readFile ./config.lua;
   autoCmd = [{

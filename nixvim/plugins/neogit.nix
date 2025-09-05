@@ -10,6 +10,8 @@
       commit_view.kind = "floating";
       log_view.kind = "floating";
       description_editor.kind = "floating";
+      reflog_view.kind = "floating";
+      tag_editor.kind = "floating";
     };
   };
   keymaps = [

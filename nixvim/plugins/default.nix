@@ -14,7 +14,6 @@
     ./plugins.nix
     ./mini.nix
     ./treesitter.nix
-    ./kulala.nix
     ./tabout.nix
     ./navbuddy.nix
     ./neo-tree.nix
