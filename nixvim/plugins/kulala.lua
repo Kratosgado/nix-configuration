@@ -177,27 +177,7 @@ local opts = {
 				json = true,
 			},
 		},
-
-		on_attach = function(bufnr)
-			local kulala = require("kulala")
-			local function map(mode, l, r, opts)
-				opts = opts or {}
-				opts.buffer = bufnr
-				vim.keymap.set(mode, l, r, opts)
-			end
-			map("n", "<leader>rs", kulala.run(), { desc = "Run request under cursor" })
-			map("n", "<leader>ra", kulala.run_all(), { desc = "Run all requests" })
-			map("n", "<leader>rr", kulala.replay(), { desc = "Replay the last request" })
-			map("n", "<leader>rf", kulala.search(), { desc = "Find request" })
-			map("n", "<leader>rp", kulala.preview(), { desc = "Preview request cURL command" })
-			map("n", "<leader>rl", kulala.last(), { desc = "Re-run last request" })
-			map("n", "<leader>rP", kulala.jump_prev(), { desc = "Jump to previous request" })
-			map("n", "<leader>rn", kulala.jump_next(), { desc = "Jump to next request" })
-			map("n", "<leader>rt", kulala.toggle_view(), { desc = "Toggle body/header view" })
-			map("n", "<leader>rb", kulala.scratchpad(), { desc = "Open scratchpad" })
-			map("n", "<leader>rc", kulala.copy(), { desc = "Copy as cURL" })
-			map("n", "<leader>rC", kulala.from_curl(), { desc = "Paste from cURL" })
-		end,
+		on_attach = nil,
 	},
 
 	-- enable/disable debug mode
@@ -225,7 +205,7 @@ local opts = {
 	kulala_keymaps_prefix = "",
 }
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = [[http|rest]],
+	pattern = "http",
 	callback = function()
 		require("kulala").setup(opts)
 		-- register custom kulala kemaps

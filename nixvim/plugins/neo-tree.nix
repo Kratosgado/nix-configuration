@@ -73,7 +73,7 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = "<cmd>Neotree reveal_force_cwd<cr>";
+      action = "<cmd>Neotree toggle reveal_force_cwd<cr>";
       options = {
         desc = "Toggle neo-tree";
         silent = true;
