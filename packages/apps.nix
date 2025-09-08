@@ -5,15 +5,12 @@
     # blendfarm
     pcsx2
     # firefox
-    tor-browser
     obs-studio
     insomnia
 
-    code-cursor
     gimp
-    claude-code
     # android-studio-full
-    android-studio
+    # android-studio
     jetbrains.idea-community
     discord
     google-chrome

@@ -149,7 +149,6 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     gnome.excludePackages = with pkgs; [
-      baobab # disk usage analyzer
       epiphany # web browser
       simple-scan # document scanner
       totem # video player

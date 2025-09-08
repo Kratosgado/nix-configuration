@@ -204,6 +204,7 @@ local opts = {
 
 	kulala_keymaps_prefix = "",
 }
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "http",
 	callback = function()

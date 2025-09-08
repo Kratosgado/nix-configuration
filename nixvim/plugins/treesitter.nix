@@ -1,11 +1,104 @@
-{ pkgs, lib, config, ... }: {
+{ pkgs, lib, config, ... }:
+let
+  kulala_http = pkgs.tree-sitter.buildGrammar {
+    language = "kulala_http";
+    version = pkgs.vimPlugins.kulala-nvim.version;
+    src = pkgs.vimPlugins.kulala-nvim.src + "/lua/tree-sitter";
+    meta = pkgs.vimPlugins.kulala-nvim.meta;
+  };
+in {
   plugins = {
     # nvim-tree.enable = true;
     treesitter = {
       enable = true;
       nixvimInjections = true;
+      # TODO ckeep this in sync with the grammars
       nixGrammars = true;
+      languageRegister = { kulala_http = [ "http" "rest" ]; };
 
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        asm
+        bash
+        c
+        cmake
+        comment
+        commonlisp
+        kulala_http
+        cpp
+        css
+        csv
+        dart
+        diff
+        dockerfile
+        dot
+        editorconfig
+        git_config
+        git_rebase
+        gitattributes
+        gitcommit
+        gitignore
+        graphql
+        groovy
+        html
+        http
+        java
+        javadoc
+        javascript
+        jq
+        jsdoc
+        json
+        json5
+        jsonc
+        kotlin
+        # kulala_http
+        llvm
+        lua
+        luadoc
+        make
+        markdown
+        markdown_inline
+        nasm
+        nginx
+        nix
+        prisma
+        python
+        regex
+        rust
+        scala
+        sql
+        styled
+        superhtml
+        svelte
+        tmux
+        todotxt
+        toml
+        tsx
+        typescript
+        typespec
+        udev
+        vim
+        vimdoc
+        vue
+        xml
+        yaml
+      ];
+      luaConfig.post = ''
+         do
+          local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+          -- change the following as needed
+          parser_config.nu = {
+            install_info = {
+              url = "${kulala_http}", -- local path or git repo
+              files = {"src/parser.c"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+              -- optional entries:
+              --  branch = "main", -- default branch in case of git repo if different from master
+              -- generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+              -- requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
+            },
+            filetype = "http", -- if filetype does not match the parser name
+          }
+        end
+      '';
       settings = {
         indent.enable = true;
         highlight.enable = true;

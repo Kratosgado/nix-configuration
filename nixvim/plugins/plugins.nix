@@ -1,7 +1,8 @@
 { pkgs, ... }: {
   extraConfigLua = builtins.readFile ./kulala.lua;
   plugins = {
-    rest.enable = true;
+    # rest.enable = true;
+    # kulala.enable = true;
     # lskind for icons.................................
     lspkind = {
       enable = false;
