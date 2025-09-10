@@ -209,6 +209,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "http",
 	callback = function()
 		require("kulala").setup(opts)
+		vim.lsp.start({ name = "kulala_ls", cmd = { "kulala-ls", "--stdio" } })
 		-- register custom kulala kemaps
 	end,
 })
