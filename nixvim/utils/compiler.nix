@@ -1,13 +1,5 @@
 { config, lib, ... }: {
-  plugins = {
-    compiler = { enable = true; };
-
-    # which-key.settings.spec = lib.optionals config.plugins.compiler.enable [{
-    #   __unkeyed-1 = "<leader>r";
-    #   group = "Compiler";
-    #   icon = "";
-    # }];
-  };
+  plugins = { compiler = { enable = true; }; };
 
   keymaps = lib.mkIf config.plugins.compiler.enable [
     {

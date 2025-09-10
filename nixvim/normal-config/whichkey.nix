@@ -56,7 +56,7 @@
         }
 
         {
-          __unkeyes-1 = "<leader>x";
+          __unkeyed-1 = "<leader>x";
           mode = "n";
           group = "Trouble";
         }
