@@ -186,7 +186,6 @@
     docker = {
       enable = true;
       enableOnBoot = false;
-      extraPackages = with pkgs; [ docker-compose ];
       rootless = {
         enable = true;
         setSocketVariable = true;

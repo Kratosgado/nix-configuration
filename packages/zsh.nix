@@ -15,13 +15,13 @@
     };
     zsh = {
       enable = true;
-      autosuggestion.enable = true;
       enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      enableAutosuggestions = true;
       dotDir = "/home/kratosgado/.config/zsh";
 
       shellAliases = {
         hms = "home-manager switch";
-        lg = "lazygit";
         v = "nvim";
         c = "clear";
         cat = "bat --theme='Catppuccin Mocha'";
@@ -58,7 +58,7 @@
         cr = "cargo run";
         cb = "cargo build";
         ct = "cargo test";
-        # cc = "cargo check";
+        cc = "cargo check";
         ccp = "cargo clippy";
         cf = "cargo fmt";
       };
@@ -66,30 +66,30 @@
         enable = true;
         extraConfig = builtins.readFile ./extraConfig.zsh;
         # Additional oh-my-zsh plugins
-        plugins = [ "web-search" "copyfile" "copybuffer" "fzf" "flutter" "cp" ];
+        plugins = [ "web-search" "copyfile" "copybuffer" "fzf" ];
       };
 
-      plugins = with pkgs; [
-        # Autocompletions
-        {
-          name = "zsh-autosuggestions";
-          src = zsh-autosuggestions;
-        }
-        {
-          name = "zsh-autocomplete";
-          src = zsh-autocomplete;
-        }
-        # Completion scroll
-        {
-          name = "zsh-completions";
-          src = zsh-completions;
-        }
-        # Highlight commands in terminal
-        {
-          name = "zsh-syntax-highlighting";
-          src = zsh-syntax-highlighting;
-        }
-      ];
+      # plugins = with pkgs; [
+      #   # Autocompletions
+      #   {
+      #     name = "zsh-autosuggestions";
+      #     src = zsh-autosuggestions;
+      #   }
+      #   {
+      #     name = "zsh-autocomplete";
+      #     src = zsh-autocomplete;
+      #   }
+      #   # Completion scroll
+      #   {
+      #     name = "zsh-completions";
+      #     src = zsh-completions;
+      #   }
+      #   # Highlight commands in terminal
+      #   {
+      #     name = "zsh-syntax-highlighting";
+      #     src = zsh-syntax-highlighting;
+      #   }
+      # ];
       initContent = ''
         ;
                 [[ ! -f ~/.config/home-manager/.p10k.zsh ]] || source ~/.config/home-manager/.p10k.zsh

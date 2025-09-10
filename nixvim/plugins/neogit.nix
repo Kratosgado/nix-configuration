@@ -17,7 +17,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>gs";
+      key = "<leader>gg";
       action = "<cmd>Neogit<cr>";
       options = { desc = "Neogit Status"; };
     }

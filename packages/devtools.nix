@@ -80,7 +80,6 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
-    lazygit
     tmux
     ripgrep
     fd
@@ -105,7 +104,6 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
-
   ];
 
 }
