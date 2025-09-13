@@ -182,7 +182,7 @@
     allowUnfreePredicate = true;
     allowUnsupportedSystem = true;
     android_sdk.accept_license = true;
-    permittedInsecurePackages = [ "libsoup-2.74.3" ];
+    # permittedInsecurePackages = [ "libsoup-2.74.3" ];
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

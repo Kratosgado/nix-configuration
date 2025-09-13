@@ -17,7 +17,7 @@
         jsonls.enable = true;
         lua_ls.enable = true;
         ts_ls = {
-          enable = true;
+          enable = false;
           autostart = false;
           settings.filetypes = [ "vue" "typescript" "javascript" ];
         };
@@ -31,7 +31,6 @@
         };
         vtsls = {
           enable = true;
-          autostart = false;
           package = pkgs.vtsls;
         };
         rust_analyzer = {
@@ -66,7 +65,17 @@
         pyright.enable = true;
         html.enable = true;
         svelte.enable = true;
-        volar = { enable = true; };
+        volar = {
+          enable = true;
+          filetypes = [
+            "typescript"
+            "javascript"
+            "javascriptreact"
+            "typescriptreact"
+            "vue"
+          ];
+          settings = { init_options = { vue = { hybridMode = false; }; }; };
+        };
         cssls.enable = true;
         bashls.enable = true;
         tailwindcss.enable = true;

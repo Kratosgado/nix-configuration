@@ -4,9 +4,8 @@
     kotlin
     poetry
     nodePackages.typescript
-    nodePackages."@vue/language-server"
-    nodePackages."typescript-language-server"
-    nodePackages.node-gyp
+    typescript-language-server
+    # nodePackages.node-gyp
     jdk
     # jdk17
     flutter
@@ -15,29 +14,28 @@
     liquibase
     ktor-cli
     dbus
-    glib
     gobject-introspection
     sqlite
-    dbus-glib
+    # dbus-glib
     rustc
     cargo
     stylua
-    libsoup_3
+    # libsoup_3
 
     # C++ toolchain
     nasm
     gcc
-    tree-sitter
+    # tree-sitter
     cmake
     pkg-config
     ninja
     clang-tools
     gnumake
     libgcc
-    opencv4
+    # opencv4
 
     kulala-fmt
-    webkitgtk_4_0
+    # webkitgtk_4_0
     # gtk3
     # gtk4
 

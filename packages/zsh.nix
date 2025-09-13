@@ -17,7 +17,7 @@
       enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
-      enableAutosuggestions = true;
+      autosuggestions.enable = true;
       dotDir = "/home/kratosgado/.config/zsh";
 
       shellAliases = {

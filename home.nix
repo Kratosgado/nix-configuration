@@ -35,7 +35,6 @@ in {
       andromeda-gtk-theme
 
       xclip
-      ngrok
       jetbrains-mono
     ];
 
