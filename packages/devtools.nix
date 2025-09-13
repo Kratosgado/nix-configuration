@@ -38,8 +38,8 @@
 
     kulala-fmt
     webkitgtk_4_0
-    gtk3
-    gtk4
+    # gtk3
+    # gtk4
 
     python311
     fzf

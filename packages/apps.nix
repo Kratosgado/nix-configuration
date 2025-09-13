@@ -10,7 +10,7 @@
 
     gimp
     # android-studio-full
-    # android-studio
+    android-studio
     jetbrains.idea-community
     discord
     google-chrome

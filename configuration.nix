@@ -176,9 +176,14 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnsupportedSystem = true;
-  nixpkgs.config.permittedInsecurePackages = [ "libsoup-2.74.3" ];
+  nixpkgs.config = {
+    allowBroken = true;
+    allowUnfree = true;
+    allowUnfreePredicate = true;
+    allowUnsupportedSystem = true;
+    android_sdk.accept_license = true;
+    permittedInsecurePackages = [ "libsoup-2.74.3" ];
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # enable docker

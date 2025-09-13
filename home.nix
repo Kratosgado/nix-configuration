@@ -73,6 +73,7 @@ in {
       CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
       NIXPKGS_ALLOW_UNFREE = 1;
       NIXPKGS_ALLOW_UNFREE_PREDICATE = 1;
+      NIXPKGS_ACCEPT_ANDROID_SDK_LICENSE = 1;
       # This forces kotlin-language-server to use the correct JDK
       KOTLIN_LANGUAGE_SERVER_JAVA_HOME = "${pkgs.jdk}";
 
