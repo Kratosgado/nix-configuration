@@ -4,6 +4,7 @@
     kotlin
     poetry
     nodePackages.typescript
+    # vue-language-server
     typescript-language-server
     # nodePackages.node-gyp
     jdk

@@ -12,6 +12,12 @@ _fzf_comprun() {
     esac
 }
 
+export PNPM_HOME="/root/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 eval "$(zoxide init zsh)"
 eval "$(devbox global shellenv --init-hook)"
 eval "$(pay-respects zsh)"

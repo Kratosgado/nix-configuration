@@ -65,6 +65,7 @@ in {
       PKG_CONFIG_PATH =
         "${pkgs.opencv4}/lib/pkgconfig:${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.libxml2.dev}/lib/pkgconfig";
       NPM_CONFIG_PREFIX = "$HOME/.npm-packages";
+      PNPM_HOME = "$HOME/.pnpm-home";
       PATH = "/home/kratosgado/.npm-packages/bin:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
       JAVA_HOME = "${pkgs.jdk}";

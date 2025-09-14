@@ -185,6 +185,7 @@
     # permittedInsecurePackages = [ "libsoup-2.74.3" ];
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.max-jobs = 16;
 
   # enable docker
   virtualisation = {

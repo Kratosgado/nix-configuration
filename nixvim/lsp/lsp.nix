@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  # extraConfigLua = builtins.readFile ./vue.lua;
   plugins = {
     clangd-extensions.enable = true;
     nix.enable = true;
@@ -33,6 +34,10 @@
           enable = true;
           package = pkgs.vtsls;
         };
+        volar = {
+          enable = true;
+          package = pkgs.vscode-extensions.vue.volar;
+        };
         rust_analyzer = {
           enable = true;
           autostart = true;
@@ -65,17 +70,6 @@
         pyright.enable = true;
         html.enable = true;
         svelte.enable = true;
-        volar = {
-          enable = true;
-          filetypes = [
-            "typescript"
-            "javascript"
-            "javascriptreact"
-            "typescriptreact"
-            "vue"
-          ];
-          settings = { init_options = { vue = { hybridMode = false; }; }; };
-        };
         cssls.enable = true;
         bashls.enable = true;
         tailwindcss.enable = true;

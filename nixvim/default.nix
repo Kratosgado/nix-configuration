@@ -11,7 +11,7 @@
       ./utils
       ./debugs
     ];
-    enable = true;
+    enable = false;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
