@@ -52,8 +52,8 @@
           "syncconfig && sudo nixos-rebuild switch && sudo cp /etc/nixos/flake.lock ~/projects/configs/nixos/flake.lock";
         iswitch =
           "syncconfig  && sudo nixos-rebuild switch --impure && sudo cp /etc/nixos/flake.lock ~/projects/configs/nixos/flake.lock";
-        editconfig =
-          "cd ~/projects/configs/nixos/ && nvim ~/projects/configs/nixos/";
+        editconfig = "cd ~/projects/configs/nixos/ && nvim ~/projects/configs/nixos/";
+        editvim = "cd ~/.config/nvim/ && nvim ~/.config/nvim";
 
         # Rust aliases
         cr = "cargo run";

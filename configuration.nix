@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./nixvim ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ];
 
   system.activationScripts.script.text = ''
     cp /home/kratosgado/Pictures/kratosgado.png /var/lib/AccountsService/icons/kratosgado
