@@ -22,6 +22,9 @@
               users.kratosgado = import ./home.nix;
               backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs; };
+              nixpkgs.overlays = [
+                (import ./overlays/pinned-packages.nix)
+              ];
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }

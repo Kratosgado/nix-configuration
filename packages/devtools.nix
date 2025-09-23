@@ -21,6 +21,7 @@
     rustc
     cargo
     stylua
+    claude-code
     # libsoup_3
 
     # C++ toolchain
