@@ -2,10 +2,9 @@
   home.packages = with pkgs; [
     trunk
     kotlin
-    poetry
-    nodePackages.typescript
+    # nodePackages.typescript
     # vue-language-server
-    typescript-language-server
+    # typescript-language-server
     # nodePackages.node-gyp
     jdk
     # jdk17
@@ -20,7 +19,8 @@
     # dbus-glib
     rustc
     cargo
-    stylua
+    # rustup
+    # stylua
     claude-code
     # libsoup_3
 
@@ -36,7 +36,7 @@
     libgcc
     # opencv4
 
-    kulala-fmt
+    # kulala-fmt
     # webkitgtk_4_0
     # gtk3
     # gtk4

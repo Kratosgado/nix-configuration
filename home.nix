@@ -116,6 +116,9 @@ in {
           }/bin/git-credential-libsecret";
       };
     };
-    tmux.plugins.tmux.plugins = [ pkgs.tmuxPlugins.vim-tmux-navigator ];
+    tmux = {
+      enable = true;
+      plugins = [ pkgs.tmuxPlugins.vim-tmux-navigator ];
+    };
   };
 }
