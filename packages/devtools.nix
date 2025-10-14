@@ -22,6 +22,10 @@
     # rustup
     # stylua
     claude-code
+    github-copilot-cli
+    qwen-code
+    gemini-cli
+    opencode
     # libsoup_3
 
     # C++ toolchain
@@ -44,7 +48,6 @@
     python311
     fzf
     skim
-    curlHTTP3
     websocat
     jq
     openssh
