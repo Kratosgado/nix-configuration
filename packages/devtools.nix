@@ -17,11 +17,12 @@
     gobject-introspection
     sqlite
     # dbus-glib
-    rustc
-    cargo
-    # rustup
+    # rustc
+    # cargo
+    rustup
     # stylua
     claude-code
+    aider-chat
     github-copilot-cli
     qwen-code
     gemini-cli

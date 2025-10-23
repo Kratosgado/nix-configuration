@@ -15,6 +15,10 @@
   programs = {
     nix-ld.enable = true;
     adb.enable = true;
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
     dconf.enable = true;
     kdeconnect = {
       enable = true;
