@@ -22,9 +22,7 @@
     rustup
     # stylua
     claude-code
-    aider-chat
     github-copilot-cli
-    qwen-code
     gemini-cli
     opencode
     # libsoup_3
