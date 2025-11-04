@@ -167,13 +167,7 @@
       # gnome-connections
       # gnome-console
     ];
-    systemPackages = with pkgs; [
-      nginx
-      direnv
-      home-manager
-      nix-direnv
-
-    ];
+    systemPackages = with pkgs; [ nginx direnv home-manager nix-direnv ];
   };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229

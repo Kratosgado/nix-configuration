@@ -1,7 +1,8 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   home.packages = with pkgs; [
     trunk
     kotlin
+    (inputs.rustowl-flake.packages.${pkgs.system}.rustowl)
     # nodePackages.typescript
     # vue-language-server
     # typescript-language-server
@@ -22,7 +23,6 @@
     rustup
     # stylua
     claude-code
-    github-copilot-cli
     gemini-cli
     opencode
     # libsoup_3
