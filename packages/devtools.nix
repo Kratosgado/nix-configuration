@@ -3,6 +3,7 @@
     trunk
     kotlin
     (inputs.rustowl-flake.packages.${pkgs.system}.rustowl)
+    lua51Packages.luarocks
     # nodePackages.typescript
     # vue-language-server
     # typescript-language-server
