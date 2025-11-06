@@ -30,6 +30,7 @@
 
     # C++ toolchain
     nasm
+    qemu
     gcc
     # tree-sitter
     cmake
