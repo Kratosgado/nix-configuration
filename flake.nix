@@ -8,8 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    snapd = {
+      url = "github:nix-community/nix-snapd";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = inputs@{ self, nixpkgs, rustowl-flake, home-manager, ... }: {
+  outputs = inputs@{ self, snapd, nixpkgs, rustowl-flake, home-manager, ... }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -17,6 +21,7 @@
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
+          snapd.nixosModules.default
           {
             # nixpkgs.overlays = [ (import ./overlays/pinned-packages.nix) ];
             home-manager = {

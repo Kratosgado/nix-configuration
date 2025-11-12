@@ -23,7 +23,7 @@
     mongodb-compass
     telegram-desktop
     zapzap
-    redisinsight
+    # redisinsight
     postgresql # for dadbod
   ];
 }

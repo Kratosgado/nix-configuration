@@ -95,6 +95,7 @@
   i18n.defaultLocale = "en_GB.UTF-8";
 
   services = {
+    snap = { enable = true; };
     gnome.gnome-keyring.enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;

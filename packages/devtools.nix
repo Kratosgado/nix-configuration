@@ -24,7 +24,6 @@
     rustup
     # stylua
     claude-code
-    gemini-cli
     opencode
     # libsoup_3
 
