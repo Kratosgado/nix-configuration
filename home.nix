@@ -107,11 +107,10 @@ in {
 
     git = {
       enable = true;
-      userName = "Kratosgado";
-      userEmail = "mbeahessilfieprince@gmail.com";
-      extraConfig = {
+      settings = {
+        user.name = "Kratosgado";
+        user.email = "mbeahessilfieprince@gmail.com";
         push = { autoSetupRemote = true; };
-
         credential.helper = "${
             pkgs.git.override { withLibsecret = true; }
           }/bin/git-credential-libsecret";
