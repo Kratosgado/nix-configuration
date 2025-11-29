@@ -66,9 +66,10 @@ in {
         "${pkgs.opencv4}/lib/pkgconfig:${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.libxml2.dev}/lib/pkgconfig";
       NPM_CONFIG_PREFIX = "$HOME/.npm-packages";
       PNPM_HOME = "$HOME/.pnpm-home";
-      PATH = "/home/kratosgado/.npm-packages/bin:$PATH";
+      PATH = "/home/kratosgado/.npm-packages/bin:$HOME/.pnpm-home:$PATH";
       NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
       JAVA_HOME = "${pkgs.jdk}";
+      ANDROID_HOME = "$HOME/Android/Sdk";
       GRADLE_USER_HOME = "$HOME/.gradle";
       CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
       NIXPKGS_ALLOW_UNFREE = 1;
